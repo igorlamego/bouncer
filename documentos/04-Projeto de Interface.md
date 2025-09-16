@@ -4,7 +4,12 @@
 ## User Flow
 
 Fluxo de usuário (User Flow) 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/blob/main/documentos/img/Sample%20project_page-0001.jpg"
+<figure> 
+  <img src="[https://user-images.githubusercontent.com/100447878/164074128-7b006e50-8621-4964-b0fd-07a90e626673.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/blob/main/documentos/img/Sample%20project_page-0001.jpg)"
+    <figcaption>Figura 2 - Estrutura padrão do site
+</figure> 
+<hr>
+
 
 
 > **Links Úteis**:
