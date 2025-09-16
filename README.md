@@ -1,10 +1,10 @@
-# Título do Projeto
+# Sistema Web para Gerenciamento de Convidados em Eventos 
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
 `DISCIPLINA`
 
-`SEMESTRE`
+`1º Semestre`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
 
