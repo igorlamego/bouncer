@@ -6,6 +6,8 @@
 Fluxo de usuário (User Flow) 
 **[https://user-images.githubusercontent.com/100447878/164074128-7b006e50-8621-4964-b0fd-07a90e626673.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/blob/main/documentos/img/Sample%20project_page-0001.jpg)**
 
+<img src="Sample project_page-0001.jpg" alt="User Flow">
+
 ## Protótipo
 
 Desenvolver um protótipo emerge como uma das maneiras mais ágeis e econômicas de validar uma ideia, conceito ou funcionalidade. Isso permite a interação, avaliação, modificação e aprovação das principais características de uma interface antes de entrar na fase de desenvolvimento. Leia o artigo [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135).
