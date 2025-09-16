@@ -20,7 +20,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
 
 ## Orientador
 
-* Nome completo do professor
+* Clóvis Lemos Tavares 
 
 # Documentação
 
@@ -38,7 +38,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+* https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/tree/main
 
 # Código-Fonte
 
