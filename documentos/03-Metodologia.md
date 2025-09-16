@@ -57,6 +57,7 @@ Canva
 
 O VS Code foi escolhido porque ele possui uma integração com o Git e GitHub. O Microsoft Teams foi escolhido por ser o software padrão para as aulas, e por fim, para criar diagramas utilizamos o Figma que permite edição em tempo real de todos os participantes do grupo.
 
+
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
 | AMBIENTE                            | PLATAFORMA                         | LINK DE ACESSO                         |
