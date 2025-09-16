@@ -32,7 +32,7 @@
 
 |EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
 |--------------------|---------------------------|----------------------------------|
-| ...                | ...                       | ...                              |
+|Eu como organizador | ...                       | ...                              |
 | ...                | ...                       | ...                              |
 
 ## Requisitos do Projeto
