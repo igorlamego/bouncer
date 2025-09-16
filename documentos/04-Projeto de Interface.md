@@ -4,7 +4,7 @@
 ## User Flow
 
 Fluxo de usuário (User Flow) 
-![Uploading Sample project_page-0001.jpg…]()
+<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/blob/main/documentos/img/Sample%20project_page-0001.jpg"
 
 
 > **Links Úteis**:
