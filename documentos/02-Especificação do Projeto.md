@@ -55,6 +55,7 @@
 | RF-08 | A aplicação deve permitir que os convidados sejam importados ou exportados para Excel.                                                                           | MÉDIA      |
 | RF-09 | A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.                                                                  | ALTA       |
 | RF-10 | A aplicação deve permitir ao promotor/organizador classificar convidados por categorias (aniversariante, VIP, cortesia, lista “amiga” etc.).                     | MÉDIA      |
+
 **Prioridade: Alta / Média / Baixa. 
 
 ### Requisitos não Funcionais
@@ -70,5 +71,6 @@
 | RF-07 | A aplicação deve apresentar uma imagem correspondente à arte do evento.                                                                                          | BAIXA      |
 | RF-08 | A aplicação deve permitir que os convidados sejam importados ou exportados para Excel.                                                                           | MÉDIA      |
 | RF-09 | A apli                                                                                                                                                           |            |
+
 **Prioridade: Alta / Média / Baixa. 
 
