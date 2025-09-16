@@ -46,7 +46,16 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
   
 ### Ferramentas
 
-[Descreva aqui as ferramentas empregadas no projeto e os ambiente de trabalho utilizados pela  equipe para desenvolvê-lo. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).]
+As ferramentas empregadas no projeto são:
+
+GitHub
+Git
+VS Code
+Figma
+Microsoft Teams
+Canva
+
+O VS Code foi escolhido porque ele possui uma integração com o Git e GitHub. O Microsoft Teams foi escolhido por ser o software padrão para as aulas, e por fim, para criar diagramas utilizamos o Figma que permite edição em tempo real de todos os participantes do grupo.
 
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
