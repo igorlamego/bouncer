@@ -23,17 +23,19 @@
 
 ## Histórias de Usuários
 
-[Apresente aqui as histórias de usuários que são relevantes para o projeto da solução.]
+| EU COMO... `QUEM`            | QUERO/PRECISO ... `O QUE`                                   | PARA ... `PORQUE`                                         |
+| ---------------------------- | ----------------------------------------------------------- | --------------------------------------------------------- |
+| Eu como organizador          | Checar o número atualizado de comparecentes                 | Não superlotar a casa                                     |
+| Eu como organizador          | Um relatório de comparecentes/faltantes                     | Avaliar a taxa de comparecimento dos convidados           |
+| Eu como organizador          | Uma visão detalhada da lista de convidados de cada promotor | Verificar performance da equipe                           |
+| Eu como organizador/promotor | Uma interface simples e funcional                           | Inserir e checar convidados rapidamente                   |
+| Eu como organizador/promotor | Acesso à lista de convidados no meio do evento              | Adicionar convidados de última hora                       |
+| Eu como promotor/organizador | Funcionalidades de organizar meus convidados por categorias | Cadastrar aniversariantes, lista off e outros convidados  |
+| Eu como recepção             | Uma busca fácil e rápida por nomes de convidados            | Não gerar atrasos e grandes filas                         |
+| Eu como recepção             | A lista de convidados completa                              | Evitar nomes erroneamente faltantes                       |
+| Eu como recepção             | A lista de convidados organizada, com categorias visíveis   | Diferenciar aniversariante, lista off, lista “amiga” etc. |
+| Eu como recepção             | A lista de convidados sempre atualizada                     | Evitar confusões por nomes recém inseridos                |
 
-> **Link Útil**:
-> - [Como escrever boas histórias de usuário](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-
-[Utilize o modelo de tabela abaixo para apresentar as histórias de usuários.]
-
-|EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
-|--------------------|---------------------------|----------------------------------|
-|Eu como organizador | ...                       | ...                              |
-| ...                | ...                       | ...                              |
 
 ## Requisitos do Projeto
 
@@ -41,23 +43,32 @@
 
 ### Requisitos Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos funcionais]
-
-|ID    | Descrição                | Prioridade |
-|-------|---------------------------------|----|
-| RF-01 |  ...                    | ...   | 
-|  ...  |  ...                    | ...   |
-
+| ID    | Descrição                                                                                                                                                        | Prioridade |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                                                                                                        | ALTA       |
+| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                                                                                                 | ALTA       |
+| RF-03 | A aplicação deve permitir ao usuário criar um evento e inserir os convidados.                                                                                    | ALTA       |
+| RF-04 | A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos. | ALTA       |
+| RF-05 | A aplicação deve permitir ao usuário disponibilizar informações sobre os eventos.                                                                                | MÉDIA      |
+| RF-06 | A aplicação deve apresentar informações básicas do evento, bem como regras e condutas.                                                                           | MÉDIA      |
+| RF-07 | A aplicação deve apresentar uma imagem correspondente à arte do evento.                                                                                          | BAIXA      |
+| RF-08 | A aplicação deve permitir que os convidados sejam importados ou exportados para Excel.                                                                           | MÉDIA      |
+| RF-09 | A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.                                                                  | ALTA       |
+| RF-10 | A aplicação deve permitir ao promotor/organizador classificar convidados por categorias (aniversariante, VIP, cortesia, lista “amiga” etc.).                     | MÉDIA      |
 **Prioridade: Alta / Média / Baixa. 
 
 ### Requisitos não Funcionais
 
-[Utilize o modelo de tabela abaixo para apresentar os requisitos não-funcionais]
-
-|ID      | Descrição               |Prioridade |
-|--------|-------------------------|----|
-| RNF-01 |  ...                    | ...   | 
-| ...    |  ...                    | ...   | 
-
+| ID    | Descrição                                                                                                                                                        | Prioridade |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                                                                                                        | ALTA       |
+| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                                                                                                 | ALTA       |
+| RF-03 | A aplicação deve permitir ao usuário criar um evento e inserir os convidados.                                                                                    | ALTA       |
+| RF-04 | A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos. | ALTA       |
+| RF-05 | A aplicação deve permitir ao usuário disponibilizar informações sobre os eventos.                                                                                | MÉDIA      |
+| RF-06 | A aplicação deve apresentar informações básicas do evento, bem como regras e condutas.                                                                           | MÉDIA      |
+| RF-07 | A aplicação deve apresentar uma imagem correspondente à arte do evento.                                                                                          | BAIXA      |
+| RF-08 | A aplicação deve permitir que os convidados sejam importados ou exportados para Excel.                                                                           | MÉDIA      |
+| RF-09 | A apli                                                                                                                                                           |            |
 **Prioridade: Alta / Média / Baixa. 
 
