@@ -10,7 +10,7 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 
 A equipe utiliza o Scrum como base para definição do processo de desenvolvimento.
 [Adicione informações abaixo sobre a divisão de papéis entre os membros da equipe.]
-- Scrum Master: Eduardo Vieira Ramos, Gabriel Estabanez Ribeiro, Igor Barcelos Lamego, Marcela Almeida de Carvalho
+- Scrum Master: Igor Barcelos Lamego
 - Product Owner: Igor Barcelos Lamego
 - Equipe de Desenvolvimento: Eduardo Vieira Ramos, Gabriel Estabanez Ribeiro, Igor Barcelos Lamego, Marcela Almeida de Carvalho
 - Equipe de Design: Igor Barcelos Lamego, Marcela Almeida de Carvalho
