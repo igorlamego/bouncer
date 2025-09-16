@@ -45,32 +45,28 @@
 
 | ID    | Descrição                                                                                                                                                        | Prioridade |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                                                                                                        | ALTA       |
-| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                                                                                                 | ALTA       |
-| RF-03 | A aplicação deve permitir ao usuário criar um evento e inserir os convidados.                                                                                    | ALTA       |
-| RF-04 | A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos. | ALTA       |
-| RF-05 | A aplicação deve permitir ao usuário disponibilizar informações sobre os eventos.                                                                                | MÉDIA      |
-| RF-06 | A aplicação deve apresentar informações básicas do evento, bem como regras e condutas.                                                                           | MÉDIA      |
-| RF-07 | A aplicação deve apresentar uma imagem correspondente à arte do evento.                                                                                          | BAIXA      |
-| RF-08 | A aplicação deve permitir que os convidados sejam importados ou exportados para Excel.                                                                           | MÉDIA      |
-| RF-09 | A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.                                                                  | ALTA       |
-| RF-10 | A aplicação deve permitir ao promotor/organizador classificar convidados por categorias (aniversariante, VIP, cortesia, lista “amiga” etc.).                     | MÉDIA      |
+| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                                                                                                        | ALTA |
+| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                                                                                                 | ALTA |
+| RF-03 | A aplicação deve permitir ao usuário criar um evento e inserir os convidados.                                                                                    | ALTA |
+| RF-04 | A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos. | ALTA |
+| RF-05 | A aplicação deve permitir ao usuário disponibilizar informações sobre os eventos.                                                                                | MÉDIA |
+| RF-06 | A aplicação deve apresentar informações básicas do evento, bem como regras e condutas.                                                                           | MÉDIA |
+| RF-07 | A aplicação deve apresentar uma imagem correspondente à arte do evento.                                                                                          | BAIXA |
+| RF-08 | A aplicação deve permitir que os convidados sejam importados ou exportados para Excel.                                                                           | MÉDIA |
+| RF-09 | A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.                                                                  | ALTA |
+| RF-10 | A aplicação deve permitir ao promotor/organizador classificar convidados por categorias (aniversariante, VIP, cortesia, lista “amiga” etc.).                     | MÉDIA |
 
 **Prioridade: Alta / Média / Baixa. 
 
 ### Requisitos não Funcionais
 
-| ID    | Descrição                                                                                                                                                        | Prioridade |
-| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-01 | A aplicação deve permitir ao usuário cadastrar uma conta.                                                                                                        | ALTA       |
-| RF-02 | A aplicação deve permitir ao usuário fazer o login da sua conta.                                                                                                 | ALTA       |
-| RF-03 | A aplicação deve permitir ao usuário criar um evento e inserir os convidados.                                                                                    | ALTA       |
-| RF-04 | A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos. | ALTA       |
-| RF-05 | A aplicação deve permitir ao usuário disponibilizar informações sobre os eventos.                                                                                | MÉDIA      |
-| RF-06 | A aplicação deve apresentar informações básicas do evento, bem como regras e condutas.                                                                           | MÉDIA      |
-| RF-07 | A aplicação deve apresentar uma imagem correspondente à arte do evento.                                                                                          | BAIXA      |
-| RF-08 | A aplicação deve permitir que os convidados sejam importados ou exportados para Excel.                                                                           | MÉDIA      |
-| RF-09 | A apli                                                                                                                                                           |            |
+| ID     | Descrição                                                                                                           | Prioridade |
+| ------ | ------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RNF-01 | A aplicação deve ser publicada em um ambiente acessível público na Internet.                                        | ALTA |
+| RNF-02 | A aplicação deverá ser responsiva permitindo a visualização em dispositivos móveis e web.                           | ALTA |
+| RNF-03 | A aplicação deve ser compatível com os principais navegadores do mercado: Google Chrome, Firefox e Microsoft Edge.  | ALTA |
+| RNF-04 | A aplicação deve ter disponível acessibilidade de leitor imersivo.                                                  | BAIXA |
+| RNF-05 | A aplicação deve responder a consultas de busca por convidados em até 2 segundos, garantindo agilidade na recepção. | MÉDIA |
 
 **Prioridade: Alta / Média / Baixa. 
 
