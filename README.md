@@ -6,7 +6,7 @@
 
 `1º Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
+O projeto consiste no desenvolvimento de uma aplicação web para gerenciamento de listas de convidados em eventos, criada com o objetivo de modernizar e automatizar o processo de controle de acesso. A solução permite que os organizadores cadastrem participantes, gerem listas digitais e realizem o check-in de forma ágil e segura, substituindo métodos tradicionais como planilhas ou listas impressas.
 
 ## Integrantes
 
