@@ -41,7 +41,14 @@ Na área de conteúdo, há uma breve descrição da aplicação e uma imagem ilu
 </p>
 
 
+## Tela - Login
 
+Na tela de Login temos o cabeçalho exclusivo sem botões adicionais.
+No parte do conteúdo, há a sessão de login onde o usuário preenche com email e senha, opção de recuperar sua conta, botão de "entrar" e cadastro, além da opção de entrar utilizando Facebook ou Google.
+
+<p align="center">
+  <img src="./img/login page.png" alt="Login Page" width="500">
+</p>
 
 
 [Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
