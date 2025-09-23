@@ -20,7 +20,9 @@ As telas da aplicação web apresentam uma estrutura conforme a imagem abaixo, c
 <li>Cabeçalho - está disposto o nome da aplicação web e navegação principal do site;
 <li>Conteúdo - apresenta o conteúdo da tela;
 <li>Rodapé - contém o nome da aplicação e os links das redes sociais representados por seus respectivos símbolos.
-<ul>
+ </ul>
+
+<figure> 
  
 ![Protótipo de baixa fidelidade](./img/prototipo-baixa-fidelidade.png)
 
