@@ -15,7 +15,14 @@ Desenvolver um protótipo emerge como uma das maneiras mais ágeis e econômicas
 
 ### Protótipo de baixa fidelidade
 
-Protótipos de baixa fidelidade apresentam de forma simplificada o design da interface e o relacionamento entre suas páginas, permitindo evolução da proposta da solução. Neste projeto, os utilizaremos para apoiar a validação dos requisitos e efetuar mudanças dos mesmos, caso seja necessário, para menor impacto na codificação da aplicação.
+As telas da aplicação web apresentam uma estrutura conforme a imagem abaixo, com 3 blocos. São eles:
+<ul>
+<li>Cabeçalho - está disposto o nome da aplicação web e navegação principal do site;
+<li>Conteúdo - apresenta o conteúdo da tela;
+<li>Rodapé - contém o nome da aplicação e os links das redes sociais representados por seus respectivos símbolos.
+<ul>
+ 
+![Protótipo de baixa fidelidade](./img/prototipo-baixa-fidelidade.png)
 
 [Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
 
