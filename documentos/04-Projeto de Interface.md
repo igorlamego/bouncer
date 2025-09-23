@@ -28,6 +28,21 @@ As telas da aplicação web apresentam uma estrutura conforme a imagem abaixo, c
   <img src="./img/prototipo-baixa-fidelidade.png" alt="Protótipo de baixa fidelidade" width="500">
 </p>
 
+### Tela - Home page
+
+A tela de home page contém, no cabeçalho, além da logo, os botões de "entrar" e "cadastrar". No conteúdo, há a descrição da aplicação web e uma imagem representativa.
+ </ul>
+
+<figure> 
+ 
+<p align="center">
+  <img src="./img/Home-Page.png" alt="Home page" width="500">
+</p>
+
+
+
+
+
 [Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
 
 [Adicione aqui as telas da sua aplicação com seus devidos títulos.] 
