@@ -15,11 +15,11 @@ Desenvolver um protótipo emerge como uma das maneiras mais ágeis e econômicas
 
 ### Protótipo de baixa fidelidade
 
-As telas da aplicação web apresentam uma estrutura conforme a imagem abaixo, com 3 blocos. São eles:
+As telas da aplicação web apresentam uma estrutura dividida em três blocos, conforme a imagem abaixo:
 <ul>
-<li>Cabeçalho - está disposto o nome da aplicação web e navegação principal do site;
-<li>Conteúdo - apresenta o conteúdo da tela;
-<li>Rodapé - contém o nome da aplicação e os links das redes sociais representados por seus respectivos símbolos.
+<li>Cabeçalho - contém o nome da aplicação web e a navegação principal;
+<li>Conteúdo - exibe as informações centrais de cada página;
+<li>Rodapé - apresenta o nome da aplicação e os links das redes sociais representados por seus respectivos ícones.
  </ul>
 
 <figure> 
@@ -30,8 +30,9 @@ As telas da aplicação web apresentam uma estrutura conforme a imagem abaixo, c
 
 ### Tela - Home page
 
-A tela de home page contém, no cabeçalho, além da logo, os botões de "entrar" e "cadastrar". No conteúdo, há a descrição da aplicação web e uma imagem representativa.
- </ul>
+A tela Home Page apresenta, no cabeçalho, a logo da aplicação e os botões “Entrar” e “Cadastrar”.
+Na área de conteúdo, há uma breve descrição da aplicação e uma imagem ilustrativa
+</ul>
 
 <figure> 
  
