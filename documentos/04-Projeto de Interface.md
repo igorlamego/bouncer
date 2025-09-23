@@ -24,7 +24,9 @@ As telas da aplicação web apresentam uma estrutura conforme a imagem abaixo, c
 
 <figure> 
  
-![Protótipo de baixa fidelidade](./img/prototipo-baixa-fidelidade.png)
+<p align="center">
+  <img src="./img/prototipo-baixa-fidelidade.png" alt="Protótipo de baixa fidelidade" width="500">
+</p>
 
 [Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
 
