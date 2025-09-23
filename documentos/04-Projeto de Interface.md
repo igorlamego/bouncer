@@ -31,7 +31,7 @@ As telas da aplicação web apresentam uma estrutura dividida em três blocos, c
 ### Tela - Home page
 
 A tela Home Page apresenta, no cabeçalho, a logo da aplicação e os botões “Entrar” e “Cadastrar”.
-Na área de conteúdo, há uma breve descrição da aplicação e uma imagem ilustrativa
+Na área de conteúdo, há uma breve descrição da aplicação e uma imagem ilustrativa.
 </ul>
 
 <figure> 
