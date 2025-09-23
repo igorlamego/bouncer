@@ -47,8 +47,38 @@ Na tela de Login temos o cabeçalho exclusivo sem botões adicionais.
 No parte do conteúdo, há a sessão de login onde o usuário preenche com email e senha, opção de recuperar sua conta, botão de "entrar" e cadastro, além da opção de entrar utilizando Facebook ou Google.
 
 <p align="center">
-  <img src="./img/login page.png" alt="Login Page" width="500">
+  <img src="./img/login-page.png" alt="Login Page" width="500">
 </p>
+
+## Tela - Cadastro
+
+Na tela de Cadastro temos o cabeçalho exclusivo sem botões adicionais.
+No conteúdo, sessão de cadastro de novo usuário com preenchimentos das informações de tal usuário, botão de criar conta e opção de login.
+
+<p align="center">
+  <img src="./img/register-page.png" alt="Register Page" width="500">
+</p>
+
+## Tela - Novo evento
+
+Tela que permite o usuário cadastrar um novo evento.
+Conta com cabeçalho com botões de navegação para Painel, Eventos e Participantes.
+Conteúdo conta com a sessão de "Criar Evento", com preenchimentos das informações do novo evento e botão de Salvar Evento.
+
+<p align="center">
+  <img src="./img/new-event-page.png" alt="New Event Page" width="500">
+</p>
+
+## Tela - Métricas
+
+Tela que dispõe ao organizador as métricas de seus eventos e equipe.
+Cabeçalho com botões de navegação para Painel, Eventos e Participantes.
+Conteúdo conta com menu de métricas para o usuário, composta de gráficos e informações sobre os eventos e participantes escolhidos.
+
+<p align="center">
+  <img src="./img/metrics-page.png" alt="Metrics Page" width="500">
+</p>
+
 
 
 [Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
