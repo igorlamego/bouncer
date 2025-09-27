@@ -5,7 +5,7 @@
 
 Fluxo de usuário (User Flow) 
 
-![User Flow](<img/Project.jpg>)
+![User Flow](<img/UserFlowDiagram.png>)
 
 
 
