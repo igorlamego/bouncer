@@ -28,7 +28,7 @@ As telas da aplicação web apresentam uma estrutura dividida em três blocos, c
   <img src="./img/prototipo-baixa-fidelidade.png" alt="Protótipo de baixa fidelidade" width="500">
 </p>
 
-### Tela - Home page
+## Tela - Home page
 
 A tela Home Page apresenta, no cabeçalho, a logo da aplicação e os botões “Entrar” e “Cadastrar”.
 Na área de conteúdo, há uma breve descrição da aplicação e uma imagem ilustrativa.
@@ -59,6 +59,15 @@ No conteúdo, sessão de cadastro de novo usuário com preenchimentos das inform
   <img src="./img/register-page.png" alt="Register Page" width="500">
 </p>
 
+## Tela - Painel
+
+Nesta tela, o usuário tem uma visão geral dos eventos já criados, com indicadores como "Total de eventos", "Total de convidados" e "Comparecimento médio".
+Também é possível visualizar "Eventos Recentes" e acessar ações rápidas, como "Meus eventos", "Contatos", "Métricas" e "Importar lista", além de criar novos eventos por meio do botão "Criar Evento".
+
+<p align="center">
+  <img src="./img/new-event-page.png" alt="New Event Page" width="500">
+</p>
+
 ## Tela - Novo evento
 
 Tela que permite o usuário cadastrar um novo evento.
@@ -67,6 +76,15 @@ Conteúdo conta com a sessão de "Criar Evento", com preenchimentos das informa�
 
 <p align="center">
   <img src="./img/new-event-page.png" alt="New Event Page" width="500">
+</p>
+
+## Tela - Cadastrar participante
+
+Ao clicar em “PARTICIPANTES”, no menu superior das páginas, é aberta esta tela que permite o cadastro de cada participante do evento.
+Ela contém os campos: "Nome do Participante", "E-mail", "Telefone", "CPF", "Categoria do Participante" (convidado, inscrito, comprador ou autoridade), "Comprovante (pagamento/inscrição)" (com a opção de anexar comprovantes de pagamento ou inscrição) e "Observações", onde o organizador pode registrar quaisquer apontamentos adicionais.
+
+<p align="center">
+  <img src="./img/Add Guest.png" alt="Add Guest" width="500">
 </p>
 
 ## Tela - Métricas
@@ -79,14 +97,7 @@ Conteúdo conta com menu de métricas para o usuário, composta de gráficos e i
   <img src="./img/metrics-page.png" alt="Metrics Page" width="500">
 </p>
 
-### Tela - Cadastrar participante
 
-Ao clicar em “PARTICIPANTES”, no menu superior das páginas, é aberta esta tela que permite o cadastro de cada participante do evento.
-Ela contém os campos: "Nome do Participante", "E-mail", "Telefone", "CPF", "Categoria do Participante" (convidado, inscrito, comprador ou autoridade), "Comprovante (pagamento/inscrição)" (com a opção de anexar comprovantes de pagamento ou inscrição) e "Observações", onde o organizador pode registrar quaisquer apontamentos adicionais.
-
-<p align="center">
-  <img src="./img/Add Guest.png" alt="Add Guest" width="500">
-</p>
 
 [Elabore as principais interfaces gráficas da aplicação de modo que os requisitos funcionais sejam contemplados nas telas propostas.]
 
