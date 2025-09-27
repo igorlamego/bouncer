@@ -39,7 +39,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
   <li>Testes (Tests)</li>
 </ul>
 
-<figure> 
+
   ![Labels](<img/Labels.png>)
   
 ### Ferramentas
