@@ -78,6 +78,16 @@ Conteúdo conta com a sessão de "Criar Evento", com preenchimentos das informa�
   <img src="./img/new-event-page.png" alt="New Event Page" width="500">
 </p>
 
+## Tela - Lista de participantes
+
+Nesta tela, o usuário pode gerenciar a lista de participantes de cada evento.
+É possível selecionar um evento específico ou visualizar todos, pesquisar por nome, aplicar filtros e conferir informações como "Nome", "Contato", "Categoria", "Status", "Promoter" e "Observações".
+Também há a opção de adicionar novos participantes diretamente pelo botão destacado no canto superior.
+
+<p align="center">
+  <img src="./img/Guest List.png" alt="Add Guest" width="500">
+</p>
+
 ## Tela - Cadastrar participante
 
 Ao clicar em “PARTICIPANTES”, no menu superior das páginas, é aberta esta tela que permite o cadastro de cada participante do evento.
