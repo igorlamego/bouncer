@@ -7,15 +7,47 @@
 <table>
 <tbody>
 <tr align=center>
-<th colspan="2">Perfil Nome </th>
+<th colspan="2">Organizador</th>
 </tr>
 <tr>
 <td width="150px"><b>Descrição</b></td>
-<td width="600px">...</td>
+<td width="600px">Organiza, gerencia e garante a ordem e fluidez do evento</td>
 </tr>
 <tr>
 <td><b>Necessidades</b></td>
-<td>...</td>
+<td>Controle e supervisão fáceis, relatórios e estatísticas precisas </td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr align=center>
+<th colspan="2">Promotor/Promoter</th>
+</tr>
+<tr>
+<td width="150px"><b>Descrição</b></td>
+<td width="600px">Equipe de captação e convite do público, responsável por convidar e cadastrar nomes</td>
+</tr>
+<tr>
+<td><b>Necessidades</b></td>
+<td>Sistema de listas eficiente a todo momento, assim como cadastro instantâneo de novos nomes quando necessário</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr align=center>
+<th colspan="2">Recepção </th>
+</tr>
+<tr>
+<td width="150px"><b>Descrição</b></td>
+<td width="600px">Controla a portaria do evento no geral, listas e filas </td>
+</tr>
+<tr>
+<td><b>Necessidades</b></td>
+<td>Listas completas, organizadas e atualizadas, com consulta simples e rápida</td>
 </tr>
 </tbody>
 </table>
