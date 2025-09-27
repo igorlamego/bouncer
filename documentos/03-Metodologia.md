@@ -40,9 +40,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 </ul>
 
 <figure> 
-  <img src="documentos/img/Labels.png"
-    <figcaption>Figura 3 - Tela do esquema de cores e categorias</figcaption>
-</figure> 
+  ![Labels](<img/Labels.png>)
   
 ### Ferramentas
 
