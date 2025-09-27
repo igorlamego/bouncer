@@ -65,7 +65,7 @@ Nesta tela, o usuário tem uma visão geral dos eventos já criados, com indicad
 Também é possível visualizar "Eventos Recentes" e acessar ações rápidas, como "Meus eventos", "Contatos", "Métricas" e "Importar lista", além de criar novos eventos por meio do botão "Criar Evento".
 
 <p align="center">
-  <img src="./img/new-event-page.png" alt="New Event Page" width="500">
+  <img src="./img/Dashboard.png" alt="Dashboard" width="500">
 </p>
 
 ## Tela - Novo evento
