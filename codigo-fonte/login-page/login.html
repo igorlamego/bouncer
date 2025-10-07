@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncer</title>
+    <link rel="stylesheet" href="./styles/style-login.css">
+</head>
+
+<body>
+    <header>
+        <nav class="login__header">
+            <a class="header__logo__link" href="homepage.html">
+                <img src="./assets/logo-clara.png" width="12%">
+            </a>
+        </nav>
+    </header>
+
+    <main class="login__page">
+        <section class="login__box">
+            <h1 class="login__title">LOGIN</h1>
+            <h2 class="login__subtitle">Bem vindo de volta</h2>
+            <a class="login__input">
+                <label id="emailLabel" for="email__login">Email</label>
+                <input id="email_login" name="email__login" required="required" type="text" placeholder="Digite seu email">
+            </a>
+            <a class="login__input">
+                <label id="senhaLabel" for="senha__login">Senha</label>
+                <input id="senha__login" name="senha__login" required="required" type="password" placeholder="Digite sua senha">
+            </a>
+            <!-- SEM LINK -->
+            <a class="recuperar__conta" href="">
+                Recuperar conta
+            </a>
+            <a class="login__button">
+                <button onclick="entrar()" id="botao" type="button">ENTRAR</button>
+            </a>
+            <p class="login__newcomer">
+                Novo por aqui? <a class="login__newcomer__link" href="register">CADASTRE-SE</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <img class="footer__logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="50%">
+        <div class="footer__socials">
+            <a href="https://x.com/">
+                <img src="assets/x-logo.png" width="24px">
+            </a>
+            <a href="https://instagram.com/">
+                <img src="assets/instagram-logo.png" width="24px">
+            </a>
+            <a href="https://linkedin.com/">
+                <img src="assets/linkedin-logo.png" width="24px">
+        </a>
+        </div>
+    </footer>
+</body>
+</html>
