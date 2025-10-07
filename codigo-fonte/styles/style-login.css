@@ -7,6 +7,7 @@
     --velvet: #6c3fa4;
     --mint: #38f2af;
     --branco: #ffffff;
+    --mint-hover: #2ab985;
 
     --titles: Montserrat;
     --text: Inter;
@@ -102,6 +103,10 @@ button {
     border-radius: 6px;
     padding: 3% 13% 3% 13%;
     margin: 4%;
+}
+
+button:hover {
+    background-color: var(--mint-hover);
 }
 
 .login__newcomer {
