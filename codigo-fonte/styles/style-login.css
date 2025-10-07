@@ -1,0 +1,117 @@
+/* importar fontes? */
+@import url();
+
+:root {
+    --cinza: #e6e6ee;
+    --preto: #121212;
+    --indigo: #2d2a55;
+    --velvet: #6c3fa4;
+    --mint: #38f2af;
+    --branco: #ffffff;
+
+}
+
+* {
+    margin: 0;
+    padding: 0%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--branco);
+}
+
+.login__header {
+    padding: 1.5% 0 1.5% 1.5%;
+    background-color: #2d2a55;
+}
+
+.login__page {
+    padding: 10% 0 15% 30%;
+    display: flex;
+    align-items: center;
+
+}
+
+.login__box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1.8px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 2% 0 3% 0;
+}
+
+.login__title{
+    color: var(--velvet);
+    font-weight: bolder;
+}
+
+.login__subtitle {
+    color: var(--velvet);
+    font-weight: 200;
+    padding-bottom: 2%;
+}
+
+.login__input {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 20% 0 20%;
+    text-align: left;
+    gap: 7px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--indigo);
+    padding-top: 7%;
+}
+
+input {
+    background-color: var(--cinza);
+    height: 30px;
+    border: 0px;
+    border-radius: 8px;
+    padding: 2%;
+}
+
+.recuperar__conta {
+    text-align: right;
+    padding-right: 20%;
+    padding-top: 5px;
+}
+
+button {
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--preto);
+    background-color: var(--mint);
+    border: 0;
+    border-radius: 6px;
+    padding: 3% 13% 3% 13%;
+    margin: 4%;
+}
+
+.login__newcomer {
+    font-size: .8rem;
+}
+
+.login__newcomer__link {
+    color: var(--velvet);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+footer {
+    padding: 10% 0 0 1%;
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    padding: 5% 2% 2% 0;
+}
