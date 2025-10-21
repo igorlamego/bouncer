@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bouncer</title>
     <link rel="stylesheet" href="./styles/style-login.css">
 </head>
@@ -12,30 +12,31 @@
     <header>
         <nav class="login__header">
             <a class="header__logo__link" href="homepage.html">
-                <img src="./assets/logo-clara.png" width="12%">
+                <img src="./assets/logo-clara.png" width="200em">
             </a>
         </nav>
     </header>
 
     <main class="login__page">
+
         <section class="login__box">
+            <div id="msgError"></div>
             <h1 class="login__title">LOGIN</h1>
             <h2 class="login__subtitle">Bem vindo de volta</h2>
-            <a class="login__input">
+            <div class="login__input">
                 <label id="emailLabel" for="email__login">Email</label>
-                <input id="email_login" name="email__login" required="required" type="text" placeholder="Digite seu email">
-            </a>
-            <a class="login__input">
+                <input id="email__login" name="email__login" required="required" type="text" placeholder="Digite seu email">
+            </div>
+            <div class="login__input">
                 <label id="senhaLabel" for="senha__login">Senha</label>
                 <input id="senha__login" name="senha__login" required="required" type="password" placeholder="Digite sua senha">
-            </a>
+            </div>
             <!-- SEM LINK -->
             <a class="recuperar__conta" href="">
                 Recuperar conta
             </a>
-            <a class="login__button">
-                <button onclick="entrar()" id="botao" type="button">ENTRAR</button>
-            </a>
+            <a class="login__button" onclick="entrar()" id="botao" type="button">ENTRAR</a>
+
             <p class="login__newcomer">
                 Novo por aqui? <a class="login__newcomer__link" href="register">CADASTRE-SE</a>
             </p>
@@ -56,5 +57,8 @@
         </a>
         </div>
     </footer>
+
+    <script src="script-login.js"></script>
+
 </body>
 </html>
