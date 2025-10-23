@@ -31,11 +31,6 @@ body{
   font-family: var(--titles);
 }
 
-.nav-left{
-  display:flex;
-  align-items:center;
-}
-
 .logo img{
   display:block;
 }
