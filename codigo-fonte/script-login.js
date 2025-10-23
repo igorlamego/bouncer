@@ -1,12 +1,7 @@
-function entrar(){
-
+function login(){
 
   let email__login = document.querySelector("#email__login")
-  let emailLabel = document.querySelector("#emailLabel")
-  
   let senha__login = document.querySelector("#senha__login")
-  let senhaLabel = document.querySelector("#senhaLabel")
-  
   let msgError = document.querySelector("#msgError")
   
   let listaUser = []
@@ -17,8 +12,6 @@ function entrar(){
       
     email: "",
     senha: "",
-    nome: ""
-   
   }
 
   listaUser = JSON.parse(localStorage.getItem("listaUser")) || []
@@ -38,7 +31,7 @@ function entrar(){
   if(email__login.value == userValid.email && senha__login.value == userValid.senha && email__login.value != "" && senha__login.value != ""){
    
     
-    window.location.href = "../paginaPerfil/perfil.html"
+    window.location.href = "dashboard.html"
     
     
     let mathRandom = Math.random().toString(16).substr(2) 
@@ -46,10 +39,8 @@ function entrar(){
     
     localStorage.setItem("token", token)
 
-    localStorage.setItem('userLogado', JSON.stringify(userValid))
+    localStorage.setItem('loggedIn', JSON.stringify(userValid))
     localStorage.setItem('nome', JSON.stringify(nomeUser))
-    localStorage.setItem('telefone', JSON.stringify(telefoneUser))
-
     
 
   } else {
@@ -57,7 +48,15 @@ function entrar(){
     msgError.innerHTML = "Email ou senha incorretos"
     email__login.classList.add('error__class')
     senha__login.classList.add('error__class')
-
+    senha__login.value = ""
+    senha__login.focus()
   }
   
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault()
+    login()
+  }
+});
