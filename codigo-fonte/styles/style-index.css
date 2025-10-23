@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --cinza: #e6e6ee;
+  --preto: #121212;
+  --indigo: #2d2a55;
+  --velvet: #6c3fa4;
+  --mint: #38f2af;
+  --branco: #ffffff;
+  --mint-hover: #2ab985;
+  --light-text: #9aa0a8;
+
+  --titles: Montserrat;
+  --text: Inter;
+
+}
+
+html,body {height:100%;}
+body{
+  margin:0;
+  background:var(--branco);
+}
+
+
+.topbar{
+  background: var(--indigo);
+  color:var(--branco);
+  padding:18px 48px;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.04);
+  font-family: var(--titles);
+}
+
+.btn-nav-login {
+  background: var(--mint);
+  color: var(--preto);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-nav-register {
+  background: var(--cinza);
+  color: var(--preto);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-nav-login:hover {
+  background: var(--mint-hover);
+  transform: translateY(-2px);
+}
+
+.btn-nav-register:hover {
+  background: var(--mint-hover);
+  transform: translateY(-2px);
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  background-color: var(--branco);
+  padding: 40px 20px;
+}
+
+.home-content {
+  text-align: center;
+}
+
+.home-content h1 {
+  font-family: var(--titles);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--indigo);
+  margin-bottom: 16px;
+}
+
+.home-content p {
+  font-size: 1.8rem;
+  color: var(--light-text);
+  margin-bottom: 40px;
+}
+
+.home-content img {
+  width: 100vw;
+  height: 700px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.footer-spacer {height: 300px;}
+
+footer {
+  padding: 2% 0 0 1%;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  padding: 5% 2% 2% 0;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .topbar {
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .nav-right {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .home-img {
+    height: 220px;
+  }
+}
