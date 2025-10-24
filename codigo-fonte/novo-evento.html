@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo Evento | BOUNCER</title>
+  <link rel="stylesheet" href="./styles/novo-evento-style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="topbar">
+  <div class="logo">
+    <img src="assets/logo-clara.png" width="200em">
+  </div>
+
+  
+ <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+
+  <nav class="nav-center">
+    <button class="pill-btn">PAINEL</button>
+    <button class="pill-btn">EVENTOS</button>
+    <button class="pill-btn">PARTICIPANTES</button>
+  </nav>
+
+  <div class="nav-right">
+    <div class="profile">
+      <div class="avatar">C</div>
+      <div class="profile-name">Clóvis</div>
+    </div>
+  </div>
+</header>
+
+  <!-- CONTEÚDO -->
+  <main>
+    <h1>Novo Evento</h1>
+    <p class="subtitle">Crie aqui seu evento em poucos passos.</p>
+
+    <div class="form-container">
+      <div class="form-header">
+        📅 Criar Evento
+      </div>
+      <form>
+        <div>
+          <label>Nome do Evento*</label>
+          <input type="text" placeholder="Digite o nome do evento" required>
+        </div>
+        <div>
+          <label>Local*</label>
+          <input type="text" placeholder="Digite o local do evento" required>
+        </div>
+        <div>
+          <label>Data*</label>
+          <input type="text" placeholder="dd/mm/aaaa" required>
+        </div>
+        <div>
+          <label>Horário*</label>
+          <input type="text" placeholder="hh : mm" required>
+        </div>
+        <div>
+          <label>Número de pessoas</label>
+          <input type="number" placeholder="Digite o número de pessoas">
+        </div>
+        <div>
+          <label>Flyer</label>
+          <input type="file" accept="image/*">
+        </div>
+        <div class="descricao">
+          <label>Descrição</label>
+          <textarea placeholder="Descreva seu evento."></textarea>
+        </div>
+        <div class="btn-save">
+          <button type="submit"> + Salvar Evento</button>
+        </div>
+      </form>
+      <small>* Campos obrigatórios</small>
+    </div>
+    <div class="footer-space"></div>
+  </main>
+
+
+
+  <!-- RODAPÉ -->
+    <footer class="footer">
+    <img class="footer-logo" src="logo-escura.png" alt="Bouncer Logo Escura" width="30%">
+      <div class="footer-socials">
+        <a href="https://x.com/">
+            <img src="x-logo.png" width="24px">
+        </a>
+        <a href="https://instagram.com/">
+            <img src="instagram-logo.png" width="24px">
+        </a>
+        <a href="https://linkedin.com/">
+            <img src="linkedin-logo.png" width="24px">
+        </a>
+      </div>
+  </footer>
+</body>
+</html>
