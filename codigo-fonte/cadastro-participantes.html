@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Novo Participante | BOUNCER</title>
-  <link rel="stylesheet" href="./styles/cadastro-participantes.css" />
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="styles/cadastro-participantes.css">
 </head>
 
 <body>
@@ -38,12 +40,14 @@
   <!-- ===== CONTEÚDO ===== -->
   <main>
     <h1>Novo Participante</h1>
-    <p class="subtitle">Cadastre participantes de todos os tipos: convidados, inscritos ou pagantes.</p>
+    <p class="subtitle">
+      Cadastre participantes de todos os tipos: convidados, inscritos ou pagantes.
+    </p>
 
     <div class="form-container">
       <div class="form-header">👤 Adicionar Participante</div>
 
-      <form id="participant-form">
+      <form id="form-participante">
         <div>
           <label for="nome">Nome do Participante*</label>
           <input id="nome" type="text" placeholder="Digite o nome do participante" required />
@@ -68,44 +72,4 @@
           <label for="categoria">Categoria do Participante</label>
           <select id="categoria">
             <option value="">Selecionar categoria</option>
-            <option value="convidado">Convidado</option>
-            <option value="inscrito">Inscrito</option>
-            <option value="pagante">Pagante</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="comprovante">Comprovante (pagamento/inscrição)</label>
-          <input id="comprovante" type="file" accept="image/*,application/pdf" />
-        </div>
-
-        <div class="descricao">
-          <label for="observacoes">Observações</label>
-          <textarea id="observacoes" placeholder="Descreva observações sobre o participante"></textarea>
-        </div>
-
-        <div class="btn-save">
-          <button type="submit">+ Cadastrar participante</button>
-        </div>
-      </form>
-
-      <small>* Campo obrigatório</small>
-    </div>
-
-    <div class="footer-space"></div>
-  </main>
-
-  <!-- ===== RODAPÉ ===== -->
-  <footer class="footer">
-    <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%" />
-    <div class="footer-socials">
-      <a href="https://x.com/"><img src="assets/x-logo.png" width="24px" alt="Twitter"></a>
-      <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24px" alt="Instagram"></a>
-      <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24px" alt="LinkedIn"></a>
-    </div>
-  </footer>
-
-  <!-- ===== JAVASCRIPT ===== -->
-  <script src="cadastro-participantes.js?v=3"></script>
-</body>
-</html>
+            <option value="convidado">Convidado</optio
