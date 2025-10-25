@@ -1,1 +1,45 @@
+/* ===== ajustes finos só da página de participantes ===== */
+
+/* grid padrão (uma coluna em celulares) */
+.form-container form {
+  display: grid;
+  gap: 20px;
+}
+
+/* em telas ≥ 900px vira duas colunas */
+@media (min-width: 900px) {
+  .form-container form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* "Observações" fica na coluna da direita */
+  .descricao {
+    grid-column: 2;
+  }
+
+  /* botão alinhado à direita, embaixo */
+  .btn-save {
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* garantir largura dos campos (compatível com css base) */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="number"],
+.form-container input[type="file"],
+.form-container textarea,
+.form-container select {
+  width: 100%;
+}
+
+.descricao textarea { min-height: 160px; }
+
+.form-container small {
+  display: inline-block;
+  margin-top: 8px;
+  color: #666;
+}
 
