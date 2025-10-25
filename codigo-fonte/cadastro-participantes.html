@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Novo Participante | BOUNCER</title>
+
+  <!-- Reaproveita o estilo existente para manter o padrão -->
+  <link rel="stylesheet" href="./styles/novo-evento-style.css" />
+
+  <!-- Autenticação do projeto -->
+  <script src="auth.js"></script>
+</head>
+<body>
+  <!-- TOPBAR (igual às demais páginas) -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="index.html" aria-label="Início">
+        <img src="assets/logo-clara.png" width="200em" alt="BOUNCER" />
+      </a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="nav-center">
+      <a class="pill-btn" href="dashboard.html">PAINEL</a>
+      <a class="pill-btn" href="novo-evento.html">EVENTOS</a>
+      <a class="pill-btn" href="cadastro-participantes.html" aria-current="page">PARTICIPANTES</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="profile">
+        <div class="avatar" id="avatarInitials">U</div>
+        <div class="profile-name" id="profileName">Usuário</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main>
+    <h1>Novo Participante</h1>
+    <p class="subtitle">Cadastre participantes de todos os tipos: convidados, inscritos ou pagantes</p>
+
+    <div class="form-container">
+      <div class="form-header">➕ Adicionar Participante</div>
+
+      <form id="participantForm" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="fullName">Nome do Participante*</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Digite o nome do participante" required />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="nome@exemplo.com" />
+          </div>
+          <div>
+            <label for="phone">Telefone</label>
+            <input id="phone" name="phone" type="text" placeholder="(00) 00000-0000" />
+          </div>
+          <div>
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" />
+          </div>
+          <div>
+            <label for="category">Categoria do Participante</label>
+            <select id="category" name="category">
+              <option value="" disabled selected>Selecionar categoria</option>
+              <option value="convidado">Convidado</option>
+              <option value="inscrito">Inscrito</option>
+              <option value="pagante">Pagante</option>
+              <option value="vip">VIP</option>
+              <option value="equipe">Equipe</option>
+            </select>
+          </div>
+          <div>
+            <label for="receipt">Comprovante (pagamento/inscrição)</label>
+            <input id="receipt" name="receipt" type="file" accept="image/*,application/pdf" />
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <label for="notes">Observações</label>
+          <textarea id="notes" name="notes" placeholder="Descreva observações sobre o participante"></textarea>
+          <small>* Campo obrigatório</small>
+        </div>
+
+        <div class="btn-save" style="display:flex;justify-content:flex-end;margin-top:16px">
+          <button type="submit" class="pill-btn">+ Cadastrar participante</button>
+        </div>
+
+        <div id="status" class="status" role="status" aria-live="polite" style="display:none"></div>
+      </form>
+    </div>
+
+    <div class="footer-space"></div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%" />
+    <div class="footer-socials">
+      <a href="https://x.com/"><img src="assets/x-logo.png" width="24" alt="X" /></a>
+      <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24" alt="Instagram" /></a>
+      <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24" alt="LinkedIn" /></a>
+    </div>
+  </footer>
+
+  <!-- JS básico desta página -->
+  <script src="participantes.js"></script>
+</body>
+</html>
 
