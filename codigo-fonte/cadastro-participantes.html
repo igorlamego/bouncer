@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Novo Participante | BOUNCER</title>
   <!-- mantém o mesmo estilo visual do Novo Evento -->
-  <link rel="stylesheet" href="./styles/cadastro-participantes.css">
+  <link rel="stylesheet" href="./styles/cadastro-participantes.css?v=5">
 </head>
 <body>
   <!-- NAVBAR -->
@@ -42,7 +42,7 @@
       <div class="form-header">👤 Adicionar Participante</div>
 
       <!-- FORM -->
-      <form id="form-participante">
+      <form id="form-participante" action="#" onsubmit="return false;" novalidate>
         <div>
           <label for="nome">Nome do Participante*</label>
           <input id="nome" type="text" placeholder="Digite o nome do participante" required>
@@ -109,7 +109,7 @@
   <!-- Teste de carregamento -->
   <script>console.log("inline OK");</script>
 
-  <!-- SCRIPT do LocalStorage (com caminho absoluto corrigido) -->
-  <script src="cadastro-participantes.js?v=4"></script>
+  <!-- SCRIPT do LocalStorage -->
+  <script src="cadastro-participantes.js?v=5"></script>
 </body>
 </html>
