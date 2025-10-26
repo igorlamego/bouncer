@@ -67,6 +67,7 @@ main{
   box-shadow:0 6px 16px rgba(34,224,173,0.14);
   transition:transform 0.12s ease, box-shadow 0.12s ease;
   letter-spacing:0.6px;
+  text-decoration: none;
 }
 .pill-btn:hover {transform:translateY(-2px); box-shadow:0 10px 20px rgba(34,224,173,0.16);}
 
