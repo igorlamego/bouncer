@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Novo Participante | BOUNCER</title>
-
-  <!-- Usa o MESMO CSS do "Novo Evento" para garantir o visual correto -->
-  <link rel="stylesheet" href="styles/novo-evento-style.css?v=1001" />
+  <!-- mantém o mesmo estilo visual do Novo Evento -->
+  <link rel="stylesheet" href="styles/novo-evento-style.css?v=1002">
 </head>
 <body>
   <!-- NAVBAR -->
   <header class="topbar">
     <div class="logo">
-      <img src="assets/logo-clara.png" width="200em" alt="BOUNCER" />
+      <img src="assets/logo-clara.png" width="200em" alt="BOUNCER">
     </div>
 
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <label for="menu-toggle" class="hamburger">
       <span></span><span></span><span></span>
     </label>
@@ -42,31 +41,31 @@
     <div class="form-container">
       <div class="form-header">👤 Adicionar Participante</div>
 
-      <!-- mantenho sem JS por enquanto, só visual -->
-      <form>
+      <!-- FORM -->
+      <form id="form-participante">
         <div>
-          <label>Nome do Participante*</label>
-          <input type="text" placeholder="Digite o nome do participante" required />
+          <label for="nome">Nome do Participante*</label>
+          <input id="nome" type="text" placeholder="Digite o nome do participante" required>
         </div>
 
         <div>
-          <label>E-mail</label>
-          <input type="email" placeholder="nome@exemplo.com" />
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="nome@exemplo.com">
         </div>
 
         <div>
-          <label>Telefone</label>
-          <input type="text" placeholder="(00) 00000-0000" />
+          <label for="telefone">Telefone</label>
+          <input id="telefone" type="text" placeholder="(00) 00000-0000">
         </div>
 
         <div>
-          <label>CPF</label>
-          <input type="text" placeholder="000.000.000-00" />
+          <label for="cpf">CPF</label>
+          <input id="cpf" type="text" placeholder="000.000.000-00">
         </div>
 
         <div>
-          <label>Categoria do Participante</label>
-          <select>
+          <label for="categoria">Categoria do Participante</label>
+          <select id="categoria">
             <option value="" disabled selected>Selecionar categoria</option>
             <option>Convidado</option>
             <option>Inscrito</option>
@@ -77,13 +76,13 @@
         </div>
 
         <div>
-          <label>Comprovante (pagamento/inscrição)</label>
-          <input type="file" accept="image/*,application/pdf" />
+          <label for="comprovante">Comprovante (pagamento/inscrição)</label>
+          <input id="comprovante" type="file" accept="image/*,application/pdf">
         </div>
 
         <div class="descricao">
-          <label>Observações</label>
-          <textarea placeholder="Descreva observações sobre o participante"></textarea>
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" placeholder="Descreva observações sobre o participante"></textarea>
         </div>
 
         <div class="btn-save">
@@ -99,12 +98,15 @@
 
   <!-- RODAPÉ -->
   <footer class="footer">
-    <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%" />
+    <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
     <div class="footer-socials">
       <a href="https://x.com/"><img src="assets/x-logo.png" width="24" alt="X"></a>
       <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24" alt="Instagram"></a>
       <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24" alt="LinkedIn"></a>
     </div>
   </footer>
+
+  <!-- SCRIPT do LocalStorage -->
+  <script src="cadastro-participantes.js?v=1"></script>
 </body>
 </html>
