@@ -57,6 +57,7 @@ main{
 }
 
 .pill-btn{
+  text-decoration: none;
   background: var(--mint);
   padding:10px 40px;
   border-radius:28px;
