@@ -1,4 +1,4 @@
-// ===== Inicialização (debug) =====
+ // ===== Inicialização (debug) =====
 console.log("JS cadastro-participantes carregado ✔");
 
 // ===== Chave do Local Storage =====
@@ -11,14 +11,6 @@ const form = document.querySelector("form");
 let nome, email, telefone, cpf, categoria, comprovante, observacoes;
 if (form) {
   const groups = form.querySelectorAll(":scope > div"); // cada linha do formulário
-  // Ordem esperada:
-  // 0: Nome (input text)
-  // 1: E-mail (input email)
-  // 2: Telefone (input text)
-  // 3: CPF (input text)
-  // 4: Categoria (select)
-  // 5: Comprovante (input file)
-  // .descricao: Observações (textarea)
 
   nome        = document.getElementById("nome")        || groups[0]?.querySelector("input");
   email       = document.getElementById("email")       || groups[1]?.querySelector("input[type='email'], input");
@@ -65,8 +57,13 @@ function resumirArquivo(file) {
 
 // ===== Submit =====
 if (form) {
+  // evita validação nativa do browser
+  form.noValidate = true;
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    e.stopPropagation();
+
     if (!validar()) return;
 
     const file = (comprovante && comprovante.files && comprovante.files[0]) ? comprovante.files[0] : null;
@@ -91,15 +88,17 @@ if (form) {
     alert("✅ Participante cadastrado com sucesso!");
     form.reset();
   });
+
+  console.log("Listener de submit conectado ✔");
 }
 
-// ===== Máscaras (opcional) =====
+// ===== Máscaras (corrigidas com template string) =====
 if (telefone) {
   telefone.addEventListener("input", () => {
     let v = telefone.value.replace(/\D/g, "");
     if (v.length > 11) v = v.slice(0, 11);
-    if (v.length > 6) telefone.value = (${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)};
-    else if (v.length > 2) telefone.value = (${v.slice(0,2)}) ${v.slice(2)};
+    if (v.length > 6) telefone.value = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+    else if (v.length > 2) telefone.value = `(${v.slice(0,2)}) ${v.slice(2)}`;
     else telefone.value = v;
   });
 }
@@ -108,9 +107,9 @@ if (cpf) {
   cpf.addEventListener("input", () => {
     let v = cpf.value.replace(/\D/g, "");
     if (v.length > 11) v = v.slice(0, 11);
-    if (v.length > 9) cpf.value = ${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6,9)}-${v.slice(9)};
-    else if (v.length > 6) cpf.value = ${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6)};
-    else if (v.length > 3) cpf.value = ${v.slice(0,3)}.${v.slice(3)};
+    if (v.length > 9) cpf.value = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6,9)}-${v.slice(9)}`;
+    else if (v.length > 6) cpf.value = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6)}`;
+    else if (v.length > 3) cpf.value = `${v.slice(0,3)}.${v.slice(3)}`;
     else cpf.value = v;
   });
 }
