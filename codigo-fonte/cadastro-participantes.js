@@ -98,8 +98,8 @@ if (telefone) {
   telefone.addEventListener("input", () => {
     let v = telefone.value.replace(/\D/g, "");
     if (v.length > 11) v = v.slice(0, 11);
-    if (v.length > 6) telefone.value = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
-    else if (v.length > 2) telefone.value = `(${v.slice(0,2)}) ${v.slice(2)}`;
+    if (v.length > 6) telefone.value = (${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)};
+    else if (v.length > 2) telefone.value = (${v.slice(0,2)}) ${v.slice(2)};
     else telefone.value = v;
   });
 }
@@ -108,9 +108,9 @@ if (cpf) {
   cpf.addEventListener("input", () => {
     let v = cpf.value.replace(/\D/g, "");
     if (v.length > 11) v = v.slice(0, 11);
-    if (v.length > 9) cpf.value = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6,9)}-${v.slice(9)}`;
-    else if (v.length > 6) cpf.value = `${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6)}`;
-    else if (v.length > 3) cpf.value = `${v.slice(0,3)}.${v.slice(3)}`;
+    if (v.length > 9) cpf.value = ${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6,9)}-${v.slice(9)};
+    else if (v.length > 6) cpf.value = ${v.slice(0,3)}.${v.slice(3,6)}.${v.slice(6)};
+    else if (v.length > 3) cpf.value = ${v.slice(0,3)}.${v.slice(3)};
     else cpf.value = v;
   });
 }
