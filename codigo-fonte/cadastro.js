@@ -1,8 +1,8 @@
 function register() {
-  const nome_register = document.querySelector("#nome_register");
-  const email_register = document.querySelector("#email_register");
-  const senha_register = document.querySelector("#senha_register");
-  const confirm_register = document.querySelector("#confirm_register"); // new confirm input
+  const nome__register = document.querySelector("#nome_register");
+  const email__register = document.querySelector("#email_register");
+  const senha__register = document.querySelector("#senha_register");
+  const confirm__register = document.querySelector("#confirm_register"); // new confirm input
   const msgError = document.querySelector("#msgError");
   const msgSuccess = document.querySelector("#msgSuccess");
 
