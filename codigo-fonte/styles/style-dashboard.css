@@ -9,6 +9,8 @@
   --branco: #ffffff;
   --mint-hover: #2ab985;
   --light-text: #9aa0a8;
+  --red: #d33;
+  --red-hover: rgb(223, 87, 87);
 
   --titles: Montserrat;
   --text: Inter;
@@ -55,6 +57,7 @@ body{
   box-shadow:0 6px 16px rgba(34,224,173,0.14);
   transition:transform 0.12s ease, box-shadow 0.12s ease;
   letter-spacing:0.6px;
+  text-decoration: none;
 }
 .pill-btn:hover {transform:translateY(-2px); box-shadow:0 10px 20px rgba(34,224,173,0.16);}
 
@@ -79,6 +82,21 @@ body{
   justify-content:center;
   color:#06302a;
   font-weight:700;
+}
+
+.logout-btn {
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  margin-left: 10px;
+  background-color: var(--mint);
+  color: var(--branco);
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--red-hover);
+  transform: scale(1.05);
 }
 
 .container{
@@ -123,6 +141,7 @@ h1.title{
   border:none;
   cursor:pointer;
   box-shadow:0 10px 20px rgba(34,224,173,0.12);
+  text-decoration: none;
 }
 .create-btn .plus {font-size:20px;}
 
