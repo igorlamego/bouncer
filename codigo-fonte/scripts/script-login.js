@@ -3,22 +3,33 @@ function login() {
   const senha__login = document.querySelector("#senha__login");
   const msgError = document.querySelector("#msgError");
 
-  const listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
+  // Get the data from localStorage through data.js
+  const data = getData();
+  const listaUser = data.users;
 
+  // Find user match
   const userValid = listaUser.find(
-    (item) => email__login.value === item.emailUser && senha__login.value === item.senhaUser
+    (item) =>
+      email__login.value === item.emailUser &&
+      senha__login.value === item.senhaUser
   );
 
   if (userValid && email__login.value && senha__login.value) {
-    const token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2);
+    // Create a token for session
+    const token =
+      Math.random().toString(16).substr(2) +
+      Math.random().toString(16).substr(2);
 
+    // Save session data
     localStorage.setItem("token", token);
     localStorage.setItem("loggedIn", JSON.stringify(userValid));
     localStorage.setItem("nome", JSON.stringify(userValid.nomeUser));
 
+    // Redirect
     window.location.href = "dashboard.html";
-    
+  
   } else {
+    // Error message
     msgError.style.display = "block";
     msgError.innerHTML = "Email ou senha incorretos";
     email__login.classList.add("error__class");
@@ -28,6 +39,7 @@ function login() {
   }
 }
 
+// Allow pressing Enter to login
 document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
