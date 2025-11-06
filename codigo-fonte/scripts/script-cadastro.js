@@ -6,13 +6,15 @@ function register() {
   const msgError = document.querySelector("#msgError");
   const msgSuccess = document.querySelector("#msgSuccess");
 
-  let listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
+  // Get structured data from localStorage
+  const data = getData();
+  const listaUser = data.users;
 
+  // Reset messages
   msgError.style.display = "none";
-  msgError.innerHTML = "";
   msgSuccess.style.display = "none";
-  msgSuccess.innerHTML = "";
 
+  // Validate all fields
   if (
     nome__register.value.trim() === "" ||
     email__register.value.trim() === "" ||
@@ -24,10 +26,14 @@ function register() {
     return;
   }
 
+  // Password rules
   const senha = senha__register.value.trim();
   const senhaValida =
-    senha.length >= 6 && /[0-9]/.test(senha) && /[a-zA-Z]/.test(senha);
+    senha.length >= 6 &&
+    /[0-9]/.test(senha) &&
+    /[a-zA-Z]/.test(senha);
 
+  // Confirm password
   if (senha__register.value.trim() !== confirm__register.value.trim()) {
     msgError.style.display = "block";
     msgError.innerHTML = "As senhas não coincidem.";
@@ -44,6 +50,7 @@ function register() {
     return;
   }
 
+  // Check if email already exists
   const userExists = listaUser.some(
     (user) => user.emailUser === email__register.value.trim()
   );
@@ -54,29 +61,36 @@ function register() {
     return;
   }
 
+  // Create the user object with a unique ID
   const newUser = {
+    id: makeId(),
     nomeUser: nome__register.value.trim(),
     emailUser: email__register.value.trim(),
     senhaUser: senha,
+    events: [] 
   };
 
+  // Add user to list and save back
   listaUser.push(newUser);
-  localStorage.setItem("listaUser", JSON.stringify(listaUser));
+  saveData(data);
 
-  msgError.style.display = "none";
+  // Success message
   msgSuccess.style.display = "block";
   msgSuccess.innerHTML = "Cadastro realizado com sucesso!";
 
+  // Clear inputs
   nome__register.value = "";
   email__register.value = "";
   senha__register.value = "";
   confirm__register.value = "";
 
+  // Redirect after short delay
   setTimeout(() => {
     window.location.href = "login.html";
   }, 1500);
 }
 
+// Press Enter to submit
 document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
