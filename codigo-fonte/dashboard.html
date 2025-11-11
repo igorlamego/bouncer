@@ -9,6 +9,7 @@
   <script src="./scripts/data.js" defer></script>
   <script src="./scripts/auth.js" defer></script>
   <script src="./scripts/logout.js" defer></script>
+  <script src="./scripts/dashboard.js" defer></script>
 </head>
 
 <body>
@@ -27,129 +28,108 @@
 
   <nav class="nav-center">
     <a class="pill-btn" href="dashboard.html">PAINEL</a>
-    <a class="pill-btn" href="lista-eventos.html">EVENTOS</a>
-    <a class="pill-btn" href="">PARTICIPANTES</a>
+    <a class="pill-btn" href="#">EVENTOS</a>
+    <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
   </nav>
 
   <div class="nav-right">
     <div class="profile">
-      <div class="avatar">C</div>
-      <div class="profile-name">Clóvis</div>
+      <div class="avatar"></div>
+      <div class="profile-name"></div>
     </div>
     <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
   </div>
 </header>
 
-  <main class="container">
-    <div class="page-top">
-      <div class="titles">
-        <h1 class="title">Painel</h1>
-        <p class="subtitle">Visão geral dos seus eventos e gerenciamento de convidados</p>
-      </div>
-
-      <div class="create-wrap">
-        <a class="create-btn" href="novo-evento.html">
-          <span class="plus">＋</span>
-          <span>Criar Evento</span>
-        </a>
-      </div>
+<main class="container">
+  <div class="page-top">
+    <div class="titles">
+      <h1 class="title">Painel</h1>
+      <p class="subtitle">Visão geral dos seus eventos e gerenciamento de convidados</p>
     </div>
 
-    <section class="grid">
-      <div class="card">
-        <div class="card-title">
-          <span>Total de eventos</span>
-          <span class="icon"></span>
-        </div>
-        <div class="metric">2</div>
-        <div class="muted">0 próximos</div>
+    <div class="create-wrap">
+      <a class="create-btn" href="novo-evento.html">
+        <span class="plus">＋</span>
+        <span>Criar Evento</span>
+      </a>
+    </div>
+  </div>
+
+  <section class="grid">
+    <div class="card">
+      <div class="card-title">
+        <span>Total de eventos</span>
+        <span class="icon"></span>
       </div>
+      <div class="metric" id="total-events">0</div>
+      <div class="muted"><span id="upcoming-events">0</span> próximos</div>
+    </div>
 
-      <div class="card">
-        <div class="card-title">
-          <span>Total de convidados</span>
-          <span class="icon"></span>
-        </div>
-        <div class="metric">2,064</div>
-        <div class="muted">Em todos os eventos</div>
+    <div class="card">
+      <div class="card-title">
+        <span>Total de convidados</span>
+        <span class="icon"></span>
       </div>
+      <div class="metric" id="total-guests">0</div>
+      <div class="muted">Em todos os eventos</div>
+    </div>
 
-      <div class="card">
-        <div class="card-title">
-          <span>Comparecimento médio</span>
-          <span class="icon"></span>
-        </div>
-        <div class="metric">76%</div>
+    <div class="card">
+      <div class="card-title">
+        <span>Comparecimento médio</span>
+        <span class="icon"></span>
       </div>
-    </section>
+      <div class="metric" id="avg-attendance">0%</div>
+    </div>
+  </section>
 
-    <section class="lower">
-      <div class="card">
-        <div class="card-title">
-          <div>
-            <div>Eventos Recentes</div>
-            <div class="muted" style="font-weight: 400;">Seus eventos mais recentes</div>
-          </div>
+  <section class="lower">
+    <div class="card">
+      <div class="card-title">
+        <div>
+          <div>Eventos Recentes</div>
+          <div class="muted" style="font-weight: 400;">Seus eventos mais recentes</div>
         </div>
+      </div>
+      
+      <div id="recent-events" class="recent-list"></div>
+    </div>
 
-          <div class="recent-item">
-            <div class="recent-left">
-              <div class="recent-title">MajorZONA</div>
-              <div class="recent-date">19/08/2025</div>
-            </div>
-            <div style="text-align:right;">
-              <div style="font-weight:800; color:var(--velvet); font-size:20px;">584</div>
-              <div style="color:#9b9b9f; font-size:13px;">convidados</div>
-            </div>
-          </div>
-
-          <div class="recent-item">
-            <div class="recent-left">
-              <div class="recent-title">Secrets</div>
-              <div class="recent-date">16/07/2025</div>
-            </div>
-            <div style="text-align:right;">
-              <div style="font-weight:800; color:var(--velvet); font-size:20px;">1480</div>
-              <div style="color:#9b9b9f; font-size:13px;">convidados</div>
-            </div>
-          </div>
+    <aside class="card">
+      <div class="card-title">
+        <div>
+          <div>Ações</div>
+          <div class="muted" style="font-weight: 400;">Para administrar seus eventos</div>
         </div>
       </div>
 
-      <aside class="card">
-        <div class="card-title">
-          <div>
-            <div>Ações</div>
-            <div class="muted" style="font-weight: 400;">Para administrar seus eventos</div>
-          </div>
-        </div>
-
-        <div class="action-list">
-          <div class="action-item">📅 Meus eventos</div>
-          <div class="action-item">👥 Contatos</div>
-          <div class="action-item">📈 Métricas</div>
-          <div class="action-item">➕ Importar lista</div>
-        </div>
-      </aside>
-    </section>
-
-    <div class="footer-spacer"></div>
-  </main>
-
-  <footer class="footer">
-    <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
-      <div class="footer-socials">
-        <a href="https://x.com/">
-            <img src="assets/x-logo.png" width="24px">
-        </a>
-        <a href="https://instagram.com/">
-            <img src="assets/instagram-logo.png" width="24px">
-        </a>
-        <a href="https://linkedin.com/">
-            <img src="assets/linkedin-logo.png" width="24px">
-        </a>
+      <div class="action-list">
+        <div class="action-item">📅 Meus eventos</div>
+        <div class="action-item">👥 Contatos</div>
+        <div class="action-item">📈 Métricas</div>
+        <div class="action-item">➕ Importar lista</div>
       </div>
-  </footer>
+    </aside>
+  </section>
+
+  <div class="footer-spacer"></div>
+</main>
+
+<footer class="footer">
+  <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
+  <div class="footer-socials">
+    <a href="https://x.com/">
+      <img src="assets/x-logo.png" width="24px">
+    </a>
+    <a href="https://instagram.com/">
+      <img src="assets/instagram-logo.png" width="24px">
+    </a>
+    <a href="https://linkedin.com/">
+      <img src="assets/linkedin-logo.png" width="24px">
+    </a>
+  </div>
+</footer>
 
 </body>
 </html>
