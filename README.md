@@ -38,7 +38,7 @@ O projeto consiste no desenvolvimento de uma aplicação web para gerenciamento 
 
 # Hospedagem
 
-* https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/tree/main
+*  https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/
 
 # Código-Fonte
 
