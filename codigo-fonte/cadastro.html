@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bouncer - Cadastro</title>
-    <link rel="stylesheet" href="./styles/cadastro.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bouncer - Cadastro</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/cadastro.css" />
 </head>
 
 <body>
-    <header>
-        <nav class="register__header">
-            <a class="header_logo_link" href="index.html">
-                <img src="./assets/logo-clara.png" width="200em" alt="Logo Bouncer">
-            </a>
-        </nav>
-    </header>
+  <header>
+    <nav class="register__header">
+      <a class="header_logo_link" href="index.html">
+        <img src="assets/logo-clara.png" width="200" alt="Logo Bouncer" />
+      </a>
+    </nav>
+  </header>
 
-    <main class="register__page">
-        <section class="register__box">
-            <div id="msgError" style="display:none; color:red; margin-top:10px;"></div>
-            <div id="msgSuccess" style="display:none; color:green; margin-top:10px;"></div>
+  <main class="register__page">
+    <section class="register__box">
+      <p id="msgError" style="display:none;color:red;margin-top:10px;"></p>
+      <p id="msgSuccess" style="display:none;color:green;margin-top:10px;"></p>
 
-            <h1 class="register__title">CADASTRE-SE</h1>
-            <h2 class="register__subtitle">Crie sua conta</h2>
+      <h1 class="register__title">CADASTRE-SE</h1>
+      <h2 class="register__subtitle">Crie sua conta</h2>
 
-            <form id="registerForm">
-                <div class="register__input">
-                    <label for="nome__register">Nome</label>
-                    <input id="nome__register" type="text" placeholder="Digite seu nome completo" required>
-                </div>
-
-                <div class="register__input">
-                    <label for="email__register">Email</label>
-                    <input id="email__register" type="email" placeholder="Digite seu email" required>
-                </div>
-
-                <div class="register__input">
-                    <label for="senha__register">Senha</label>
-                    <input id="senha__register" type="password" placeholder="Senha" required>
-                </div>
-
-                <div class="register__input">
-                    <label for="confirm__register">Confirmar Senha</label>
-                    <input id="confirm__register" type="password" placeholder="Confirmar senha" required>
-                </div>
-
-                <button class="register__button" id="botaoCadastrar" type="submit">CRIAR CONTA</button>
-            </form>
-
-            <p class="register__newcomer">
-                Já tem conta? <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
-            </p>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <img class="footer__logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
-        <div class="footer__socials">
-            <a href="https://x.com/"><img src="assets/x-logo.png" width="24px" alt="Twitter"></a>
-            <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24px" alt="Instagram"></a>
-            <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24px" alt="LinkedIn"></a>
+      <!-- bloqueia o submit nativo -->
+      <form id="registerForm" onsubmit="return false;">
+        <div class="register__input">
+          <label for="nome__register">Nome</label>
+          <input id="nome__register" type="text" placeholder="Digite seu nome completo" required />
         </div>
-    </footer>
 
-    <!-- scripts na ordem correta -->
-    <script src="./scripts/data.js"></script>
-    <script src="./scripts/script-cadastro.js"></script>
+        <div class="register__input">
+          <label for="email__register">Email</label>
+          <input id="email__register" type="email" placeholder="Digite seu email" required />
+        </div>
+
+        <div class="register__input">
+          <label for="senha__register">Senha</label>
+          <input id="senha__register" type="password" placeholder="Senha" required />
+        </div>
+
+        <div class="register__input">
+          <label for="confirm__register">Confirmar Senha</label>
+          <input id="confirm__register" type="password" placeholder="Confirmar senha" required />
+        </div>
+
+        <!-- botão como TYPE=BUTTON para não enviar o form -->
+        <button class="register__button" id="botaoCadastrar" type="button">
+          CRIAR CONTA
+        </button>
+      </form>
+
+      <p class="register__newcomer">
+        Já tem conta? <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img class="footer__logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%" />
+    <div class="footer__socials">
+      <a href="https://x.com/"><img src="assets/x-logo.png" width="24" alt="Twitter" /></a>
+      <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24" alt="Instagram" /></a>
+      <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24" alt="LinkedIn" /></a>
+    </div>
+  </footer>
+
+  <!-- ORDEM IMPORTANTE: data.js antes do script de cadastro -->
+  <script src="scripts/data.js"></script>
+  <script src="scripts/script-cadastro.js?v=5"></script>
 </body>
 </html>
