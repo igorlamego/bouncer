@@ -1,102 +1,79 @@
+// scripts/script-cadastro.js (v17)
+
+function getVal(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : "";
+}
+
 function register() {
-  const nome__register = document.querySelector("#nome__register");
-  const email__register = document.querySelector("#email__register");
-  const senha__register = document.querySelector("#senha__register");
-  const confirm__register = document.querySelector("#confirm__register");
-  const msgError = document.querySelector("#msgError");
-  const msgSuccess = document.querySelector("#msgSuccess");
+  const msgError   = document.getElementById("msgError");
+  const msgSuccess = document.getElementById("msgSuccess");
 
-  let listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
+  // pega valores com fallback robusto
+  const nome   = getVal("nome__register");
+  const email  = getVal("email__register");
+  const senha  = getVal("senha__register");
+  const confirm= getVal("confirm__register");
 
+  // (debug leve no console, ajuda a diagnosticar se algum veio vazio)
+  console.log("[cadastro] vals:", { nome, email, senhaLen: senha.length, confirmLen: confirm.length });
+
+  // limpa mensagens
   msgError.style.display = "none";
   msgSuccess.style.display = "none";
   msgError.innerHTML = "";
   msgSuccess.innerHTML = "";
 
-  // validação básica
-  if (
-    nome__register.value.trim() === "" ||
-    email__register.value.trim() === "" ||
-    senha__register.value.trim() === "" ||
-    confirm__register.value.trim() === ""
-  ) {
+  // validação
+  if (!nome || !email || !senha || !confirm) {
     msgError.style.display = "block";
     msgError.innerHTML = "Preencha todos os campos.";
     return;
   }
 
-  // validação de senha
-  const senha = senha__register.value.trim();
-  const senhaValida =
-    senha.length >= 6 &&
-    /[0-9]/.test(senha) &&
-    /[a-zA-Z]/.test(senha);
-
-  if (!senhaValida) {
-    msgError.style.display = "block";
-    msgError.innerHTML =
-      "A senha deve ter pelo menos 6 caracteres e incluir letras e números.";
-    return;
-  }
-
-  if (senha__register.value.trim() !== confirm__register.value.trim()) {
+  if (senha !== confirm) {
     msgError.style.display = "block";
     msgError.innerHTML = "As senhas não coincidem.";
-    senha__register.value = "";
-    confirm__register.value = "";
-    senha__register.focus();
+    const sEl = document.getElementById("senha__register");
+    const cEl = document.getElementById("confirm__register");
+    if (sEl) sEl.value = "";
+    if (cEl) cEl.value = "";
+    if (sEl) sEl.focus();
     return;
   }
 
-  // verificar se email já existe
-  const userExists = listaUser.some(
-    (user) => user.emailUser === email__register.value.trim()
-  );
-
-  if (userExists) {
+  // carrega/salva
+  let listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
+  const existe = listaUser.some(u => u.emailUser === email);
+  if (existe) {
     msgError.style.display = "block";
-    msgError.innerHTML = "Email já cadastrado.";
+    msgError.innerHTML = "Este e-mail já está cadastrado.";
     return;
   }
 
-  // salvar usuário
-  const newUser = {
-    nomeUser: nome__register.value.trim(),
-    emailUser: email__register.value.trim(),
-    senhaUser: senha,
-  };
-
-  listaUser.push(newUser);
+  listaUser.push({ nomeUser: nome, emailUser: email, senhaUser: senha });
   localStorage.setItem("listaUser", JSON.stringify(listaUser));
 
-  // exibir mensagem de sucesso
+  // sucesso + redirecionamento em 3s
   msgSuccess.style.display = "block";
-  msgSuccess.innerHTML = `
-    ✅ Cadastro realizado com sucesso!<br>
-    <a href="login.html"
-       style="color:#2d2a55; font-weight:600; text-decoration:none;">
-       Clique aqui para realizar o login
-    </a>.
-  `;
+  msgSuccess.innerHTML = "✅ Cadastro realizado com sucesso!<br>Você será redirecionado para a página de login...";
+  
+  // limpa campos visualmente
+  const ids = ["nome__register","email__register","senha__register","confirm__register"];
+  ids.forEach(i => { const el = document.getElementById(i); if (el) el.value = ""; });
 
-  // desativar botão e limpar campos
-  const botao = document.getElementById("botaoCadastrar");
-  if (botao) {
-    botao.disabled = true;
-    botao.style.opacity = "0.6";
-    botao.style.cursor = "not-allowed";
-  }
-
-  nome__register.value = "";
-  email__register.value = "";
-  senha__register.value = "";
-  confirm__register.value = "";
+  setTimeout(() => { window.location.href = "login.html"; }, 3000);
 }
 
-// permitir Enter
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    register();
-  }
+// listeners à prova de falha
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("registerForm");
+  const btn  = document.getElementById("botaoCadastrar");
+  if (form) form.addEventListener("submit", e => e.preventDefault());
+  if (btn)  btn.addEventListener("click", e => { e.preventDefault(); register(); });
+});
+
+// Enter não envia form
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") { e.preventDefault(); register(); }
 });
