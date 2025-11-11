@@ -1,5 +1,4 @@
-// scripts/script-cadastro.js (v21 — só cadastro, compatível com login atual)
-
+// scripts/script-cadastro.js (v22 — só cadastro; compatível com login atual)
 function register() {
   const nomeEl = document.getElementById("nome__register");
   const emailEl = document.getElementById("email__register");
@@ -14,9 +13,9 @@ function register() {
   msgErr.innerHTML = "";
   msgOk.innerHTML  = "";
 
-  // valores normalizados
+  // valores digitados (exatos, apenas sem espaços nas pontas)
   const nome    = (nomeEl.value  || "").trim();
-  const email   = ((emailEl.value || "").trim()).toLowerCase();
+  const email   = (emailEl.value || "").trim();   // sem .toLowerCase(): login compara literal
   const senha   = (senhaEl.value || "").trim();
   const confirm = (confEl.value  || "").trim();
 
@@ -33,7 +32,7 @@ function register() {
     return;
   }
 
-  // helpers de dados (usam data.js se existir)
+  // Helpers de dados (usam data.js se disponível)
   const safeGetData  = (typeof getData  === "function")
     ? () => getData()
     : () => JSON.parse(localStorage.getItem("data")) || { users: [], events: [], guests: [] };
@@ -46,43 +45,43 @@ function register() {
   let data = safeGetData();
   if (!Array.isArray(data.users)) data.users = [];
 
-  // e-mail já cadastrado?
-  const exists = data.users.some(u => String(u.emailUser || "").toLowerCase() === email);
+  // checa duplicado (case-insensitive para evitar e-mails duplicados só por maiúscula/minúscula)
+  const exists = data.users.some(u => String(u.emailUser || "").trim().toLowerCase() === email.toLowerCase());
   if (exists) {
     msgErr.style.display = "block";
     msgErr.innerHTML = "Este e-mail já está cadastrado.";
     return;
   }
 
-  // monta usuário no formato que o login espera
+  // objeto no formato que o login usa
   const newUser = { nomeUser: nome, emailUser: email, senhaUser: senha };
 
-  // grava onde o login lê
+  // salva onde o login lê
   data.users.push(newUser);
   safeSaveData(data);
 
-  // compatibilidade (se outra parte do site usa listaUser)
+  // compatibilidade com listaUser (se outra parte usa)
   try {
-    const listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
-    listaUser.push(newUser);
-    localStorage.setItem("listaUser", JSON.stringify(listaUser));
+    const lista = JSON.parse(localStorage.getItem("listaUser")) || [];
+    lista.push(newUser);
+    localStorage.setItem("listaUser", JSON.stringify(lista));
   } catch (_) {}
 
-  // sucesso + redirecionamento
+  // feedback + redirecionamento
   msgOk.style.display = "block";
   msgOk.innerHTML = "✅ Cadastro realizado com sucesso!<br>Você será redirecionado para a página de login...";
   document.getElementById("registerForm")?.reset();
 
-  // diagnóstico discreto (opcional)
+  // log de confirmação (abra o console para ver)
   try {
-    const check = safeGetData().users.find(u => u.emailUser === email && u.senhaUser === senha);
+    const check = (safeGetData().users || []).find(u => u.emailUser === email && u.senhaUser === senha);
     console.log("📦 Gravado em data.users:", !!check, check);
   } catch (_) {}
 
   setTimeout(() => { window.location.href = "login.html"; }, 3000);
 }
 
-// evita submit nativo e liga o botão
+// evita submit nativo e liga botão
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("registerForm")?.addEventListener("submit", e => e.preventDefault());
   document.getElementById("botaoCadastrar")?.addEventListener("click", e => { e.preventDefault(); register(); });
