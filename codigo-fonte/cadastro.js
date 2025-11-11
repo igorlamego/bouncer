@@ -6,17 +6,14 @@ function register() {
   const msgError = document.querySelector("#msgError");
   const msgSuccess = document.querySelector("#msgSuccess");
 
-  // obtém dados do localStorage
-  let data = getData();
-  let listaUser = data.users;
+  let listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
 
-  // limpa mensagens
   msgError.style.display = "none";
   msgSuccess.style.display = "none";
   msgError.innerHTML = "";
   msgSuccess.innerHTML = "";
 
-  // valida campos vazios
+  // validação básica
   if (
     nome__register.value.trim() === "" ||
     email__register.value.trim() === "" ||
@@ -28,7 +25,7 @@ function register() {
     return;
   }
 
-  // valida senha
+  // validação de senha
   const senha = senha__register.value.trim();
   const senhaValida =
     senha.length >= 6 &&
@@ -42,7 +39,6 @@ function register() {
     return;
   }
 
-  // confirma senhas
   if (senha__register.value.trim() !== confirm__register.value.trim()) {
     msgError.style.display = "block";
     msgError.innerHTML = "As senhas não coincidem.";
@@ -52,7 +48,7 @@ function register() {
     return;
   }
 
-  // verifica se e-mail já existe
+  // verificar se email já existe
   const userExists = listaUser.some(
     (user) => user.emailUser === email__register.value.trim()
   );
@@ -63,7 +59,7 @@ function register() {
     return;
   }
 
-  // cria e salva novo usuário
+  // salvar usuário
   const newUser = {
     nomeUser: nome__register.value.trim(),
     emailUser: email__register.value.trim(),
@@ -71,22 +67,19 @@ function register() {
   };
 
   listaUser.push(newUser);
-  data.users = listaUser;
-  saveData(data);
+  localStorage.setItem("listaUser", JSON.stringify(listaUser));
 
-  // mostra mensagem de sucesso com link para login
-  msgError.style.display = "none";
+  // exibir mensagem de sucesso
   msgSuccess.style.display = "block";
   msgSuccess.innerHTML = `
     ✅ Cadastro realizado com sucesso!<br>
-    <a href="login.html" style="color:#2d2a55;font-weight:600;text-decoration:none;">
-      Clique aqui para fazer login
+    <a href="login.html"
+       style="color:#2d2a55; font-weight:600; text-decoration:none;">
+       Clique aqui para realizar o login
     </a>.
   `;
-  msgSuccess.style.transition = "opacity 0.6s ease";
-  msgSuccess.style.opacity = "1";
 
-  // desativa botão para evitar novo clique
+  // desativar botão e limpar campos
   const botao = document.getElementById("botaoCadastrar");
   if (botao) {
     botao.disabled = true;
@@ -94,29 +87,16 @@ function register() {
     botao.style.cursor = "not-allowed";
   }
 
-  // limpa campos
   nome__register.value = "";
   email__register.value = "";
   senha__register.value = "";
   confirm__register.value = "";
 }
 
-// garante clique e enter
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("botaoCadastrar");
-  const form = document.getElementById("registerForm");
-
-  if (btn) {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (typeof window.register === "function") window.register();
-    });
-  }
-
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (typeof window.register === "function") window.register();
-    });
+// permitir Enter
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    register();
   }
 });
