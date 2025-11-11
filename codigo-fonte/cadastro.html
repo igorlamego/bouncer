@@ -1,112 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bouncer - Cadastro</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/cadastro.css?v=10" />
+  <link rel="stylesheet" href="./styles/cadastro.css">
 </head>
 
 <body>
   <header>
     <nav class="register__header">
-      <a class="header_logo_link" href="index.html">
-        <img src="assets/logo-clara.png" width="200" alt="Logo Bouncer" />
+      <a class="header_logo_link" href="homepage.html">
+        <img src="./assets/logo-clara.png" width="200em" alt="Logo Bouncer">
       </a>
     </nav>
   </header>
 
   <main class="register__page">
     <section class="register__box">
-      <!-- mensagens -->
-      <p id="msgError" style="display:none;color:red;margin-top:10px;"></p>
-      <p id="msgSuccess" style="display:none;color:green;margin-top:10px;"></p>
+      <p id="msgError" style="display:none; color:red; margin-top:10px;"></p>
+      <p id="msgSuccess" style="display:none; color:green; margin-top:10px;"></p>
 
       <h1 class="register__title">CADASTRE-SE</h1>
       <h2 class="register__subtitle">Crie sua conta</h2>
 
-      <!-- FORM com proteção total -->
-      <form
-        id="registerForm"
-        onsubmit="event.preventDefault(); return false;"
-        autocomplete="off"
-        novalidate
-      >
+      <form id="registerForm">
         <div class="register__input">
           <label for="nome__register">Nome</label>
-          <input id="nome__register" type="text" placeholder="Digite seu nome completo" required />
+          <input id="nome__register" type="text" placeholder="Digite seu nome completo" required>
         </div>
 
         <div class="register__input">
           <label for="email__register">Email</label>
-          <input id="email__register" type="email" placeholder="Digite seu email" required />
+          <input id="email__register" type="email" placeholder="Digite seu email" required>
         </div>
 
         <div class="register__input">
           <label for="senha__register">Senha</label>
-          <input id="senha__register" type="password" placeholder="Senha" required />
+          <input type="password" id="senha__register" placeholder="Senha" required>
         </div>
 
         <div class="register__input">
           <label for="confirm__register">Confirmar Senha</label>
-          <input id="confirm__register" type="password" placeholder="Confirmar senha" required />
+          <input type="password" id="confirm__register" placeholder="Confirmar senha" required>
         </div>
 
-        <!-- Botão com segurança dupla -->
-        <button
-          class="register__button"
-          id="botaoCadastrar"
-          type="button"
-          onclick="event.preventDefault(); if (typeof window.register==='function'){ window.register(); } else { alert('⚠️ Função register() não carregou.'); }"
-        >
-          CRIAR CONTA
-        </button>
+        <a class="register__button" onclick="register()" id="botaoCadastrar" type="button">CRIAR CONTA</a>
       </form>
 
       <p class="register__newcomer">
-        Já tem conta?
-        <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
+        Já tem conta? <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
       </p>
     </section>
   </main>
 
   <footer class="footer">
-    <img
-      class="footer__logo"
-      src="assets/logo-escura.png"
-      alt="Bouncer Logo Escura"
-      width="30%"
-    />
+    <img class="footer__logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
     <div class="footer__socials">
-      <a href="https://x.com/"><img src="assets/x-logo.png" width="24" alt="Twitter" /></a>
-      <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24" alt="Instagram" /></a>
-      <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24" alt="LinkedIn" /></a>
+      <a href="https://x.com/"><img src="assets/x-logo.png" width="24px" alt="Twitter"></a>
+      <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24px" alt="Instagram"></a>
+      <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24px" alt="LinkedIn"></a>
     </div>
   </footer>
 
-  <!-- scripts: data primeiro, cadastro depois -->
-  <script src="scripts/data.js?v=2"></script>
-  <script src="scripts/script-cadastro.js?v=10"></script>
-
-  <!-- Fallback de segurança adicional -->
-  <script>
-    (function () {
-      function hook() {
-        const btn = document.getElementById("botaoCadastrar");
-        const form = document.getElementById("registerForm");
-        if (form) form.addEventListener("submit", e => e.preventDefault());
-        if (btn)
-          btn.addEventListener("click", e => {
-            e.preventDefault();
-            if (typeof window.register === "function") window.register();
-          });
-      }
-      if (document.readyState !== "loading") hook();
-      else document.addEventListener("DOMContentLoaded", hook);
-    })();
-  </script>
+  <script src="./scripts/script-cadastro.js?v=14"></script>
 </body>
 </html>
