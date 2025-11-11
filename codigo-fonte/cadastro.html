@@ -5,8 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bouncer - Cadastro</title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="styles/cadastro.css" />
 </head>
 
@@ -27,7 +25,7 @@
       <h1 class="register__title">CADASTRE-SE</h1>
       <h2 class="register__subtitle">Crie sua conta</h2>
 
-      <!-- bloqueia o submit nativo -->
+      <!-- BLOQUEIA o submit nativo -->
       <form id="registerForm" onsubmit="return false;">
         <div class="register__input">
           <label for="nome__register">Nome</label>
@@ -49,10 +47,8 @@
           <input id="confirm__register" type="password" placeholder="Confirmar senha" required />
         </div>
 
-        <!-- botão como TYPE=BUTTON para não enviar o form -->
-        <button class="register__button" id="botaoCadastrar" type="button">
-          CRIAR CONTA
-        </button>
+        <!-- botão NÃO envia o form -->
+        <button class="register__button" id="botaoCadastrar" type="button">CRIAR CONTA</button>
       </form>
 
       <p class="register__newcomer">
@@ -70,8 +66,25 @@
     </div>
   </footer>
 
-  <!-- ORDEM IMPORTANTE: data.js antes do script de cadastro -->
+  <!-- ORDEM IMPORTANTE -->
   <script src="scripts/data.js"></script>
-  <script src="scripts/script-cadastro.js?v=5"></script>
+  <script src="scripts/script-cadastro.js?v=6"></script>
+
+  <!-- Garantia extra: liga o botão mesmo que algo falhe -->
+  <script>
+    (function () {
+      function hook() {
+        const btn = document.getElementById('botaoCadastrar');
+        const form = document.getElementById('registerForm');
+        if (form) form.addEventListener('submit', e => e.preventDefault());
+        if (btn) btn.addEventListener('click', e => {
+          e.preventDefault();
+          if (typeof window.register === 'function') window.register();
+        });
+      }
+      if (document.readyState !== 'loading') hook();
+      else document.addEventListener('DOMContentLoaded', hook);
+    })();
+  </script>
 </body>
 </html>
