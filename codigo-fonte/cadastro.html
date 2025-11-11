@@ -7,7 +7,7 @@
   <title>Bouncer - Cadastro</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles/cadastro.css?v=8" />
+  <link rel="stylesheet" href="styles/cadastro.css?v=10" />
 </head>
 
 <body>
@@ -28,8 +28,13 @@
       <h1 class="register__title">CADASTRE-SE</h1>
       <h2 class="register__subtitle">Crie sua conta</h2>
 
-      <!-- bloqueia o submit automático -->
-      <form id="registerForm" onsubmit="return false;">
+      <!-- FORM com proteção total -->
+      <form
+        id="registerForm"
+        onsubmit="event.preventDefault(); return false;"
+        autocomplete="off"
+        novalidate
+      >
         <div class="register__input">
           <label for="nome__register">Nome</label>
           <input id="nome__register" type="text" placeholder="Digite seu nome completo" required />
@@ -50,8 +55,13 @@
           <input id="confirm__register" type="password" placeholder="Confirmar senha" required />
         </div>
 
-        <!-- botão SEM submit -->
-        <button class="register__button" id="botaoCadastrar" type="button">
+        <!-- Botão com segurança dupla -->
+        <button
+          class="register__button"
+          id="botaoCadastrar"
+          type="button"
+          onclick="event.preventDefault(); if (typeof window.register==='function'){ window.register(); } else { alert('⚠️ Função register() não carregou.'); }"
+        >
           CRIAR CONTA
         </button>
       </form>
@@ -78,10 +88,10 @@
   </footer>
 
   <!-- scripts: data primeiro, cadastro depois -->
-  <script src="scripts/data.js?v=1"></script>
-  <script src="scripts/script-cadastro.js?v=8"></script>
+  <script src="scripts/data.js?v=2"></script>
+  <script src="scripts/script-cadastro.js?v=10"></script>
 
-  <!-- fallback de segurança -->
+  <!-- Fallback de segurança adicional -->
   <script>
     (function () {
       function hook() {
