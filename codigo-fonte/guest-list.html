@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Convidados - BOUNCER</title>
+  <link rel="stylesheet" href="./styles/style-guest-list.css">
+  <script src="./scripts/data.js" defer></script>
+  <script src="./scripts/auth.js" defer></script>
+  <script src="./scripts/logout.js" defer></script>
+  <script src="./scripts/guest-list.js" defer></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="logo">
+      <img src="assets/logo-clara.png" width="200em">
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="nav-center">
+      <a class="pill-btn" href="dashboard.html">PAINEL</a>
+      <a class="pill-btn" href="#">EVENTOS</a>
+      <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="profile">
+        <div class="avatar"></div>
+        <div class="profile-name"></div>
+      </div>
+      <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
+    </div>
+  </header>
+
+
+  <main class="page-content">
+  <div class="page-top">
+    <div class="titles">
+      <h1 class="title">Lista de Participantes</h1>
+      <p class="subtitle">Gerenciar convidados</p>
+    </div>
+
+    <div class="add-guest-wrap">
+      <a class="add-btn" href="cadastro-participante.html">
+        <span class="plus">＋</span>
+        <span>Adicionar Participante</span>
+      </a>
+    </div>
+  </div>
+
+    <div class="card select-event-card">
+      <label>Selecionar Evento</label>
+      <select id="event-select" class="event-select">
+        <option>Carregando eventos...</option>
+      </select>
+      <div class="big-total">
+        <div id="participants-total" class="metric">0</div>
+        <div class="muted">confirmados</div>
+      </div>
+    </div>
+
+    <div class="card guests-card">
+    <div class="search-card">
+      <input type="search" id="guest-search" placeholder="Digite quem está procurando" />
+      <button id="filters-toggle">Filtros</button>
+    </div>
+      <table id="guests-table" class="guests-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Contato</th>
+            <th>Categoria</th>
+            <th>Status</th>
+            <th>Promoter</th>
+            <th>Observações</th>
+          </tr>
+        </thead>
+        <tbody id="guests-tbody"></tbody>
+      </table>
+
+    <div id="load-more-wrap" style="text-align:center; margin-top:12px;">
+      <button id="load-more-btn" class="muted-link">ver mais</button>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
+    <div class="footer-socials">
+      <a href="https://x.com/">
+        <img src="assets/x-logo.png" width="24px">
+      </a>
+      <a href="https://instagram.com/">
+        <img src="assets/instagram-logo.png" width="24px">
+      </a>
+      <a href="https://linkedin.com/">
+        <img src="assets/linkedin-logo.png" width="24px">
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
