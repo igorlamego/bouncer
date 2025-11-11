@@ -30,7 +30,7 @@
       <h2 class="register__subtitle">Crie sua conta</h2>
 
       <!-- Formulário -->
-      <form id="registerForm">
+      <form id="registerForm" novalidate>
         <div class="register__input">
           <label for="nome__register">Nome</label>
           <input id="nome__register" type="text" placeholder="Digite seu nome completo" required />
@@ -43,19 +43,19 @@
 
         <div class="register__input">
           <label for="senha__register">Senha</label>
-          <input type="password" id="senha__register" placeholder="Senha" required />
+          <input id="senha__register" type="password" placeholder="Senha" required />
         </div>
 
         <div class="register__input">
           <label for="confirm__register">Confirmar Senha</label>
-          <input type="password" id="confirm__register" placeholder="Confirmar senha" required />
+          <input id="confirm__register" type="password" placeholder="Confirmar senha" required />
         </div>
 
         <button class="register__button" id="botaoCadastrar" type="button">CRIAR CONTA</button>
       </form>
 
       <p class="register__newcomer">
-        Já tem conta? 
+        Já tem conta?
         <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
       </p>
     </section>
@@ -71,7 +71,7 @@
     </div>
   </footer>
 
-  <!-- Script principal -->
-  <script src="./scripts/script-cadastro.js"></script>
+  <!-- SCRIPT -->
+  <script src="./scripts/script-cadastro.js?v=17"></script>
 </body>
 </html>
