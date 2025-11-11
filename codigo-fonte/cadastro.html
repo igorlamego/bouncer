@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bouncer - Cadastro</title>
 
-  <!-- CSS (caminho ajustado) -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/cadastro.css">
 </head>
 
@@ -27,7 +27,7 @@
       <h1 class="register__title">CADASTRE-SE</h1>
       <h2 class="register__subtitle">Crie sua conta</h2>
 
-      <!-- form não envia, só aciona o script -->
+      <!-- Impede submit padrão; usamos JS -->
       <form id="registerForm" onsubmit="return false;">
         <div class="register__input">
           <label for="nome__register">Nome</label>
@@ -49,13 +49,11 @@
           <input type="password" id="confirm__register" placeholder="Confirmar senha" required>
         </div>
 
-        <!-- botão corrigido -->
         <button class="register__button" id="botaoCadastrar" type="button">CRIAR CONTA</button>
       </form>
 
       <p class="register__newcomer">
-        Já tem conta?
-        <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
+        Já tem conta? <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
       </p>
     </section>
   </main>
@@ -69,7 +67,8 @@
     </div>
   </footer>
 
-  <!-- JS (caminho ajustado) -->
-  <script src="scripts/script-cadastro.js"></script>
+  <!-- IMPORTANTES: data.js antes do script de cadastro -->
+  <script src="scripts/data.js"></script>
+  <script src="scripts/script-cadastro.js?v=2"></script>
 </body>
 </html>
