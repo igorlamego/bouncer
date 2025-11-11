@@ -1,78 +1,89 @@
-// scripts/script-cadastro.js  (versão simplificada e estável)
+// scripts/script-cadastro.js (v21 — só cadastro, compatível com login atual)
+
 function register() {
-  const nome__register = document.querySelector("#nome__register");
-  const email__register = document.querySelector("#email__register");
-  const senha__register = document.querySelector("#senha__register");
-  const confirm__register = document.querySelector("#confirm__register");
-  const msgError = document.querySelector("#msgError");
-  const msgSuccess = document.querySelector("#msgSuccess");
+  const nomeEl = document.getElementById("nome__register");
+  const emailEl = document.getElementById("email__register");
+  const senhaEl = document.getElementById("senha__register");
+  const confEl  = document.getElementById("confirm__register");
+  const msgErr  = document.getElementById("msgError");
+  const msgOk   = document.getElementById("msgSuccess");
 
-  msgError.style.display = "none";
-  msgSuccess.style.display = "none";
+  // limpa mensagens
+  msgErr.style.display = "none";
+  msgOk.style.display  = "none";
+  msgErr.innerHTML = "";
+  msgOk.innerHTML  = "";
 
-  const nome = nome__register.value.trim();
-  const email = email__register.value.trim();
-  const senha = senha__register.value.trim();
-  const confirm = confirm__register.value.trim();
+  // valores normalizados
+  const nome    = (nomeEl.value  || "").trim();
+  const email   = ((emailEl.value || "").trim()).toLowerCase();
+  const senha   = (senhaEl.value || "").trim();
+  const confirm = (confEl.value  || "").trim();
 
-  // Verifica campos
+  // validações
   if (!nome || !email || !senha || !confirm) {
-    msgError.style.display = "block";
-    msgError.innerHTML = "Preencha todos os campos.";
+    msgErr.style.display = "block";
+    msgErr.innerHTML = "Preencha todos os campos.";
     return;
   }
-
   if (senha !== confirm) {
-    msgError.style.display = "block";
-    msgError.innerHTML = "As senhas não coincidem.";
-    senha__register.value = "";
-    confirm__register.value = "";
-    senha__register.focus();
+    msgErr.style.display = "block";
+    msgErr.innerHTML = "As senhas não coincidem.";
+    senhaEl.value = ""; confEl.value = ""; senhaEl.focus();
     return;
   }
 
-  let listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
-  const userExists = listaUser.some(u => u.emailUser === email);
+  // helpers de dados (usam data.js se existir)
+  const safeGetData  = (typeof getData  === "function")
+    ? () => getData()
+    : () => JSON.parse(localStorage.getItem("data")) || { users: [], events: [], guests: [] };
 
-  if (userExists) {
-    msgError.style.display = "block";
-    msgError.innerHTML = "Este e-mail já está cadastrado.";
+  const safeSaveData = (typeof saveData === "function")
+    ? (d) => saveData(d)
+    : (d) => localStorage.setItem("data", JSON.stringify(d));
+
+  // carrega estrutura principal
+  let data = safeGetData();
+  if (!Array.isArray(data.users)) data.users = [];
+
+  // e-mail já cadastrado?
+  const exists = data.users.some(u => String(u.emailUser || "").toLowerCase() === email);
+  if (exists) {
+    msgErr.style.display = "block";
+    msgErr.innerHTML = "Este e-mail já está cadastrado.";
     return;
   }
 
-  // Cria novo usuário
-  const newUser = {
-    nomeUser: nome,
-    emailUser: email,
-    senhaUser: senha,
-  };
+  // monta usuário no formato que o login espera
+  const newUser = { nomeUser: nome, emailUser: email, senhaUser: senha };
 
-  listaUser.push(newUser);
-  localStorage.setItem("listaUser", JSON.stringify(listaUser));
+  // grava onde o login lê
+  data.users.push(newUser);
+  safeSaveData(data);
 
-  // Mostra sucesso e redireciona após 3 segundos
-  msgSuccess.style.display = "block";
-  msgSuccess.innerHTML = "✅ Cadastro realizado com sucesso!<br>Você será redirecionado para a página de login...";
-  
-  // Limpa campos
-  nome__register.value = "";
-  email__register.value = "";
-  senha__register.value = "";
-  confirm__register.value = "";
+  // compatibilidade (se outra parte do site usa listaUser)
+  try {
+    const listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
+    listaUser.push(newUser);
+    localStorage.setItem("listaUser", JSON.stringify(listaUser));
+  } catch (_) {}
 
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 3000);
+  // sucesso + redirecionamento
+  msgOk.style.display = "block";
+  msgOk.innerHTML = "✅ Cadastro realizado com sucesso!<br>Você será redirecionado para a página de login...";
+  document.getElementById("registerForm")?.reset();
+
+  // diagnóstico discreto (opcional)
+  try {
+    const check = safeGetData().users.find(u => u.emailUser === email && u.senhaUser === senha);
+    console.log("📦 Gravado em data.users:", !!check, check);
+  } catch (_) {}
+
+  setTimeout(() => { window.location.href = "login.html"; }, 3000);
 }
 
-// Evita submit do form e ativa o botão
+// evita submit nativo e liga o botão
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("registerForm");
-  const btn = document.getElementById("botaoCadastrar");
-
-  if (form) form.addEventListener("submit", (e) => e.preventDefault());
-  if (btn) btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    register();
-  });
+  document.getElementById("registerForm")?.addEventListener("submit", e => e.preventDefault());
+  document.getElementById("botaoCadastrar")?.addEventListener("click", e => { e.preventDefault(); register(); });
 });
