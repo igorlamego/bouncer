@@ -1,4 +1,4 @@
-// scripts/script-cadastro.js (compatível com login atual que usa getData()->data.users)
+// scripts/script-cadastro.js (versão final — compatível com login atual)
 function register() {
   const nomeEl = document.getElementById("nome__register");
   const emailEl = document.getElementById("email__register");
@@ -19,7 +19,7 @@ function register() {
   const senha  = (senhaEl.value || "").trim();
   const confirm= (confEl.value  || "").trim();
 
-  // validações
+  // validações básicas
   if (!nome || !email || !senha || !confirm) {
     msgErr.style.display = "block";
     msgErr.innerHTML = "Preencha todos os campos.";
@@ -34,52 +34,39 @@ function register() {
     return;
   }
 
-  // 1) listaUser (compatibilidade antiga)
-  let listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
-  if (listaUser.some(u => String(u.emailUser).toLowerCase() === email)) {
+  // lê ou cria objeto 'data' do localStorage
+  let data = JSON.parse(localStorage.getItem("data")) || { users: [], events: [], guests: [] };
+  if (!Array.isArray(data.users)) data.users = [];
+
+  // verifica duplicado
+  const exists = data.users.some(u => (u.emailUser || "").toLowerCase() === email);
+  if (exists) {
     msgErr.style.display = "block";
     msgErr.innerHTML = "Este e-mail já está cadastrado.";
     return;
   }
 
-  // 2) data.users (o que o login usa via getData())
-  let data;
-  try {
-    data = (typeof getData === "function") ? getData() : (JSON.parse(localStorage.getItem("data")) || {});
-  } catch {
-    data = JSON.parse(localStorage.getItem("data")) || {};
-  }
-  data.users = Array.isArray(data.users) ? data.users : [];
-
-  if (data.users.some(u => String(u.emailUser).toLowerCase() === email)) {
-    msgErr.style.display = "block";
-    msgErr.innerHTML = "Este e-mail já está cadastrado.";
-    return;
-  }
-
-  // novo usuário
+  // adiciona novo usuário
   const newUser = { nomeUser: nome, emailUser: email, senhaUser: senha };
+  data.users.push(newUser);
+  localStorage.setItem("data", JSON.stringify(data));
 
-  // grava nas DUAS fontes
+  // também mantém compatibilidade com listaUser (caso outra parte use)
+  let listaUser = JSON.parse(localStorage.getItem("listaUser")) || [];
   listaUser.push(newUser);
   localStorage.setItem("listaUser", JSON.stringify(listaUser));
 
-  data.users.push(newUser);
-  if (typeof saveData === "function") {
-    saveData(data);                 // usa helper do seu data.js
-  } else {
-    localStorage.setItem("data", JSON.stringify(data)); // fallback
-  }
-
-  // sucesso + redireciona em 3s
+  // sucesso + redirecionamento em 3 s
   msgOk.style.display = "block";
   msgOk.innerHTML = "✅ Cadastro realizado com sucesso!<br>Você será redirecionado para a página de login...";
   nomeEl.value = emailEl.value = senhaEl.value = confEl.value = "";
 
-  setTimeout(() => { window.location.href = "login.html"; }, 3000);
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 3000);
 }
 
-// evita submit nativo e liga o botão
+// evita submit e liga o botão
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registerForm");
   const btn  = document.getElementById("botaoCadastrar");
