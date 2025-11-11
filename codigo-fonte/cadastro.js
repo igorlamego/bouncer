@@ -74,17 +74,19 @@ function register() {
   data.users = listaUser;
   saveData(data);
 
-  // sucesso visual
+  // mostra mensagem de sucesso com link para login
   msgError.style.display = "none";
   msgSuccess.style.display = "block";
   msgSuccess.innerHTML = `
     ✅ Cadastro realizado com sucesso!<br>
-    Redirecionando para o login...
+    <a href="login.html" style="color:#2d2a55;font-weight:600;text-decoration:none;">
+      Clique aqui para fazer login
+    </a>.
   `;
   msgSuccess.style.transition = "opacity 0.6s ease";
   msgSuccess.style.opacity = "1";
 
-  // desativa botão
+  // desativa botão para evitar novo clique
   const botao = document.getElementById("botaoCadastrar");
   if (botao) {
     botao.disabled = true;
@@ -97,11 +99,6 @@ function register() {
   email__register.value = "";
   senha__register.value = "";
   confirm__register.value = "";
-
-  // redireciona com atraso
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 2000);
 }
 
 // garante clique e enter
