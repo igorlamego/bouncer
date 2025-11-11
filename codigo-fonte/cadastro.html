@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bouncer - Cadastro</title>
-  <link rel="stylesheet" href="styles/cadastro.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/cadastro.css?v=8" />
 </head>
 
 <body>
@@ -19,13 +21,14 @@
 
   <main class="register__page">
     <section class="register__box">
+      <!-- mensagens -->
       <p id="msgError" style="display:none;color:red;margin-top:10px;"></p>
       <p id="msgSuccess" style="display:none;color:green;margin-top:10px;"></p>
 
       <h1 class="register__title">CADASTRE-SE</h1>
       <h2 class="register__subtitle">Crie sua conta</h2>
 
-      <!-- BLOQUEIA o submit nativo -->
+      <!-- bloqueia o submit automático -->
       <form id="registerForm" onsubmit="return false;">
         <div class="register__input">
           <label for="nome__register">Nome</label>
@@ -47,18 +50,26 @@
           <input id="confirm__register" type="password" placeholder="Confirmar senha" required />
         </div>
 
-        <!-- botão NÃO envia o form -->
-        <button class="register__button" id="botaoCadastrar" type="button">CRIAR CONTA</button>
+        <!-- botão SEM submit -->
+        <button class="register__button" id="botaoCadastrar" type="button">
+          CRIAR CONTA
+        </button>
       </form>
 
       <p class="register__newcomer">
-        Já tem conta? <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
+        Já tem conta?
+        <a class="register_newcomer_link" href="login.html">FAÇA LOGIN</a>
       </p>
     </section>
   </main>
 
   <footer class="footer">
-    <img class="footer__logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%" />
+    <img
+      class="footer__logo"
+      src="assets/logo-escura.png"
+      alt="Bouncer Logo Escura"
+      width="30%"
+    />
     <div class="footer__socials">
       <a href="https://x.com/"><img src="assets/x-logo.png" width="24" alt="Twitter" /></a>
       <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24" alt="Instagram" /></a>
@@ -66,24 +77,25 @@
     </div>
   </footer>
 
-  <!-- ORDEM IMPORTANTE -->
-  <script src="scripts/data.js"></script>
-  <script src="scripts/script-cadastro.js?v=6"></script>
+  <!-- scripts: data primeiro, cadastro depois -->
+  <script src="scripts/data.js?v=1"></script>
+  <script src="scripts/script-cadastro.js?v=8"></script>
 
-  <!-- Garantia extra: liga o botão mesmo que algo falhe -->
+  <!-- fallback de segurança -->
   <script>
     (function () {
       function hook() {
-        const btn = document.getElementById('botaoCadastrar');
-        const form = document.getElementById('registerForm');
-        if (form) form.addEventListener('submit', e => e.preventDefault());
-        if (btn) btn.addEventListener('click', e => {
-          e.preventDefault();
-          if (typeof window.register === 'function') window.register();
-        });
+        const btn = document.getElementById("botaoCadastrar");
+        const form = document.getElementById("registerForm");
+        if (form) form.addEventListener("submit", e => e.preventDefault());
+        if (btn)
+          btn.addEventListener("click", e => {
+            e.preventDefault();
+            if (typeof window.register === "function") window.register();
+          });
       }
-      if (document.readyState !== 'loading') hook();
-      else document.addEventListener('DOMContentLoaded', hook);
+      if (document.readyState !== "loading") hook();
+      else document.addEventListener("DOMContentLoaded", hook);
     })();
   </script>
 </body>
