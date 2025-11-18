@@ -75,6 +75,20 @@ document.addEventListener("DOMContentLoaded", () => {
       applyAdvancedFilters();
       filterPopout.classList.remove("open");
     })
+
+    // Replace the external link with modal opener
+    document.querySelector('.add-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('add-guest-modal').classList.add('show');
+    });
+
+    // Modal close handlers
+    document.getElementById('close-modal').addEventListener('click', closeAddGuestModal);
+    document.getElementById('cancel-add-guest').addEventListener('click', closeAddGuestModal);
+
+    // Form submission
+    document.getElementById('add-guest-form').addEventListener('submit', handleAddGuest);
+
   }
 
   function resetAndRender() {
@@ -83,44 +97,44 @@ document.addEventListener("DOMContentLoaded", () => {
     render();
   }
 
-function refreshData() {
-  allGuests = getGuests();
-  allEvents = getEvents();
-
-  filteredGuests = allGuests.filter(g => {
-
-    // Filter by EVENT
-    if (currentEventId !== "all" && g.eventId !== currentEventId) return false;
-
-    // Filter by SEARCH
-    const name = (g.name || "").toLowerCase();
-    const contact = (g.contact || "").toLowerCase();
-
-    if (currentSearch && !name.includes(currentSearch) && !contact.includes(currentSearch)) {
-      return false;
-    }
-
-    // Filter by CATEGORY
-    if (filterCategory.value && g.category !== filterCategory.value) {
-      return false;
-    }
-
-    // Filter by STATUS
-    if (filterStatus.value === "present" && !g.attended) {
-      return false;
-    }
-
-    if (filterStatus.value === "absent" && g.attended) {
-      return false;
-    }
-
-    return true;
-  });
-}
+  function refreshData() {
+    allGuests = getGuests();
+    allEvents = getEvents();
+  
+    filteredGuests = allGuests.filter(g => {
+  
+      // Filter by EVENT
+      if (currentEventId !== "all" && g.eventId !== currentEventId) return false;
+  
+      // Filter by SEARCH
+      const name = (g.name || "").toLowerCase();
+      const contact = (g.contact || "").toLowerCase();
+  
+      if (currentSearch && !name.includes(currentSearch) && !contact.includes(currentSearch)) {
+        return false;
+      }
+  
+      // Filter by CATEGORY
+      if (filterCategory.value && g.category !== filterCategory.value) {
+        return false;
+      }
+  
+      // Filter by STATUS
+      if (filterStatus.value === "present" && !g.attended) {
+        return false;
+      }
+  
+      if (filterStatus.value === "absent" && g.attended) {
+        return false;
+      }
+  
+      return true;
+    });
+  }
 
   function applyAdvancedFilters() {
   resetAndRender();
-}
+  }
 
 
   // update totals
@@ -223,4 +237,51 @@ function refreshData() {
       t = setTimeout(() => fn(...args), wait);
     };
   }
+
+  function closeAddGuestModal() {
+  document.getElementById('add-guest-modal').classList.remove('show');
+  document.getElementById('add-guest-form').reset();
+  }
+
+  function handleAddGuest(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('guest-name').value.trim();
+    const contact = document.getElementById('guest-contact').value.trim();
+    const category = document.getElementById('guest-category').value;
+    const promoter = document.getElementById('guest-promoter').value.trim();
+    const notes = document.getElementById('guest-notes').value.trim();
+    
+    if (!name) {
+      alert('Por favor, preencha o nome do participante.');
+      return;
+    }
+  
+    // Get current event - if "none" or no event selected, show error
+    if (currentEventId === "none" || currentEventId === "all") {
+      alert('Por favor, selecione um evento antes de adicionar participantes.');
+      return;
+    }
+  
+    const newGuest = {
+      id: makeId(),
+      eventId: currentEventId,
+      name: name,
+      contact: contact,
+      category: category,
+      promoter: promoter,
+      notes: notes,
+      attended: false
+    };
+  
+    // Save using your existing data system
+    saveGuest(newGuest);
+  
+    // Close modal and refresh
+    closeAddGuestModal();
+    resetAndRender();
+    
+    alert('Participante adicionado com sucesso!');
+  }
+
 });
