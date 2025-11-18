@@ -29,7 +29,7 @@
     <nav class="nav-center">
       <a class="pill-btn" href="dashboard.html">PAINEL</a>
       <a class="pill-btn" href="lista-eventos.html">EVENTOS</a>
-      <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
+      <a class="pill-btn-current" href="guest-list.html">PARTICIPANTES</a>
     </nav>
 
     <div class="nav-right">
@@ -91,16 +91,53 @@
       <button id="load-more-btn" class="muted-link">ver mais</button>
     </div>
     </div>
+
+    <div id="filter-popout" class="filter-popout">
+
+      <div class="popout-header">
+        <h2>Filtros</h2>
+        <button id="close-filters" class="close-btn">x</button>
+      </div>
+
+      <div class="popout-content">
+
+        <label>Categoria</label>
+        <select id="filter-category">
+          <option value="">Todas</option>
+          <option value="">VIP</option>
+          <option value="">Lista</option>
+          <option value="">Cortesia</option>
+        </select>
+
+        <label>Status</label>
+        <select id="filter-status">
+          <option value="">Todos</option>
+          <option value="present">Confirmados</option>
+          <option value="absent">Pendentes</option>
+        </select>
+      </div>
+
+      <button id="apply-filters" class="apply-btn">Aplicar Filtros</button>
+    </div>
+
+  <div class="footer-spacer"></div>
+
   </main>
-<!-- RODAPÉ -->
-    <footer class="footer">
-        <img class="footer__logo" src="./assets/logo-escura.png" alt="Bouncer Logo">
-        <div class="footer__socials">
-            <a href="https://x.com/"><img src="./assets/x-logo.png" alt="X"></a>
-            <a href="https://instagram.com/"><img src="./assets/instagram-logo.png" alt="Instagram"></a>
-            <a href="https://linkedin.com/"><img src="./assets/linkedin-logo.png" alt="LinkedIn"></a>
-        </div>
-    </footer>
+
+  <footer class="footer">
+    <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
+    <div class="footer-socials">
+      <a href="https://x.com/">
+        <img src="assets/x-logo.png" width="24px">
+      </a>
+      <a href="https://instagram.com/">
+        <img src="assets/instagram-logo.png" width="24px">
+      </a>
+      <a href="https://linkedin.com/">
+        <img src="assets/linkedin-logo.png" width="24px">
+      </a>
+    </div>
+  </footer>
 
 </body>
 </html>
