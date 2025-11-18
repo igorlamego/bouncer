@@ -23,6 +23,7 @@ body, html {
   height: 100%;
   font-family: var(--text);
   background-color: var(--cinza);
+  
 }
 
 main {
@@ -93,6 +94,9 @@ h1 {
   border: none;
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
+  margin-top: 12px;
+  display: inline-block;
+  
 }
 
 .pill-btn:hover {
@@ -100,6 +104,71 @@ h1 {
   box-shadow: 0 10px 20px rgba(34,224,173,0.16);
   background-color: var(--mint-hover);
 }
+
+.add-event-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+.add-event-btn {
+    background: var(--mint);
+    color: #08302a;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(34, 224, 173, 0.18);
+    transition: 0.2s ease;
+    letter-spacing: .8px;
+}
+
+.add-event-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(34, 224, 173, 0.25);
+}
+
+.create-btn{
+  background:var(--mint);
+  color:#03302a;
+  padding:14px 20px;
+  border-radius:12px;
+  font-family: var(--titles);
+  font-weight:700;
+  font-size: larger;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 10px 20px rgba(34,224,173,0.12);
+  text-decoration: none;}
+
+  .delete-btn {
+  text-decoration: none;
+  background: #ff4d4d;      
+  padding: 10px 20px;        
+  border-radius: 28px;       
+  font-weight: 600;          
+  color: white;              
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease; 
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.delete-btn:hover {
+  background: #d93636;
+  transform: translateY(-2px);
+}
+
+.delete-btn:active {
+  transform: scale(0.97);
+}
+
 
 /* ======== LISTA DE EVENTOS ======== */
 .event-list {
@@ -113,6 +182,7 @@ h1 {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  
 }
 
 .event-card h3 {
@@ -134,6 +204,7 @@ footer {
   align-items: center;
   font-family: var(--titles);
   border-top: 1px solid #ddd;
+  
 }
 
 .footer__logo {
