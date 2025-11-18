@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".event-list");
 
-  let eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+  let eventos = getEvents();
 
   container.innerHTML = "";
 
@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     card.classList.add("event-card");
 
     card.innerHTML = `
-      <h3>${evento.nome}</h3>
-      <p><strong>Data:</strong> ${evento.data}</p>
-      <p><strong>Local:</strong> ${evento.local}</p>
-      <p><strong>Descrição:</strong> ${evento.descricao}</p>
+      <h3>${evento.title}</h3>
+      <p><strong>Data:</strong> ${evento.date}</p>
+      <p><strong>Local:</strong> ${evento.location}</p>
+      <p><strong>Descrição:</strong> ${evento.description}</p>
 
-      <a class="pill-btn" href="evento.html?id=${index}">Ver detalhes</a>
+      <a class="pill-btn" href="evento.html?id=${evento.id}">Ver detalhes</a>
 
-      <button class="delete-btn" data-index="${index}">
+      <button class="delete-btn" data-id="${evento.id}">
           Excluir
       </button>
     `;
@@ -33,13 +33,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== EXCLUIR EVENTO =====
   document.querySelectorAll(".delete-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
-      const idx = e.target.getAttribute("data-index");
+      const eventId = e.target.getAttribute("data-id");
 
       if (confirm("Tem certeza que deseja excluir este evento?")) {
-        eventos.splice(idx, 1);
-        localStorage.setItem("eventos", JSON.stringify(eventos));
-        location.reload(); // recarrega a lista atualizada
+        deleteEvent(eventId);
       }
     });
   });
 });
+
+function deleteEvent(eventId) {
+  const data = getData();
+  
+  // Remove the event
+  data.events = data.events.filter(event => event.id !== eventId);
+  
+  // Remove all guests associated with the event
+  data.guests = data.guests.filter(guest => guest.eventId !== eventId);
+  
+  saveData(data);
+  location.reload(); // reload list
+}
