@@ -1,4 +1,3 @@
-/* styles/cadastro.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -11,8 +10,8 @@
   --mint-hover: #2ab985;
   --light-text: #9aa0a8;
 
-  --titles: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --text: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --titles: 'Montserrat';
+  --text: 'Inter';
 }
 
 /* Reset leve */
