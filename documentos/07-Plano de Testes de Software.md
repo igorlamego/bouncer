@@ -24,7 +24,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
    <li>RF-002:	O site deve permitir ao usuário fazer o login da sua conta.</li>
      </ul>
   </td>
-  <td>Verificar se os links da página Home estão encaminhando para as respectivas páginas corretamente</td>
+  <td>Verificar se os links da página Dashboard estão encaminhando para as respectivas páginas corretamente</td>
   <td>
    <ol>
     <li>Acessar o navegador.</li>
