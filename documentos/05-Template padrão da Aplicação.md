@@ -1,10 +1,10 @@
-# 🧩 Template Padrão da Aplicação
+# Template Padrão da Aplicação
 
 Este documento apresenta o **template padrão** utilizado em toda a aplicação, reunindo identidade visual, estrutura base, responsividade e iconografia.
 
 ---
 
-## 📐 1. Estrutura Geral do Layout
+## 1. Estrutura Geral do Layout
 
 A aplicação segue uma estrutura fixa que se repete em todas as páginas:
 
@@ -22,11 +22,11 @@ A aplicação segue uma estrutura fixa que se repete em todas as páginas:
 
 ---
 
-## 🎨 2. Identidade Visual
+## 2. Identidade Visual
 
 A identidade visual é consistente em todas as páginas, seguindo padronização de cores, tipografia e espaçamentos.
 
-### **🎨 Paleta de Cores Principal**
+### ** Paleta de Cores Principal**
 
 | Elemento | Nome | Hex |
 |---------|------|---------|
@@ -43,7 +43,7 @@ A identidade visual é consistente em todas as páginas, seguindo padronização
 
 ---
 
-## 🔤 3. Tipografia
+## 3. Tipografia
 
 A aplicação utiliza duas famílias de fontes:
 
@@ -61,7 +61,7 @@ Usada para:
 
 ---
 
-## 📱 4. Responsividade
+## 4. Responsividade
 
 O layout foi projetado para se adaptar a qualquer resolução:
 
@@ -77,7 +77,7 @@ O layout foi projetado para se adaptar a qualquer resolução:
 
 ---
 
-## 🖼️ 5. Iconografia
+## 5. Iconografia
 
 Os ícones seguem o estilo:
 - Minimalista  
@@ -92,7 +92,7 @@ São usados em:
 
 ---
 
-## 📦 6. Objetivo do Template
+## 6. Objetivo do Template
 
 O template garante:
 - Identidade visual uniforme  
