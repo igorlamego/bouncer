@@ -48,10 +48,3 @@ O acesso a tela de login poderá ser feito através da opção de menu “Entrar
 #### Responsável
 
 Igor
-
-
-
-
-
-
-<img src="./img/Login.png" alt="Entrar">
