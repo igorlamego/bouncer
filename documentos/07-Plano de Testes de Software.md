@@ -1,21 +1,40 @@
 # Plano de Testes de Software
 
-|Caso de Teste    | Teste de Cadastro |
-|:---|:---|
-| Requisitos Associados | RF-01 |
-| Objetivo do Teste | A aplicação deve permitir ao usuário cadastrar uma conta. |
-| Passos | Abra um navegador de Internet e informe a seguinte URL: https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/ - Ao clicar em “Cadastre-se” no canto superior direito da tela, terá acesso a página de cadastro. |
-| Critérios de êxito | Indicar os critérios de êxito  |
-| Responsável pela elaborar do caso de Teste | Marcela |
- 
-<img src="./img/Cadastro.png" alt="Cadastro">
+Os requisitos para realização dos testes de software são:
+<ul><li>Site publicado na internet;</li>
+<li>Navegador da internet: Chrome, Firefox ou Edge.</li>
+</ul>
 
-|Caso de Teste    | Teste de Login |
-|:---|:---|
-| Requisitos Associados | RF-02 |
-| Objetivo do Teste | A aplicação deve permitir ao usuário fazer o login da sua conta. |
-| Passos | Abra um navegador de Internet e informe a seguinte URL: https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/ - Ao clicar em “Entrar” no canto superior direito da tela, terá acesso a página de entrar. |
-| Critérios de êxito | Indicar os critérios de êxito  |
-| Responsável pela elaborar do caso de Teste | Marcela |
+Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
-<img src="./img/Login.png" alt="Entrar">
+<table>
+ <tr>
+  <th>Caso de teste</th>
+  <th>Requisitos associados</th>
+  <th>Objetivo do teste</th>
+  <th>Passos</th>
+  <th>Critérios de êxito</th>
+  <th>Responsável</th>
+ </tr>
+ <tr>
+  <td>CT-01: Verificar o funcionamento dos links da página Dashboard</td>
+  <td>
+   <ul>
+    <li>RF-001:	O site deve permitir ao usuário cadastrar uma conta.</li>
+   <li>RF-002:	O site deve permitir ao usuário fazer o login da sua conta.</li>
+     </ul>
+  </td>
+  <td>Verificar se os links da página Home estão encaminhando para as respectivas páginas corretamente</td>
+  <td>
+   <ol>
+    <li>Acessar o navegador.</li>
+    <li>Informar o endereço do site.</li>
+    <li>Visualizar a página Dashboard</li>
+    <li>Clicar nos links da página Dashboard</li>
+   </ol>
+   </td>
+  <td>Todos os links da página Home devem encaminhar os usuários para as páginas descritas.</td>
+  <td>Maria</td>
+ </tr>
+</table>
+
