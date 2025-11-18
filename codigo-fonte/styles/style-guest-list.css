@@ -126,7 +126,7 @@ body {
   box-shadow: 0 10px 20px rgba(34, 224, 173, 0.16);
 }
 
-.pill-btn-current{
+.pill-btn-current {
   background: rgb(245, 118, 213);
   padding:10px 40px;
   border-radius:28px;
