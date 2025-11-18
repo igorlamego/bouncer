@@ -50,8 +50,8 @@
     </div>
 
     <div class="add-guest-wrap">
-      <a class="add-btn" href="cadastro-participante.html">
-        <span class="plus">＋</span>
+      <a class="add-btn" href="#">
+          <span class="plus">＋</span>
         <span>Adicionar Participante</span>
       </a>
     </div>
@@ -138,6 +138,53 @@
       </a>
     </div>
   </footer>
+
+  <!-- Add Guest Modal -->
+<div id="add-guest-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Adicionar Participante</h2>
+      <button id="close-modal" class="close-btn">&times;</button>
+    </div>
+    
+    <form id="add-guest-form">
+      <div class="form-group">
+        <label for="guest-name">Nome*</label>
+        <input type="text" id="guest-name" placeholder="Digite o nome do participante" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="guest-contact">Contato</label>
+        <input type="text" id="guest-contact" placeholder="Telefone ou email">
+      </div>
+      
+      <div class="form-group">
+        <label for="guest-category">Categoria</label>
+        <select id="guest-category">
+          <option value="">Selecionar categoria</option>
+          <option value="VIP">VIP</option>
+          <option value="Lista">Lista</option>
+          <option value="Cortesia">Cortesia</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="guest-promoter">Promoter</label>
+        <input type="text" id="guest-promoter" placeholder="Nome do promoter">
+      </div>
+      
+      <div class="form-group">
+        <label for="guest-notes">Observações</label>
+        <textarea id="guest-notes" placeholder="Notas adicionais"></textarea>
+      </div>
+      
+      <div class="form-actions">
+        <button type="button" id="cancel-add-guest" class="cancel-btn">Cancelar</button>
+        <button type="submit" class="submit-btn">Salvar Participante</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
