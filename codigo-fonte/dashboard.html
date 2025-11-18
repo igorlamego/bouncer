@@ -27,7 +27,7 @@
   </label>
 
   <nav class="nav-center">
-    <a class="pill-btn" href="dashboard.html">PAINEL</a>
+    <a class="pill-btn-current" href="dashboard.html">PAINEL</a>
     <a class="pill-btn" href="lista-eventos.html">EVENTOS</a>
     <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
   </nav>
@@ -35,7 +35,7 @@
   <div class="nav-right">
     <div class="profile">
       <div class="avatar"></div>
-      <div class="profile-name">Clóvis</div>
+      <div class="profile-name"></div>
     </div>
     <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
   </div>
@@ -105,25 +105,31 @@
       </div>
 
       <div class="action-list">
-        <div class="action-item">📅 Meus eventos </div>
-        <div class="action-item">👥 Contatos</div>
-        <div class="action-item">📈 Métricas</div>
-        <div class="action-item">➕ Importar lista</div>
+        <a class="action-item" href="lista-eventos.html">📅 Meus eventos</a>
+        <div class="action-item">👥 Contatos - EM BREVE</div>
+        <div class="action-item">📈 Métricas - EM BREVE</div>
+        <div class="action-item">➕ Importar lista - EM BREVE</div>
       </div>
     </aside>
   </section>
 
   <div class="footer-spacer"></div>
 </main>
-<!-- RODAPÉ -->
-    <footer class="footer">
-        <img class="footer__logo" src="./assets/logo-escura.png" alt="Bouncer Logo">
-        <div class="footer__socials">
-            <a href="https://x.com/"><img src="./assets/x-logo.png" alt="X"></a>
-            <a href="https://instagram.com/"><img src="./assets/instagram-logo.png" alt="Instagram"></a>
-            <a href="https://linkedin.com/"><img src="./assets/linkedin-logo.png" alt="LinkedIn"></a>
-        </div>
-    </footer>
+
+<footer class="footer">
+  <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
+  <div class="footer-socials">
+    <a href="https://x.com/">
+      <img src="assets/x-logo.png" width="24px">
+    </a>
+    <a href="https://instagram.com/">
+      <img src="assets/instagram-logo.png" width="24px">
+    </a>
+    <a href="https://linkedin.com/">
+      <img src="assets/linkedin-logo.png" width="24px">
+    </a>
+  </div>
+</footer>
 
 </body>
 </html>
