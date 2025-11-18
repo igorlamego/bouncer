@@ -1,6 +1,6 @@
 # Plano de Testes de Software
 
-|Caso de Teste    | CT-X - Título Caso de Teste |
+|Caso de Teste    | Teste de Cadastro |
 |:---|:---|
 | Requisitos Associados | RF-01 |
 | Objetivo do Teste | A aplicação deve permitir ao usuário cadastrar uma conta. |
