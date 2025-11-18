@@ -6,13 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bouncer - Cadastro</title>
   <link rel="stylesheet" href="./styles/cadastro.css" />
+  <script src="./scripts/data.js" defer></script>
+  <script src="./scripts/script-cadastro.js" defer></script>
+
 </head>
 
 <body>
   <!-- HEADER -->
   <header>
     <nav class="register__header">
-      <!-- use ./ para sempre voltar à home (index.html) na mesma pasta publicada -->
       <a class="header_logo_link" href="./">
         <img src="./assets/logo-clara.png" width="200" alt="Logo Bouncer" />
       </a>
@@ -52,7 +54,7 @@
           <input id="confirm__register" type="password" placeholder="Confirmar senha" required />
         </div>
 
-        <button class="register__button" id="botaoCadastrar" type="button">CRIAR CONTA</button>
+        <button class="register__button" id="botaoCadastrar" onclick="register()" type="button">CRIAR CONTA</button>
       </form>
 
       <p class="register__newcomer">
@@ -72,7 +74,5 @@
     </div>
   </footer>
 
-  <!-- Carrega a versão nova do JS (cache-bust v=21) -->
-  <script src="./scripts/script-cadastro.js?v=21"></script>
 </body>
 </html>
