@@ -8,4 +8,4 @@
 | Critérios de êxito | Indicar os critérios de êxito  |
 | Responsável pela elaborar do caso de Teste | Marcela |
  
-<img src="./img/cadastro.png" alt="Cadastro" width="500">
+<img src="./img/Cadastro.png" alt="Cadastro" width="500">
