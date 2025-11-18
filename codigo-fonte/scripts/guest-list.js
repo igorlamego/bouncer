@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("guest-search");
   const loadMoreBtn = document.getElementById("load-more-btn");
 
+  const filterPopout = document.getElementById("filter-popout");
+  const closeFiltersBtn = document.getElementById("close-filters");
+  const applyFiltersBtn = document.getElementById("apply-filters");
+
+  const filterCategory = document.getElementById("filter-category");
+  const filterStatus = document.getElementById("filter-status");
+
   const PAGE_SIZE = 10;
   let currentEventId = "all";
   let allGuests = getGuests();
@@ -23,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---- functions ----
   function populateEventSelect() {
     eventSelect.innerHTML = "";
-    const optAll = document.createElement("option");
-    optAll.value = "all";
-    optAll.textContent = "Todos os eventos";
-    eventSelect.appendChild(optAll);
+    const optNone = document.createElement("option");
+    optNone.value = "none";
+    optNone.textContent = "Escolha um evento";
+    eventSelect.appendChild(optNone);
 
     allEvents.forEach(e => {
       const opt = document.createElement("option");
@@ -55,6 +62,19 @@ document.addEventListener("DOMContentLoaded", () => {
       page++;
       renderRows();
     });
+
+    document.getElementById("filters-toggle").addEventListener("click", () => {
+      filterPopout.classList.add("open");
+    });
+
+    closeFiltersBtn.addEventListener("click", () => {
+      filterPopout.classList.remove("open");
+    });
+
+    applyFiltersBtn.addEventListener("click", () => {
+      applyAdvancedFilters();
+      filterPopout.classList.remove("open");
+    })
   }
 
   function resetAndRender() {
@@ -63,17 +83,45 @@ document.addEventListener("DOMContentLoaded", () => {
     render();
   }
 
-  function refreshData() {
-    allGuests = getGuests();
-    allEvents = getEvents();
-    filteredGuests = allGuests.filter(g => {
-      if (currentEventId !== "all" && g.eventId !== currentEventId) return false;
-      if (!currentSearch) return true;
-      const name = (g.name || "").toLowerCase();
-      const contact = (g.contact || "").toLowerCase();
-      return name.includes(currentSearch) || contact.includes(currentSearch);
-    });
-  }
+function refreshData() {
+  allGuests = getGuests();
+  allEvents = getEvents();
+
+  filteredGuests = allGuests.filter(g => {
+
+    // Filter by EVENT
+    if (currentEventId !== "all" && g.eventId !== currentEventId) return false;
+
+    // Filter by SEARCH
+    const name = (g.name || "").toLowerCase();
+    const contact = (g.contact || "").toLowerCase();
+
+    if (currentSearch && !name.includes(currentSearch) && !contact.includes(currentSearch)) {
+      return false;
+    }
+
+    // Filter by CATEGORY
+    if (filterCategory.value && g.category !== filterCategory.value) {
+      return false;
+    }
+
+    // Filter by STATUS
+    if (filterStatus.value === "present" && !g.attended) {
+      return false;
+    }
+
+    if (filterStatus.value === "absent" && g.attended) {
+      return false;
+    }
+
+    return true;
+  });
+}
+
+  function applyAdvancedFilters() {
+  resetAndRender();
+}
+
 
   // update totals
   function render() {
