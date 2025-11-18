@@ -5,7 +5,7 @@ const loggedIn = !!localStorage.getItem("loggedIn");
 const currentPage = window.location.pathname.split("/").pop();
 
 // Define public pages
-const publicPages = ["index.html", "login.html", "register.html"];
+const publicPages = ["index.html", "login.html", "cadastro.html"];
 
 // If user is logged in and tries to access a public page, redirect to dashboard
 if (loggedIn && publicPages.includes(currentPage)) {
