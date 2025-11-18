@@ -72,6 +72,13 @@ h1 {
   gap: 14px;
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
 .avatar {
   width: 36px;
   height: 36px;
