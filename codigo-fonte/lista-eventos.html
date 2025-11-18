@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bouncer - Eventos Cadastrados</title>
-    <link rel="stylesheet" href="./styles/lista-eventos-styles.css">
+    <link rel="stylesheet" href="./styles/lista-eventos-style.css">
     <script src="./scripts/data.js" defer></script>
     <script src="./scripts/auth.js" defer></script>
     <script src="./scripts/logout.js" defer></script>
     <script src="./scripts/lista-eventos.js" defer></script>
-
 </head>
 <body>
     <!-- CABEÇALHO -->
     <header>
         <nav class="topbar">
-            <a class="logo">
+            <a class="logo" href="dashboard.html">
                 <img src="./assets/logo-clara.png" alt="Logo Bouncer">
             </a>
 
@@ -26,13 +25,14 @@
                 <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
             </div>
 
-  <div class="nav-right">
-    <div class="profile">
-      <div class="avatar"></div>
-      <div class="profile-name"></div>
-    </div>
-    <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
-  </div>
+            <div class="nav-right">
+                <div class="profile">
+                    <div class="avatar"></div>
+                    <div class="profile-name"></div>
+                </div>
+                <a href="#" onclick="logout(); return false;" class="pill-btn logout-btn">SAIR</a>
+            </div>
+        </nav>
     </header>
 
     <!-- CONTEÚDO -->
@@ -41,13 +41,14 @@
         <h2 class="subtitle">Lista de todos os eventos disponíveis</h2>
 
         <div class="add-event-container">
-    <a class="create-btn" href="novo-evento.html">
-        <span class="plus">＋</span>
-        <span>Criar Evento</span>
-    </a>
-</div>
+            <a class="create-btn" href="novo-evento.html">
+                <span class="plus">＋</span>
+                <span>Criar Evento</span>
+            </a>
+        </div>
 
-       <section class="event-list"></section>
+        <section class="event-list">
+        </section>
     </main>
 
     <!-- RODAPÉ -->
