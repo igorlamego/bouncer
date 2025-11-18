@@ -116,6 +116,21 @@ body {
   box-shadow: 0 10px 20px rgba(34,224,173,0.16);
 }
 
+.pill-btn-current{
+  background: rgb(245, 118, 213);
+  padding:10px 40px;
+  border-radius:28px;
+  font-weight:600;
+  color:var(--indigo);
+  border:none;
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(34,224,173,0.14);
+  transition:transform 0.12s ease, box-shadow 0.12s ease;
+  letter-spacing:0.6px;
+  text-decoration: none;
+}
+.pill-btn-current:hover {transform:translateY(-2px); box-shadow:0 10px 20px rgba(34,224,173,0.16);}
+
 .create-btn {
   background: var(--mint);
   color: #03302a;
