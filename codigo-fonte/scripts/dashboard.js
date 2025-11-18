@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const data = getData();
 
-  // Filter events belonging to the current user
+  // Filter events to current user
   const userEvents = data.events.filter(e => e.userId === userData.id);
 
 
   // ---- METRICS ----
   const totalEvents = userEvents.length;
 
-  // Count all guests across user's events
+  // Count all guests
   const userGuests = data.guests.filter(g =>
     userEvents.some(e => e.id === g.eventId)
   );
