@@ -9,3 +9,13 @@
 | Responsável pela elaborar do caso de Teste | Marcela |
  
 <img src="./img/Cadastro.png" alt="Cadastro">
+
+|Caso de Teste    | Teste de Login |
+|:---|:---|
+| Requisitos Associados | RF-02 |
+| Objetivo do Teste | A aplicação deve permitir ao usuário fazer o login da sua conta. |
+| Passos | Abra um navegador de Internet e informe a seguinte URL: https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/ - Ao clicar em “Entrar” no canto superior direito da tela, terá acesso a página de entrar. |
+| Critérios de êxito | Indicar os critérios de êxito  |
+| Responsável pela elaborar do caso de Teste | Marcela |
+
+<img src="./img/Login.png" alt="Entrar">
