@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Novo Evento | BOUNCER</title>
   <link rel="stylesheet" href="./styles/novo-evento-style.css">
+  <script src="./scripts/data.js" defer></script>
+  <script src="./scripts/auth.js" defer></script>
+  <script src="./scripts/logout.js" defer></script>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -25,7 +28,7 @@
   <nav class="nav-center">
     <a class="pill-btn" href="dashboard.html">PAINEL</a>
     <a class="pill-btn" href="lista-eventos.html">EVENTOS</a>
-    <a class="pill-btn">PARTICIPANTES</a>
+    <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
   </nav>
 
   <div class="nav-right">
@@ -33,6 +36,7 @@
       <div class="avatar">C</div>
       <div class="profile-name">Clóvis</div>
     </div>
+     <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
   </div>
 </header>
 
