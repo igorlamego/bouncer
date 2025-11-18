@@ -95,19 +95,32 @@ function makeId() {
 // ------------ Data API ------------
 
 // Get all
+function getEvents() {
+  const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+  const allEvents = getData().events;
+  
+  if (!loggedIn) return allEvents;
+
+  return allEvents.filter(event => event.userId === loggedIn.id);
+}
+
+function getGuests() {
+  const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+  const allGuests = getData().guests;
+  const userEvents = getEvents();
+
+  if (!loggedIn) return allGuests;
+
+  const userEventIds = userEvents.map(event => event.id);
+  return allGuests.filter(guest => userEventIds.includes(guest.eventId));
+}
+
+
+// Save single
 function getUsers() {
   return getData().users;
 }
 
-function getEvents() {
-  return getData().events;
-}
-
-function getGuests() {
-  return getData().guests;
-}
-
-// Save single
 function saveUser(user) {
   const data = getData();
   data.users = data.users || [];
