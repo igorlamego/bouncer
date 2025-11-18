@@ -6,26 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bouncer - Eventos Cadastrados</title>
     <link rel="stylesheet" href="./styles/lista-eventos-styles.css">
+    <script src="./scripts/lista-eventos.js" defer></script>
+    <script src="./scripts/data.js" defer></script>
+    <script src="./scripts/auth.js" defer></script>
+    <script src="./scripts/logout.js" defer></script>
+
 </head>
 <body>
     <!-- CABEÇALHO -->
     <header>
         <nav class="topbar">
-            <a class="logo" href="homepage.html">
+            <a class="logo" href="index.html">
                 <img src="./assets/logo-clara.png" alt="Logo Bouncer">
             </a>
 
             <div class="nav-center">
-                <a href="dashboard.html" class="pill-btn">PAINEL</a>
-                <a href="novo-evento.html" class="pill-btn">CADASTRAR EVENTO</a>
+                <a class="pill-btn" href="dashboard.html">PAINEL</a>
+                <a class="pill-btn" href="lista-eventos.html">EVENTOS</a>
+                <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
             </div>
 
-            <div class="nav-right">
-                <div class="profile">
-                    <div class="avatar">A</div>
-                    <span>Administrador</span>
-                </div>
-            </div>
+  <div class="nav-right">
+    <div class="profile">
+      <div class="avatar">C</div>
+      <div class="profile-name">Clóvis</div>
+    </div>
+  </div>
         </nav>
     </header>
 
@@ -34,29 +40,14 @@
         <h1>Eventos Cadastrados</h1>
         <h2 class="subtitle">Lista de todos os eventos disponíveis</h2>
 
-        <section class="event-list">
-            <!-- Exemplo de evento -->
-            <div class="event-card">
-                <h3>Festa de Inverno</h3>
-                <p>Data: 20/11/2025</p>
-                <p>Local: Auditório Central</p>
-                <a href="#" class="pill-btn">Ver Detalhes</a>
-            </div>
+        <div class="add-event-container">
+    <a class="create-btn" href="novo-evento.html">
+        <span class="plus">＋</span>
+        <span>Criar Evento</span>
+    </a>
+</div>
 
-            <div class="event-card">
-                <h3>Workshop de Fotografia</h3>
-                <p>Data: 05/12/2025</p>
-                <p>Local: Sala 101</p>
-                <a href="#" class="pill-btn">Ver Detalhes</a>
-            </div>
-
-            <div class="event-card">
-                <h3>Conferência de Tecnologia</h3>
-                <p>Data: 15/12/2025</p>
-                <p>Local: Centro de Convenções</p>
-                <a href="#" class="pill-btn">Ver Detalhes</a>
-            </div>
-        </section>
+       <section class="event-list"></section>
     </main>
 
     <!-- RODAPÉ -->
