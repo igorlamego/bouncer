@@ -104,17 +104,30 @@ main {
   object-position: top;
 }
 
-.footer-spacer {height: 300px;}
-
+/* ======== RODAPÉ ======== */
 footer {
-  padding: 2% 0 0 1%;
+  background-color: #fff;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--titles);
+  border-top: 1px solid #ddd;
+  
 }
 
-.footer-socials {
+.footer__logo {
+  max-width: 200px;
+}
+
+.footer__socials {
   display: flex;
-  justify-content: end;
   gap: 15px;
-  padding: 5% 2% 2% 0;
+}
+
+.footer__socials img {
+  width: 24px;
+  height: 24px;
 }
 
 
