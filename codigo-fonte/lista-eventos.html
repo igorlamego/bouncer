@@ -15,8 +15,8 @@
     <!-- CABEÇALHO -->
     <header>
         <nav class="topbar">
-            <a class="logo" href="dashboard.html">
-                <img src="./assets/logo-clara.png" alt="Logo Bouncer">
+            <a class="logo">
+                <img src="./assets/logo-clara.png" width="200em" alt="Logo Bouncer">
             </a>
 
             <div class="nav-center">
@@ -52,13 +52,72 @@
     </main>
 
     <!-- RODAPÉ -->
-    <footer class="footer">
-        <img class="footer__logo" src="./assets/logo-escura.png" alt="Bouncer Logo">
-        <div class="footer__socials">
-            <a href="https://x.com/"><img src="./assets/x-logo.png" alt="X"></a>
-            <a href="https://instagram.com/"><img src="./assets/instagram-logo.png" alt="Instagram"></a>
-            <a href="https://linkedin.com/"><img src="./assets/linkedin-logo.png" alt="LinkedIn"></a>
-        </div>
-    </footer>
+<footer class="footer">
+  <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
+  <div class="footer-socials">
+    <a href="https://x.com/">
+      <img src="assets/x-logo.png" width="24px">
+    </a>
+    <a href="https://instagram.com/">
+      <img src="assets/instagram-logo.png" width="24px">
+    </a>
+    <a href="https://linkedin.com/">
+      <img src="assets/linkedin-logo.png" width="24px">
+    </a>
+  </div>
+</footer>
+
+<!-- Add Event Modal -->
+<div id="add-event-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Criar Novo Evento</h2>
+      <button id="close-event-modal" class="close-btn">&times;</button>
+    </div>
+    
+    <form id="add-event-form">
+      <div class="form-group">
+        <label for="event-title">Nome do Evento*</label>
+        <input type="text" id="event-title" placeholder="Digite o nome do evento" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="event-location">Local*</label>
+        <input type="text" id="event-location" placeholder="Digite o local do evento" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="event-date">Data*</label>
+        <input type="text" id="event-date" placeholder="dd/mm/aaaa" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="event-time">Horário*</label>
+        <input type="text" id="event-time" placeholder="hh : mm" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="event-capacity">Número de pessoas</label>
+        <input type="number" id="event-capacity" placeholder="Digite o número de pessoas">
+      </div>
+      
+      <div class="form-group">
+        <label for="event-flyer">Flyer</label>
+        <input type="file" id="event-flyer" accept="image/*">
+      </div>
+      
+      <div class="form-group">
+        <label for="event-description">Descrição</label>
+        <textarea id="event-description" placeholder="Descreva seu evento"></textarea>
+      </div>
+      
+      <div class="form-actions">
+        <button type="button" id="cancel-add-event" class="cancel-btn">Cancelar</button>
+        <button type="submit" class="submit-btn">Salvar Evento</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
