@@ -1,16 +1,26 @@
- // ===== Inicialização (debug) =====
+// ===== Inicialização (debug) =====
 console.log("JS cadastro-participantes carregado ✔");
 
 // ===== Chave do Local Storage =====
 const STORAGE_KEY = "participantes";
 
-// Pega o formulário (o primeiro da página)
+// ===== Função para pegar os eventos cadastrados =====
+function getEventos() {
+  try {
+    return JSON.parse(localStorage.getItem("eventos")) || [];
+  } catch {
+    return [];
+  }
+}
+
+// ===== Pega o formulário =====
 const form = document.querySelector("form");
 
-// Seleciona campos com fallback (funciona com/sem IDs)
-let nome, email, telefone, cpf, categoria, comprovante, observacoes;
+// Seleciona campos com fallback
+let nome, email, telefone, cpf, categoria, comprovante, observacoes, selectEvento;
+
 if (form) {
-  const groups = form.querySelectorAll(":scope > div"); // cada linha do formulário
+  const groups = form.querySelectorAll(":scope > div");
 
   nome        = document.getElementById("nome")        || groups[0]?.querySelector("input");
   email       = document.getElementById("email")       || groups[1]?.querySelector("input[type='email'], input");
@@ -20,6 +30,9 @@ if (form) {
   comprovante = document.getElementById("comprovante") || groups[5]?.querySelector("input[type='file']");
   observacoes = document.getElementById("observacoes") || form.querySelector(".descricao textarea");
 
+  // Campo de evento
+  selectEvento = document.getElementById("evento");
+
   console.log("Form encontrado?", !!form);
 } else {
   console.warn("⚠️ Formulário não encontrado.");
@@ -27,11 +40,28 @@ if (form) {
 
 // ===== Helpers de Storage =====
 function getAll() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
-  catch { return []; }
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  } catch {
+    return [];
+  }
 }
+
 function setAll(arr) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+}
+
+// ===== Preencher <select id="evento"> =====
+if (selectEvento) {
+  const eventos = getEventos();
+
+  if (eventos.length === 0) {
+    selectEvento.innerHTML = `<option value="">Nenhum evento cadastrado</option>`;
+  } else {
+    selectEvento.innerHTML = eventos
+      .map(ev => `<option value="${ev.id}">${ev.nome}</option>`)
+      .join("");
+  }
 }
 
 // ===== Validação simples =====
@@ -46,6 +76,11 @@ function validar() {
     email.focus();
     return false;
   }
+  if (selectEvento && !selectEvento.value) {
+    alert("Selecione o evento.");
+    selectEvento.focus();
+    return false;
+  }
   return true;
 }
 
@@ -57,7 +92,6 @@ function resumirArquivo(file) {
 
 // ===== Submit =====
 if (form) {
-  // evita validação nativa do browser
   form.noValidate = true;
 
   form.addEventListener("submit", (e) => {
@@ -66,15 +100,19 @@ if (form) {
 
     if (!validar()) return;
 
-    const file = (comprovante && comprovante.files && comprovante.files[0]) ? comprovante.files[0] : null;
+    const file = (comprovante?.files?.[0]) || null;
 
     const participante = {
       id: "P-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2,6).toUpperCase(),
+
+      // VÍNCULO DO EVENTO
+      eventoId: selectEvento?.value || "",
+
       nome: nome?.value?.trim() || "",
       email: email?.value?.trim() || "",
       telefone: telefone?.value?.trim() || "",
       cpf: cpf?.value?.trim() || "",
-      categoria: (categoria && categoria.value) ? categoria.value : "",
+      categoria: categoria?.value || "",
       comprovante: resumirArquivo(file),
       observacoes: observacoes?.value?.trim() || "",
       criadoEm: new Date().toISOString()
@@ -85,6 +123,7 @@ if (form) {
     setAll(lista);
 
     console.log("Participante salvo:", participante);
+
     alert("✅ Participante cadastrado com sucesso!");
     form.reset();
   });
@@ -92,7 +131,7 @@ if (form) {
   console.log("Listener de submit conectado ✔");
 }
 
-// ===== Máscaras (corrigidas com template string) =====
+// ===== Máscaras =====
 if (telefone) {
   telefone.addEventListener("input", () => {
     let v = telefone.value.replace(/\D/g, "");
