@@ -34,5 +34,19 @@ Informações armazenadas no LocalStorage do usuário logado.
 <img width="1917" height="1079" alt="Captura de tela 2025-11-21 153344" src="https://github.com/user-attachments/assets/cb2d77f3-bc14-4e4c-aa1c-6329de82e7db" />
 
 
+CT-03: Verificar o cadastro de eventos.
+
+Responsável: Gabriel.
+
+Mensagem de confirmação de cadastro de evento.
+<img width="1919" height="1079" alt="Captura de tela 2025-11-21 161121" src="https://github.com/user-attachments/assets/8d364dd4-4bd7-4abd-b3fe-a89013a6343e" />
+Registro do evento disponível
+<img width="1919" height="1079" alt="Captura de tela 2025-11-21 163940" src="https://github.com/user-attachments/assets/159e5a35-99e1-4246-b1ca-eee669b452bf" />
+No exemplo abaixo, o usuário tenta fazer o cadastro do evento, sem preencher todos os campos, o que não finaliza o cadastro.
+<img width="1919" height="1079" alt="Captura de tela 2025-11-21 165912" src="https://github.com/user-attachments/assets/864b2308-65a1-4b58-a3ad-bd4543c25ff0" />
+
+
+
+
 
 
