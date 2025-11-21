@@ -7,4 +7,6 @@ Responsável: Gabriel.
 
 Usuário preenche os campos "Senha" e "Confirmaçāo de Senha" com valores diferentes.
 
-<img width="704" height="808" alt="Captura de tela 2025-11-21 143714" src="https://github.com/user-attachments/assets/49666fec-6d1f-43bd-b7c6-3bba6a0498e8" />
+
+<img width="1919" height="1079" alt="Captura de tela 2025-11-21 152033" src="https://github.com/user-attachments/assets/4acca8b5-15df-45a4-9a1c-5277e3f98dcc" />
+
