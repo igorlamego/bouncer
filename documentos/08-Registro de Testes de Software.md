@@ -19,7 +19,6 @@ Verificar se o usuário foi cadastrado.
 
 Informações armazenadas no LocalStorage após usuário se cadastrar.
 
-
 <img width="1919" height="1079" alt="Captura de tela 2025-11-21 152257" src="https://github.com/user-attachments/assets/5a3de804-d0dd-4411-8ef6-c6a07d71aba2" />
 
 
