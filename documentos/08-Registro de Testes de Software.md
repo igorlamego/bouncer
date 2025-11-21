@@ -3,6 +3,7 @@
 Relatório com as evidências dos testes de software realizados na aplicação pela equipe, baseado no plano de testes pré-definido.
 
 CT-01: Verificar o cadastro de usuários.
+
 Responsável: Gabriel.
 
 Usuário preenche os campos "Senha" e "Confirmaçāo de Senha" com valores diferentes.
