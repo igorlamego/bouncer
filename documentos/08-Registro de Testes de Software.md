@@ -7,8 +7,6 @@ CT-01: Verificar o cadastro de usuários.
 Responsável: Gabriel.
 
 Usuário preenche os campos "Senha" e "Confirmaçāo de Senha" com valores diferentes.
-
-
 <img width="1919" height="1079" alt="Captura de tela 2025-11-21 152033" src="https://github.com/user-attachments/assets/4acca8b5-15df-45a4-9a1c-5277e3f98dcc" />
 
 Verificar se o usuário foi cadastrado.
@@ -25,8 +23,6 @@ CT-02: Verificar o login de usuários.
 Responsável: Gabriel.
 
 Usuário preenche os campos "Email" e "Senha" com valores diferentes do usuário já cadastrado.
-
-
 <img width="1919" height="1079" alt="Captura de tela 2025-11-21 153152" src="https://github.com/user-attachments/assets/52d66c9c-6f72-4f2a-bf8b-86a7692d6f72" />
 Se as informações de usuário forem válidas, o login será bem sucedido.
 <img width="1919" height="1079" alt="Captura de tela 2025-11-21 153256" src="https://github.com/user-attachments/assets/9aa1afdf-8859-4285-8cea-7236872a24ef" />
