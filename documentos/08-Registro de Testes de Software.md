@@ -2,11 +2,9 @@
 
 Relatório com as evidências dos testes de software realizados na aplicação pela equipe, baseado no plano de testes pré-definido.
 
-Os resultados dos testes funcionais realizados na aplicação são descritos a seguir. [Utilize a estrutura abaixo para cada caso de teste executado]
+CT-01: Verificar o cadastro de usuários.
+Responsável: Gabriel.
 
-|Caso de Teste    | CT-X - Título Caso de Teste |
-|:---|:---|
-| Resultados obtidos | Descrever resultados do teste  |
-| Responsável pela execução do caso de Teste | Nome do integrante da equipe |
+Usuário preenche os campos "Senha" e "Confirmaçāo de Senha" com valores diferentes.
 
-[Inserir aqui as evidências de teste que podem ser apresentadas por print de telas ou por .gif de execução de teste]
+<img width="704" height="808" alt="Captura de tela 2025-11-21 143714" src="https://github.com/user-attachments/assets/49666fec-6d1f-43bd-b7c6-3bba6a0498e8" />
