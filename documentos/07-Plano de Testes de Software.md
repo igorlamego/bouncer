@@ -145,8 +145,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
   </td>
 
   <td>
-   Verificar se os links da página "Dashboard" estão encaminhando para as respectivas páginas corretamente.<br>
-   Verificar se o painel está exibindo as informações dos eventos cadastrados e dos participantes.
+   Verificar se os links da página "Dashboard" estão encaminhando para as respectivas páginas corretamente e se o painel está exibindo as informações dos eventos cadastrados e dos participantes.
   </td>
 
   <td>
