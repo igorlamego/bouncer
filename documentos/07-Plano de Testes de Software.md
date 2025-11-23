@@ -263,3 +263,54 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
 </table>
 
+<table>
+ <tr>
+  <th>Caso de teste</th>
+  <th>Requisitos associados</th>
+  <th>Objetivo do teste</th>
+  <th>Passos</th>
+  <th>Critérios de êxito</th>
+  <th>Responsável</th>
+ </tr>
+
+ <tr>
+  <td>CT-07: Verificar as métricas do Dashboard (Painel)</td>
+
+  <td>
+   <ul>
+    <li>RF-04: A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos.</li>
+    <li>RF-09: A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.</li>
+   </ul>
+  </td>
+
+  <td>Verificar se as métricas do Dashboard (painel) são atualizadas corretamente.</td>
+
+  <td>
+   <ol>
+    <li>Acessar o navegador.</li>
+    <li>Informar o endereço do site.</li>
+    <li>Visualizar a página Home.</li>
+    <li>Clicar em “Entrar”, no menu.</li>
+    <li>Preencher seus dados e clicar em “Entrar”.</li>
+    <li>Visualizar a página Dashboard.</li>
+    <li>Clicar em “Eventos” no menu superior ou em “Meus eventos”.</li>
+    <li>Clicar em “+ Criar Evento”.</li>
+    <li>Inserir as informações sobre o evento (incluindo o flyer).</li>
+    <li>Clicar em “Salvar Evento”.</li>
+    <li>Clicar em “Participantes”.</li>
+    <li>Selecionar o evento criado.</li>
+    <li>Clicar em “Adicionar Participante”.</li>
+    <li>Inserir as informações do participante.</li>
+    <li>Clicar em “Salvar Participante”.</li>
+    <li>Alterar o status de presença de alguns participantes (ex.: presente/ausente).</li>
+   </ol>
+  </td>
+
+  <td>
+   O número total de eventos, o número total de participantes e o percentual médio de comparecimento devem corresponder aos dados cadastrados.
+  </td>
+
+  <td>Gabriel</td>
+ </tr>
+
+</table>
