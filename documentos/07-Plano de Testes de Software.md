@@ -44,3 +44,42 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
  </tr>
 
 </table>
+
+<table>
+ <tr>
+  <th>Caso de teste</th>
+  <th>Requisitos associados</th>
+  <th>Objetivo do teste</th>
+  <th>Passos</th>
+  <th>Critérios de êxito</th>
+  <th>Responsável</th>
+ </tr>
+
+ <tr>
+  <td>CT-04: Verificar o cadastro de usuários</td>
+
+  <td>
+   <ul>
+    <li>RF-01: A aplicação deve permitir ao usuário cadastrar uma conta.</li>
+   </ul>
+  </td>
+
+  <td>Verificar se o cadastro está sendo feito corretamente.</td>
+
+  <td>
+   <ol>
+    <li>Acessar o navegador.</li>
+    <li>Informar o endereço do site.</li>
+    <li>Visualizar a página Home.</li>
+    <li>Clicar em “Cadastrar”, no Menu.</li>
+    <li>Preencher o formulário e clicar em “Criar conta”.</li>
+   </ol>
+  </td>
+
+  <td>Deve ocorrer a validação das informações fornecidas pelo usuário e, ao clicar em “Criar conta”, deve aparecer a mensagem “Usuário cadastrado com sucesso”.</td>
+
+  <td>Eduardo</td>
+ </tr>
+
+</table>
+
