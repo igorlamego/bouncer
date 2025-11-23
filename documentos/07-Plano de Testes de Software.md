@@ -56,7 +56,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
  </tr>
 
  <tr>
-  <td>CT-04: Verificar o cadastro de usuários</td>
+  <td>CT-02: Verificar o cadastro de usuários</td>
 
   <td>
    <ul>
