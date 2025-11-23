@@ -43,7 +43,10 @@ No exemplo abaixo, o usuário tenta fazer o cadastro do evento, sem preencher to
 
 
 CT-04: Verificar o funcionamento do dashboard.
+
 Responsável: Gabriel.
+https://raw.githubusercontent.com/SEU-USUARIO/SEU-REPO/main/Painel%20%E2%80%94%20BOUNCER%20-%20Google%20Chrome%202025-11-23%2019-29-41.mp4
+
 
 
 
