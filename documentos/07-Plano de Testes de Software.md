@@ -16,25 +16,31 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
   <th>Critérios de êxito</th>
   <th>Responsável</th>
  </tr>
+
  <tr>
-  <td>CT-01: Verificar o funcionamento dos links da página Dashboard</td>
+  <td>CT-01: Verificar o funcionamento dos links da página Home</td>
+
   <td>
    <ul>
-    <li>RF-001:	O site deve permitir ao usuário cadastrar uma conta.</li>
-   <li>RF-002:	O site deve permitir ao usuário fazer o login da sua conta.</li>
-     </ul>
+    <li>RF-01: A aplicação deve permitir ao usuário cadastrar uma conta.</li>
+    <li>RF-02: A aplicação deve permitir ao usuário fazer o login da sua conta.</li>
+   </ul>
   </td>
-  <td>Verificar se os links da página Dashboard estão encaminhando para as respectivas páginas corretamente</td>
+
+  <td>Verificar se os links da página Home estão encaminhando para as respectivas páginas corretamente.</td>
+
   <td>
    <ol>
     <li>Acessar o navegador.</li>
     <li>Informar o endereço do site.</li>
-    <li>Visualizar a página Dashboard</li>
-    <li>Clicar nos links da página Dashboard</li>
+    <li>Visualizar a página Home.</li>
+    <li>Clicar nos links da página Home.</li>
    </ol>
-   </td>
-  <td>Todos os links da página Home devem encaminhar os usuários para as páginas descritas.</td>
-  <td>Maria</td>
- </tr>
-</table>
+  </td>
 
+  <td>Todos os links da página Home devem encaminhar o usuário para as páginas descritas.</td>
+
+  <td>Eduardo</td>
+ </tr>
+
+</table>
