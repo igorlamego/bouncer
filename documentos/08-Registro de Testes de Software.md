@@ -44,7 +44,9 @@ No exemplo abaixo, o usuário tenta fazer o cadastro do evento, sem preencher to
 
 CT-04: Verificar o funcionamento do dashboard.
 
-Responsável: Gabriel.
+Responsável: Gabriel
+
+
 
 
 
