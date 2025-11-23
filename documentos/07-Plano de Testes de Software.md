@@ -161,8 +161,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
   </td>
 
   <td>
-   A página Dashboard deve ser visualizada contendo as informações dos eventos e dos participantes.<br>
-   Todos os links da página Dashboard devem encaminhar os usuários para as páginas descritas.
+   A página Dashboard deve ser visualizada contendo as informações dos eventos e dos participantes e todos os links da página Dashboard devem encaminhar os usuários para as páginas descritas.
   </td>
 
   <td>Eduardo</td>
