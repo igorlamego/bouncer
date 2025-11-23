@@ -258,7 +258,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
   <td>Deverá aparecer a mensagem indicando que o participante foi adicionado com sucesso.</td>
 
-  <td>Gabriel</td>
+  <td>Eduardo</td>
  </tr>
 
 </table>
@@ -310,7 +310,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
    O número total de eventos, o número total de participantes e o percentual médio de comparecimento devem corresponder aos dados cadastrados.
   </td>
 
-  <td>Gabriel</td>
+  <td>Eduardo</td>
  </tr>
 
 </table>
