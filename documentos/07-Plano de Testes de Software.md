@@ -213,6 +213,52 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
   <td>Gabriel</td>
  </tr>
 
+
 </table>
 
+<table>
+ <tr>
+  <th>Caso de teste</th>
+  <th>Requisitos associados</th>
+  <th>Objetivo do teste</th>
+  <th>Passos</th>
+  <th>Critérios de êxito</th>
+  <th>Responsável</th>
+ </tr>
+
+ <tr>
+  <td>CT-06: Verificar o cadastro de participantes</td>
+
+  <td>
+   <ul>
+    <li>RF-03: A aplicação deve permitir ao usuário criar um evento e inserir os convidados.</li>
+    <li>RF-09: A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.</li>
+    <li>RF-10: A aplicação deve permitir ao promotor/organizador classificar convidados por categorias (aniversariante, VIP, cortesia, lista “amiga” etc.).</li>
+   </ul>
+  </td>
+
+  <td>Verificar se o usuário consegue cadastrar participantes corretamente.</td>
+
+  <td>
+   <ol>
+    <li>Acessar o navegador.</li>
+    <li>Informar o endereço do site.</li>
+    <li>Visualizar a página Home.</li>
+    <li>Clicar em “Entrar”, no menu.</li>
+    <li>Preencher seus dados e clicar em “Entrar”.</li>
+    <li>Visualizar a página Dashboard.</li>
+    <li>Clicar em “Participantes”.</li>
+    <li>Selecionar o evento desejado.</li>
+    <li>Clicar em “Adicionar Participante”.</li>
+    <li>Inserir as informações sobre o participante.</li>
+    <li>Clicar em “Salvar Participante”.</li>
+   </ol>
+  </td>
+
+  <td>Deverá aparecer a mensagem indicando que o participante foi adicionado com sucesso.</td>
+
+  <td>Gabriel</td>
+ </tr>
+
+</table>
 
