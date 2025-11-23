@@ -42,6 +42,12 @@ No exemplo abaixo, o usuário tenta fazer o cadastro do evento, sem preencher to
 <img width="1919" height="1079" alt="Captura de tela 2025-11-21 165912" src="https://github.com/user-attachments/assets/864b2308-65a1-4b58-a3ad-bd4543c25ff0" />
 
 
+CT-04: Verificar o funcionamento do dashboard.
+Responsável: Gabriel.
+
+
+"C:\Users\carol\Videos\Captures\Painel — BOUNCER - Google Chrome 2025-11-23 19-10-05.mp4"
+
 
 
 
