@@ -40,7 +40,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
   <td>Todos os links da página Home devem encaminhar o usuário para as páginas descritas.</td>
 
-  <td>Gabriel</td>
+  <td>Eduardo</td>
  </tr>
 
 </table>
@@ -78,7 +78,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
   <td>Deve ocorrer a validação das informações fornecidas pelo usuário e, ao clicar em “Criar conta”, deve aparecer a mensagem “Usuário cadastrado com sucesso”.</td>
 
-  <td>Gabriel</td>
+  <td>Eduardo</td>
  </tr>
 
 </table>
@@ -116,7 +116,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
   <td>Após o login, o usuário deverá ser redirecionado para a sua página de perfil.</td>
 
-  <td>Gabriel</td>
+  <td>Eduardo</td>
  </tr>
 
 </table>
@@ -164,7 +164,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
    A página Dashboard deve ser visualizada contendo as informações dos eventos e dos participantes e todos os links da página Dashboard devem encaminhar os usuários para as páginas descritas.
   </td>
 
-  <td>Gabriel</td>
+  <td>Eduardo</td>
  </tr>
 
 </table>
@@ -210,7 +210,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
   <td>Deverá aparecer a mensagem indicando que o evento foi criado com sucesso.</td>
 
-  <td>Gabriel</td>
+  <td>Eduardo</td>
  </tr>
 
 
