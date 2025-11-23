@@ -45,7 +45,7 @@ No exemplo abaixo, o usuário tenta fazer o cadastro do evento, sem preencher to
 CT-04: Verificar o funcionamento do dashboard.
 
 Responsável: Gabriel
-sandbox:/mnt/data/Painel — BOUNCER - Google Chrome 2025-11-23 19-29-41.mp4
+
 
 
 
