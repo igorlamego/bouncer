@@ -46,7 +46,7 @@ CT-04: Verificar o funcionamento do dashboard.
 Responsável: Gabriel.
 
 
-"C:\Users\carol\Videos\Captures\Painel — BOUNCER - Google Chrome 2025-11-23 19-10-05.mp4"
+
 
 
 
