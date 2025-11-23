@@ -121,4 +121,53 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
 
 </table>
 
+<table>
+ <tr>
+  <th>Caso de teste</th>
+  <th>Requisitos associados</th>
+  <th>Objetivo do teste</th>
+  <th>Passos</th>
+  <th>Critérios de êxito</th>
+  <th>Responsável</th>
+ </tr>
+
+ <tr>
+  <td>CT-04: Verificar o funcionamento dos links da página "Dashboard"</td>
+
+  <td>
+   <ul>
+    <li>RF-03: A aplicação deve permitir ao usuário criar um evento e inserir os convidados.</li>
+    <li>RF-04: A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos.</li>
+    <li>RF-05: A aplicação deve permitir ao usuário disponibilizar informações sobre os eventos.</li>
+    <li>RF-06: A aplicação deve apresentar informações básicas do evento, bem como regras e condutas.</li>
+    <li>RF-09: A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.</li>
+   </ul>
+  </td>
+
+  <td>
+   Verificar se os links da página "Dashboard" estão encaminhando para as respectivas páginas corretamente.<br>
+   Verificar se o painel está exibindo as informações dos eventos cadastrados e dos participantes.
+  </td>
+
+  <td>
+   <ol>
+    <li>Acessar o navegador.</li>
+    <li>Informar o endereço do site.</li>
+    <li>Visualizar a página Home.</li>
+    <li>Clicar em “Entrar”, no menu.</li>
+    <li>Preencher seus dados e clicar em “Entrar”.</li>
+    <li>Visualizar a página Dashboard.</li>
+    <li>Clicar nos links da página Dashboard.</li>
+   </ol>
+  </td>
+
+  <td>
+   A página Dashboard deve ser visualizada contendo as informações dos eventos e dos participantes.<br>
+   Todos os links da página Dashboard devem encaminhar os usuários para as páginas descritas.
+  </td>
+
+  <td>Eduardo</td>
+ </tr>
+
+</table>
 
