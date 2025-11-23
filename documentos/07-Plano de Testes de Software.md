@@ -232,6 +232,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
   <td>
    <ul>
     <li>RF-03: A aplicação deve permitir ao usuário criar um evento e inserir os convidados.</li>
+    <li>RF-04:	A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos.</li>
     <li>RF-09: A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.</li>
     <li>RF-10: A aplicação deve permitir ao promotor/organizador classificar convidados por categorias (aniversariante, VIP, cortesia, lista “amiga” etc.).</li>
    </ul>
