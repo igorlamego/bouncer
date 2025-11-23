@@ -314,3 +314,50 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
  </tr>
 
 </table>
+
+<table>
+ <tr>
+  <th>Caso de teste</th>
+  <th>Requisitos associados</th>
+  <th>Objetivo do teste</th>
+  <th>Passos</th>
+  <th>Critérios de êxito</th>
+  <th>Responsável</th>
+ </tr>
+
+ <tr>
+  <td>CT-08: Verificar isolamento de dados entre usuários</td>
+
+  <td>
+   <ul>
+    <li>RF-01: A aplicação deve permitir ao usuário cadastrar uma conta.</li>
+    <li>RF-02: A aplicação deve permitir ao usuário fazer o login da sua conta.</li>
+    <li>RF-03: A aplicação deve permitir ao usuário criar um evento e inserir os convidados.</li>
+   </ul>
+  </td>
+
+  <td>Verificar se, ao deslogar de um usuário e logar em outro, os dados exibidos são exclusivos de cada usuário, sem compartilhamento entre perfis.</td>
+
+  <td>
+   <ol>
+    <li>Acessar o navegador.</li>
+    <li>Informar o endereço do site.</li>
+    <li>Clicar em “Cadastrar” e criar a conta do Usuário A (se ainda não existir).</li>
+    <li>Logar com o Usuário A.</li>
+    <li>Criar um evento para o Usuário A.</li>
+    <li>Realizar logout.</li>
+    <li>Clicar em “Cadastrar” e criar a conta do Usuário B (se ainda não existir).</li>
+    <li>Logar com o Usuário B.</li>
+    <li>Visualizar o Dashboard do Usuário B.</li>
+   </ol>
+  </td>
+
+  <td>
+   O Usuário B não deve visualizar eventos, participantes ou métricas criados pelo Usuário A.<br>
+   As informações apresentadas devem ser exclusivas do usuário logado.
+  </td>
+
+  <td>Eduardo</td>
+ </tr>
+
+</table>
