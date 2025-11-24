@@ -100,6 +100,30 @@ O usuário deve acessar o menu “Listas” ou “Convidados”. No meio da inte
 #### Responsável
 
 Marcela
+
+### Informações sobre os eventos
+
+<img width="1908" height="911" alt="Captura de tela 2025-11-24 012044" src="https://github.com/user-attachments/assets/0b2feb4d-006b-499d-a260-da0665224f36" />
+
+#### Requisito atendido
+
+RF-05	A aplicação deve permitir ao usuário disponibilizar informações sobre os eventos.
+
+#### Artefatos da funcionalidade
+
+• evento.html
+
+• evento-style.css
+
+• evento.js
+
+#### Instruções de acesso
+
+A partir do painel principal, o usuário deve acessar o evento desejado. Na aba “Informações do Evento”, o sistema exibirá campos editáveis onde o organizador pode inserir ou atualizar detalhes como horário, local, descrição e observações gerais.
+
+#### Responsável
+
+Marcela
  
 
 
