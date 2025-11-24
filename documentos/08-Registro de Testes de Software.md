@@ -53,6 +53,14 @@ No exemplo abaixo, o usuário tenta fazer o cadastro do participante, sem seleci
 Filtro de participantes
 <img width="1898" height="893" alt="Captura de tela 2025-11-24 015712" src="https://github.com/user-attachments/assets/7548bd55-490b-4560-8bc1-658565b388ca" />
 
+CT-05: Painel
+
+Responsável: Gabriel
+
+Exibi as informações dos eventos, incluindo total de convidados, número de presentes, ausentes e demais estatísticas relevantes.
+<img width="1900" height="910" alt="Captura de tela 2025-11-24 020323" src="https://github.com/user-attachments/assets/713c04f8-6a9b-421b-a046-1e19875c45e2" />
+
+
 
 
 
