@@ -98,7 +98,7 @@ O usuário deve acessar o menu “Listas” ou “Convidados”. No meio da inte
 
 Marcela
 
-### Informações sobre os eventos
+### Tela de informações sobre os eventos
 
 <img width="1908" height="911" alt="Captura de tela 2025-11-24 012044" src="https://github.com/user-attachments/assets/0b2feb4d-006b-499d-a260-da0665224f36" />
 
@@ -122,7 +122,7 @@ A partir do painel principal, o usuário deve acessar o evento desejado. Na aba 
 
 Marcela
 
-### Informações sobre ausência e confirmação de convidados
+### Tela de informações sobre ausência e confirmação de convidados
 <img width="1907" height="905" alt="Captura de tela 2025-11-24 013643" src="https://github.com/user-attachments/assets/753f1ce9-1c37-4ece-937c-7dcb4249450e" />
 
 #### Requisito atendido
