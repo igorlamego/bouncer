@@ -49,9 +49,6 @@ O acesso a tela de login poderá ser feito através da opção de menu “Entrar
 
 Igor
 
-# Programação de Funcionalidades
-
-Implementação da aplicação descritas por meio dos requisitos codificados. 
 
 ### Tela de Criação de Eventos
 
@@ -128,7 +125,7 @@ Marcela
 ### Informações sobre ausência e confirmação de convidados
 <img width="1907" height="905" alt="Captura de tela 2025-11-24 013643" src="https://github.com/user-attachments/assets/753f1ce9-1c37-4ece-937c-7dcb4249450e" />
 
-#### Imagem do evento
+#### Requisito atendido
 
 RF-09	A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.
 
@@ -142,7 +139,7 @@ RF-09	A aplicação deve permitir ao organizador gerar relatórios de presença 
 
 #### Instruções de acesso
 
-Visualizar o status do convidado
+Visualizar o status do convidado.
 
 #### Responsável
 
