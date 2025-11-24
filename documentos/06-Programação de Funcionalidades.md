@@ -145,7 +145,30 @@ Visualizar o status do convidado.
 
 Igor
 
+### Tela de categorias
+<img width="1897" height="904" alt="Captura de tela 2025-11-24 015144" src="https://github.com/user-attachments/assets/e75e74db-ffb4-495b-8e87-da95f98732dc" />
 
+
+#### Requisito atendido
+
+A aplicação deve permitir ao promotor/organizador classificar convidados por categorias (aniversariante, VIP, cortesia, lista “amiga” etc.).
+
+#### Artefatos da funcionalidade
+
+• guest-list.html
+
+• style-guest-list.css
+
+• guest-list.js
+
+#### Instruções de acesso
+
+Ao acessar a aba “Participantes”, o organizador poderá editar cada convidado individualmente e selecionar uma categoria (VIP, aniversariante, cortesia, lista amiga etc.).
+Também será possível aplicar filtros e visualizar as categorias diretamente na tabela de convidados.
+
+#### Responsável
+
+Igor
  
 
 
