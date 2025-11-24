@@ -72,6 +72,22 @@ Igor
 
  Eduardo/Igor
 
+ #### Painel
+ <img width="1886" height="887" alt="Captura de tela 2025-11-24 003713" src="https://github.com/user-attachments/assets/27ddae77-3e6e-4641-896c-9d8f90ae2c68" />
+
+ #### Requisito atendido
+
+ A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.
+
+  #### Responsável
+
+  Igor
+
+ 
+
+
+
+
  
 
  
