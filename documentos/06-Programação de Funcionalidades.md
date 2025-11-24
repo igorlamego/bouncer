@@ -124,6 +124,29 @@ A partir do painel principal, o usuário deve acessar o evento desejado. Na aba 
 #### Responsável
 
 Marcela
+
+### Informações sobre ausência e confirmação de convidados
+<img width="1907" height="905" alt="Captura de tela 2025-11-24 013643" src="https://github.com/user-attachments/assets/753f1ce9-1c37-4ece-937c-7dcb4249450e" />
+
+#### Imagem do evento
+
+RF-09	A aplicação deve permitir ao organizador gerar relatórios de presença e ausência de convidados.
+
+#### Artefatos da funcionalidade
+
+• guest-list.html
+
+• style-guest-list.css
+
+• guest-list.js
+
+#### Instruções de acesso
+
+Visualizar o status do convidado
+
+#### Responsável
+
+Igor
  
 
 
