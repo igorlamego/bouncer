@@ -77,6 +77,29 @@ O usuário deve acessar o módulo “Eventos” e selecionar a opção “Criar 
 
 Marcela
 
+### Tela de Filtro/Pesquisa
+
+<img width="1908" height="899" alt="Captura de tela 2025-11-24 011347" src="https://github.com/user-attachments/assets/870592ad-f85f-469a-aeb7-70438d860812" />
+
+#### Requisito atendido
+
+RF-04	A aplicação deve oferecer uma funcionalidade de filtro/pesquisa para permitir ao usuário localizar listas específicas de convidados e/ou convidados específicos.
+
+#### Artefatos da funcionalidade
+
+• guest-list.html
+
+• style-guest-list.css
+
+• guest-list.js
+
+#### Instruções de acesso
+
+O usuário deve acessar o menu “Listas” ou “Convidados”. No meio da interface estará disponível um campo de pesquisa e filtros avançados que permitem localizar eventos, listas específicas ou convidados individuais. Basta digitar palavras-chave ou selecionar filtros como categorias, status ou data.
+
+#### Responsável
+
+Marcela
  
 
 
