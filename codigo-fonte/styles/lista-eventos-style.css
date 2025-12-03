@@ -8,6 +8,9 @@
   --branco: #ffffff;
   --mint-hover: #2ab985;
   --light-text: #9aa0a8;
+  --red: #d33;
+  --red-hover: rgb(223, 87, 87);
+  
   --titles: 'Montserrat', sans-serif;
   --text: 'Inter', sans-serif;
 }
@@ -378,6 +381,9 @@ h1 {
 }
 
 /* ======== RODAPÉ ======== */
+
+.footer-spacer {height: 500px;}
+
 footer {
   background-color: #fff;
   padding: 20px 48px;
