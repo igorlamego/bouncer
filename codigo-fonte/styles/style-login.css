@@ -94,6 +94,10 @@ input {
     padding: 2%;
 }
 
+input:focus {
+    outline-color: var(--velvet);
+}
+
 .recuperar__conta {
     font-family: var(--text);
     font-size: .8rem;
@@ -152,6 +156,7 @@ footer {
     background-color: #ffbbbb;
     padding: 1px;
     display: none;
+    transition: ease-in 700ms;
 }
 
 .error__class {
