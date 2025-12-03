@@ -72,7 +72,7 @@ O usuário deve acessar o módulo “Eventos” e selecionar a opção “Criar 
 
 #### Responsável
 
-Marcela
+Igor/Marcela
 
 ### Tela de Filtro/Pesquisa
 
@@ -96,7 +96,7 @@ O usuário deve acessar o menu “Listas” ou “Convidados”. No meio da inte
 
 #### Responsável
 
-Marcela
+Igor
 
 ### Tela de informações sobre os eventos
 
@@ -120,7 +120,7 @@ A partir do painel principal, o usuário deve acessar o evento desejado. Na aba 
 
 #### Responsável
 
-Marcela
+Igor/Marcela
 
 ### Tela de informações sobre ausência e confirmação de convidados
 <img width="1907" height="905" alt="Captura de tela 2025-11-24 013643" src="https://github.com/user-attachments/assets/753f1ce9-1c37-4ece-937c-7dcb4249450e" />
@@ -145,7 +145,7 @@ Visualizar o status do convidado.
 
 Igor
 
-### Tela de categorias
+### Tela de adicionar convidado
 <img width="1897" height="904" alt="Captura de tela 2025-11-24 015144" src="https://github.com/user-attachments/assets/e75e74db-ffb4-495b-8e87-da95f98732dc" />
 
 
