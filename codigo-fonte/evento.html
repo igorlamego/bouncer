@@ -16,27 +16,32 @@
 <body>
 
     <!-- CABEÇALHO -->
-    <header>
-        <nav class="topbar">
-            <a class="logo" href="homepage.html">
-                <img src="./assets/logo-clara.png" width="200em" alt="Logo Bouncer">
-            </a>
+<header class="topbar">
+  <div class="logo">
+    <img src="assets/logo-clara.png" width="200em">
+  </div>
 
-            <div class="nav-center">
-                <a class="pill-btn" href="dashboard.html">PAINEL</a>
-                <a class="pill-btn" href="lista-eventos.html">EVENTOS</a>
-                <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
-            </div>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
-            <div class="nav-right">
-                <div class="profile">
-                    <div class="avatar"></div>
-                    <div class="profile-name"></div>
-                </div>
-                 <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
-            </div>
-        </nav>
-    </header>
+  <nav class="nav-center">
+    <a class="pill-btn" href="dashboard.html">PAINEL</a>
+    <a class="pill-btn" href="lista-eventos.html">EVENTOS</a>
+    <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
+  </nav>
+
+  <div class="nav-right">
+    <div class="profile">
+      <div class="avatar"></div>
+      <div class="profile-name"></div>
+    </div>
+    <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
+  </div>
+</header>
 
     <!-- CONTEÚDO -->
     <main class="event-page">
@@ -72,18 +77,18 @@
               
             </div>
         </section>
-
+        <div class="footer-spacer"></div>
     </main>
 
     <!-- RODAPÉ -->
-    <footer class="footer">
-        <img class="footer__logo" src="./assets/logo-escura.png" alt="Logo Bouncer">
-        <div class="footer__socials">
-            <a href="#"><img src="./assets/x-logo.png"></a>
-            <a href="#"><img src="./assets/instagram-logo.png"></a>
-            <a href="#"><img src="./assets/linkedin-logo.png"></a>
-        </div>
-    </footer>
+  <footer class="footer">
+    <img class="footer__logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%" />
+    <div class="footer__socials">
+      <a href="https://x.com/"><img src="assets/x-logo.png" width="24" alt="Twitter" /></a>
+      <a href="https://instagram.com/"><img src="assets/instagram-logo.png" width="24" alt="Instagram" /></a>
+      <a href="https://linkedin.com/"><img src="assets/linkedin-logo.png" width="24" alt="LinkedIn" /></a>
+    </div>
+  </footer>
 
 </body>
 </html>
