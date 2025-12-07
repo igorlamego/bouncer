@@ -5,27 +5,26 @@ authors:
     given-names: Gabriel
   - family-names: Vieira Ramos
     given-names: Eduardo
-  - family-names: Barcelos Lamego 
+  - family-names: Barcelos Lamego
     given-names: Igor
   - family-names: Almeida de Carvalho
-    given-names: Marcela
   - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - name-suffix: Clovis Lemos Tavares
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    given-names: Marcela  
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Lemos Tavares
     given-names: Clovis
-keywords:
-  - 
-  - 
-repository-code: 
-version: 1.0.0
 
-date-released: 2025/12/07
+keywords:
+  - interface do usuário
+  - UI/UX
+  - design de interfaces
+  - aplicação web
+  - Bouncer
+
+repository-code: BOUNCER
+version: 1.0.0
+date-released: 2025-12-07
+
+
 
