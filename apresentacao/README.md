@@ -16,4 +16,4 @@ https://github.com/user-attachments/assets/3728b2bc-c336-476f-a5de-1a6d4877a323
 
 ## Hospedagem
 
-[Adicione o endereço eletrônico público onde o site encontra-se hospedado.]
+https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-2-e1-proj-web-t9-g1-turma-9/
