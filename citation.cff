@@ -3,11 +3,11 @@ title: BOUNCER
 authors:
   - family-names: Estabanez
     given-names: Gabriel
-  - family-names: Vieira
+  - family-names: Vieira Ramos
     given-names: Eduardo
-  - family-names: Lamego
+  - family-names: Barcelos Lamego 
     given-names: Igor
-  - family-names: 
+  - family-names: Almeida de Carvalho
     given-names: Marcela
   - family-names: 
     given-names: 
@@ -19,8 +19,8 @@ authors:
     given-names: 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Lemos Tavares
+    given-names: Clovis
 keywords:
   - 
   - 
@@ -28,3 +28,4 @@ repository-code:
 version: 1.0.0
 
 date-released: 2025/12/07
+
