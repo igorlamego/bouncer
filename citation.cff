@@ -1,30 +1,22 @@
+cff-version: 1.2.0
 message: Please cite this software using these metadata.
 title: BOUNCER
 authors:
-  - family-names: Estabanez
-    given-names: Gabriel
   - family-names: Vieira Ramos
     given-names: Eduardo
+  - family-names: Estabanez Ribeiro
+    given-names: Gabriel
   - family-names: Barcelos Lamego
     given-names: Igor
   - family-names: Almeida de Carvalho
-  - family-names: 
-    given-names: Marcela  
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: Lemos Tavares
-    given-names: Clovis
-
+    given-names: Marcela
 keywords:
-  - interface do usuário
-  - UI/UX
-  - design de interfaces
   - aplicação web
-  - Bouncer
-
-repository-code: BOUNCER
-version: 1.0.0
+  - gerenciamento de eventos
+  - lista de convidados
+  - HTML
+  - CSS
+  - JavaScript
+repository-code: https://github.com/igorlamego/bouncer
+version: 1.1.0
 date-released: 2025-12-07
-
-
-

@@ -8,13 +8,14 @@ function login() {
   const listaUser = data.users;
 
   // Find user match
+  const email = email__login.value.trim().toLowerCase();
   const userValid = listaUser.find(
     (item) =>
-      email__login.value === item.emailUser &&
+      email === (item.emailUser || "").toLowerCase() &&
       senha__login.value === item.senhaUser
   );
 
-  if (userValid && email__login.value && senha__login.value) {
+  if (userValid && email && senha__login.value) {
     // Create a token for session
     const token =
       Math.random().toString(16).substr(2) +
@@ -22,7 +23,9 @@ function login() {
 
     // Save session data
     localStorage.setItem("token", token);
-    localStorage.setItem("loggedIn", JSON.stringify(userValid));
+    // Never keep the password in the session object
+    const { senhaUser, ...sessionUser } = userValid;
+    localStorage.setItem("loggedIn", JSON.stringify(sessionUser));
     localStorage.setItem("nome", JSON.stringify(userValid.nomeUser));
 
     // Redirect

@@ -2,7 +2,8 @@
 const loggedIn = !!localStorage.getItem("loggedIn");
 
 // Get current page name
-const currentPage = window.location.pathname.split("/").pop();
+// (an empty name means the site root, e.g. https://usuario.github.io/bouncer/)
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 // Define public pages
 const publicPages = ["index.html", "login.html", "cadastro.html"];

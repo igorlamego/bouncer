@@ -679,3 +679,9 @@ footer {
   }
 
 }
+
+.empty-row {
+  text-align: center;
+  color: #9aa0a8;
+  padding: 24px 0;
+}

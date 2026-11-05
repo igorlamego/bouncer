@@ -26,6 +26,14 @@ function register() {
     return;
   }
 
+  // Email format
+  const email = email__register.value.trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msgError.style.display = "block";
+    msgError.innerHTML = "Digite um email válido.";
+    return;
+  }
+
   // Password rules
   const senha = senha__register.value.trim();
   const senhaValida =
@@ -52,7 +60,7 @@ function register() {
 
   // Check if email already exists
   const userExists = listaUser.some(
-    (user) => user.emailUser === email__register.value.trim()
+    (user) => (user.emailUser || "").toLowerCase() === email
   );
 
   if (userExists) {
@@ -65,7 +73,7 @@ function register() {
   const newUser = {
     id: makeId(),
     nomeUser: nome__register.value.trim(),
-    emailUser: email__register.value.trim(),
+    emailUser: email,
     senhaUser: senha,
     events: [] 
   };

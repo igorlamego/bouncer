@@ -16,11 +16,11 @@
 
 <header class="topbar">
   <div class="logo">
-    <img src="assets/logo-clara.png" width="200em">
+    <img src="assets/logo-clara.png" width="200" alt="Logo Bouncer">
   </div>
 
   <input type="checkbox" id="menu-toggle" class="menu-toggle">
-  <label for="menu-toggle" class="hamburger">
+  <label for="menu-toggle" class="hamburger" aria-label="Abrir menu">
     <span></span>
     <span></span>
     <span></span>
@@ -37,7 +37,7 @@
       <div class="avatar"></div>
       <div class="profile-name"></div>
     </div>
-    <a href="#" onclick="logout()" class="pill-btn logout-btn">SAIR</a>
+    <a href="#" onclick="logout(); return false;" class="pill-btn logout-btn">SAIR</a>
   </div>
 </header>
 
@@ -119,13 +119,13 @@
   <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
   <div class="footer-socials">
     <a href="https://x.com/">
-      <img src="assets/x-logo.png" width="24px">
+      <img src="assets/x-logo.png" width="24" alt="X (Twitter)">
     </a>
     <a href="https://instagram.com/">
-      <img src="assets/instagram-logo.png" width="24px">
+      <img src="assets/instagram-logo.png" width="24" alt="Instagram">
     </a>
     <a href="https://linkedin.com/">
-      <img src="assets/linkedin-logo.png" width="24px">
+      <img src="assets/linkedin-logo.png" width="24" alt="LinkedIn">
     </a>
   </div>
 </footer>

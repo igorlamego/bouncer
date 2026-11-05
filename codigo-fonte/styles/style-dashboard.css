@@ -12,8 +12,8 @@
   --red: #d33;
   --red-hover: rgb(223, 87, 87);
 
-  --titles: Montserrat;
-  --text: Inter;
+  --titles: 'Montserrat', sans-serif;
+  --text: 'Inter', sans-serif;
 
 }
 
@@ -21,6 +21,7 @@ html,body {height:100%;}
 body{
   margin:0;
   background:var(--branco);
+  font-family: var(--text);
 }
 
 .topbar{
@@ -220,7 +221,9 @@ h1.title{
   font-weight:700;
   font-size: 16px;
   color:var(--indigo); 
+  text-decoration:none;
 }
+.recent-title:hover { text-decoration:underline; }
 .recent-date { 
   font-size:13px; 
   color:var(--light-text); 

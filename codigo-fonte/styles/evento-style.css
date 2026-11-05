@@ -294,3 +294,10 @@ a {text-decoration: none;}
   }
 
 }
+
+[hidden] { display: none !important; }
+
+.ticket-box .pill-btn {
+  display: inline-block;
+  margin-top: 8px;
+}

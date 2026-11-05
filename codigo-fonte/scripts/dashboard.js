@@ -17,20 +17,27 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const totalGuests = userGuests.length;
 
-  // Upcoming events: future dates only
+  // Upcoming events: today or later
   const today = new Date();
-  const upcomingEvents = userEvents.filter(e => new Date(e.date) > today).length;
+  today.setHours(0, 0, 0, 0);
+  const upcomingEvents = userEvents.filter(e => {
+    const d = parseEventDate(e.date);
+    return d && d >= today;
+  }).length;
 
-  // Attendance %
+  // Attendance %: average over events that already happened and have guests
+  // (future events would always count as 0% and pull the average down)
   let avgAttendance = 0;
-  if (userEvents.length > 0) {
-    const totalAttendance = userEvents.map(event => {
+  const pastEvents = userEvents.filter(e => {
+    const d = parseEventDate(e.date);
+    return d && d < today && userGuests.some(g => g.eventId === e.id);
+  });
+  if (pastEvents.length > 0) {
+    const rates = pastEvents.map(event => {
       const guests = userGuests.filter(g => g.eventId === event.id);
-      if (guests.length === 0) return 0;
-      const attended = guests.filter(g => g.attended).length;
-      return attended / guests.length;
+      return guests.filter(g => g.attended).length / guests.length;
     });
-    avgAttendance = (totalAttendance.reduce((a, b) => a + b, 0) / totalAttendance.length) * 100;
+    avgAttendance = (rates.reduce((a, b) => a + b, 0) / rates.length) * 100;
   }
 
 
@@ -43,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---- RECENT EVENTS ----
   const recentContainer = document.getElementById("recent-events");
   if (recentContainer) {
-    const sorted = [...userEvents].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const time = e => (parseEventDate(e.date) || new Date(0)).getTime();
+    const sorted = [...userEvents].sort((a, b) => time(b) - time(a));
     const recent = sorted.slice(0, 2);
 
     if (recent.length === 0) {
@@ -51,11 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       recentContainer.innerHTML = recent.map(event => {
         const guestCount = userGuests.filter(g => g.eventId === event.id).length;
-        const formattedDate = new Date(event.date).toLocaleDateString("pt-BR");
+        const formattedDate = formatEventDate(event.date);
         return `
           <div class="recent-item">
             <div class="recent-left">
-              <div class="recent-title">${event.title}</div>
+              <a class="recent-title" href="evento.html?id=${encodeURIComponent(event.id)}">${escapeHtml(event.title)}</a>
               <div class="recent-date">${formattedDate}</div>
             </div>
             <div style="text-align:right;">

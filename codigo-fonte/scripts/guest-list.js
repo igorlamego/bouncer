@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---- functions ----
   function populateEventSelect() {
     eventSelect.innerHTML = "";
-    const optNone = document.createElement("option");
-    optNone.value = "none";
-    optNone.textContent = "Escolha um evento";
-    eventSelect.appendChild(optNone);
+    const optAll = document.createElement("option");
+    optAll.value = "all";
+    optAll.textContent = "Todos os eventos";
+    eventSelect.appendChild(optAll);
 
     allEvents.forEach(e => {
       const opt = document.createElement("option");
@@ -41,6 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
       opt.textContent = e.title;
       eventSelect.appendChild(opt);
     });
+
+    // Pre-select the event when coming from the event page (guest-list.html?evento=ID)
+    const fromUrl = new URLSearchParams(window.location.search).get("evento");
+    if (fromUrl && allEvents.some(e => e.id === fromUrl)) {
+      eventSelect.value = fromUrl;
+    }
   }
 
   function setEventFromSelect() {
@@ -149,10 +155,26 @@ document.addEventListener("DOMContentLoaded", () => {
     renderRows();
   }
 
-  function renderRows() {
-    const start = page * PAGE_SIZE;
-    const end = start + PAGE_SIZE;
+  // Renders the rows of the current page.
+  // With fromStart = true it redraws every page already loaded (used after a status change).
+  function renderRows(fromStart = false) {
+    const start = fromStart ? 0 : page * PAGE_SIZE;
+    const end = (page + 1) * PAGE_SIZE;
     const rows = filteredGuests.slice(start, end);
+
+    if (fromStart || page === 0) {
+      guestsTbody.innerHTML = "";
+    }
+
+    if (filteredGuests.length === 0) {
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.colSpan = 6;
+      td.className = "empty-row";
+      td.textContent = "Nenhum participante encontrado.";
+      tr.appendChild(td);
+      guestsTbody.appendChild(tr);
+    }
 
     rows.forEach(g => {
       const tr = document.createElement("tr");
@@ -219,10 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
   data.guests[idx].attended = newStatus;
   saveData(data);
 
-    // re-render
+    // re-render keeping the pages already loaded ("ver mais")
     refreshData();
-    guestsTbody.innerHTML = "";
-    renderRows();
+    renderRows(true);
     // update total metric
     const confirmedCount = filteredGuests.filter(g => g.attended).length;
     participantsTotal.textContent = confirmedCount.toLocaleString("pt-BR");
@@ -258,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     // Get current event - if "none" or no event selected, show error
-    if (currentEventId === "none" || currentEventId === "all") {
+    if (!currentEventId || currentEventId === "all") {
       alert('Por favor, selecione um evento antes de adicionar participantes.');
       return;
     }

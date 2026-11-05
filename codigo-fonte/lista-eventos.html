@@ -13,26 +13,31 @@
 </head>
 <body>
     <!-- CABEÇALHO -->
-    <header>
-        <nav class="topbar">
-            <a class="logo">
-                <img src="./assets/logo-clara.png" width="200em" alt="Logo Bouncer">
-            </a>
+    <header class="topbar">
+        <div class="logo">
+            <img src="./assets/logo-clara.png" width="200" alt="Logo Bouncer">
+        </div>
 
-            <div class="nav-center">
-                <a class="pill-btn" href="dashboard.html">PAINEL</a>
-                <a class="pill-btn-current" href="lista-eventos.html">EVENTOS</a>
-                <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
-            </div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-            <div class="nav-right">
-                <div class="profile">
-                    <div class="avatar"></div>
-                    <div class="profile-name"></div>
-                </div>
-                <a href="#" onclick="logout(); return false;" class="pill-btn logout-btn">SAIR</a>
-            </div>
+        <nav class="nav-center">
+            <a class="pill-btn" href="dashboard.html">PAINEL</a>
+            <a class="pill-btn-current" href="lista-eventos.html">EVENTOS</a>
+            <a class="pill-btn" href="guest-list.html">PARTICIPANTES</a>
         </nav>
+
+        <div class="nav-right">
+            <div class="profile">
+                <div class="avatar"></div>
+                <div class="profile-name"></div>
+            </div>
+            <a href="#" onclick="logout(); return false;" class="pill-btn logout-btn">SAIR</a>
+        </div>
     </header>
 
     <!-- CONTEÚDO -->
@@ -41,7 +46,7 @@
         <h2 class="subtitle">Lista de todos os eventos disponíveis</h2>
 
         <div class="add-event-container">
-            <a class="create-btn" href="novo-evento.html">
+            <a class="create-btn" href="#">
                 <span class="plus">＋</span>
                 <span>Criar Evento</span>
             </a>
@@ -58,13 +63,13 @@
   <img class="footer-logo" src="assets/logo-escura.png" alt="Bouncer Logo Escura" width="30%">
   <div class="footer-socials">
     <a href="https://x.com/">
-      <img src="assets/x-logo.png" width="24px">
+      <img src="assets/x-logo.png" width="24" alt="X (Twitter)">
     </a>
     <a href="https://instagram.com/">
-      <img src="assets/instagram-logo.png" width="24px">
+      <img src="assets/instagram-logo.png" width="24" alt="Instagram">
     </a>
     <a href="https://linkedin.com/">
-      <img src="assets/linkedin-logo.png" width="24px">
+      <img src="assets/linkedin-logo.png" width="24" alt="LinkedIn">
     </a>
   </div>
 </footer>
@@ -90,17 +95,17 @@
       
       <div class="form-group">
         <label for="event-date">Data*</label>
-        <input type="text" id="event-date" placeholder="dd/mm/aaaa" required>
+        <input type="date" id="event-date" required>
       </div>
       
       <div class="form-group">
         <label for="event-time">Horário*</label>
-        <input type="text" id="event-time" placeholder="hh : mm" required>
+        <input type="time" id="event-time" required>
       </div>
       
       <div class="form-group">
         <label for="event-capacity">Número de pessoas</label>
-        <input type="number" id="event-capacity" placeholder="Digite o número de pessoas">
+        <input type="number" id="event-capacity" min="1" placeholder="Digite o número de pessoas">
       </div>
       
       <div class="form-group">
