@@ -687,3 +687,25 @@ footer {
 }
 
 button, input, select, textarea { font-family: inherit; }
+
+/* Filters button when there is an active filter */
+#filters-toggle.active {
+  background: var(--velvet);
+  color: var(--branco);
+}
+
+.clear-filters-btn {
+  margin-top: 8px;
+  padding: 10px;
+  background: transparent;
+  color: var(--velvet);
+  border: 1px solid var(--velvet);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.clear-filters-btn:hover {
+  background: rgba(108, 63, 164, 0.08);
+}

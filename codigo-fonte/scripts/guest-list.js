@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let page = 0;
   let currentSearch = "";
 
+  // Filters only change when the user clicks "Aplicar Filtros"
+  let appliedFilters = { category: "", status: "" };
+  const filtersToggle = document.getElementById("filters-toggle");
+  const clearFiltersBtn = document.getElementById("clear-filters");
+
   populateEventSelect();
   setEventFromSelect();
   attachListeners();
@@ -60,27 +65,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     searchInput.addEventListener("input", debounce(() => {
-      currentSearch = searchInput.value.trim().toLowerCase();
+      currentSearch = normalizeText(searchInput.value);
       resetAndRender();
     }, 220));
+
+    // Enter inside the search box should not submit anything
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") e.preventDefault();
+    });
 
     loadMoreBtn.addEventListener("click", () => {
       page++;
       renderRows();
     });
 
-    document.getElementById("filters-toggle").addEventListener("click", () => {
+    filtersToggle.addEventListener("click", () => {
+      // Show the filters that are really applied
+      filterCategory.value = appliedFilters.category;
+      filterStatus.value = appliedFilters.status;
       filterPopout.classList.add("open");
     });
 
+    // Closing without applying discards the changes
     closeFiltersBtn.addEventListener("click", () => {
+      filterCategory.value = appliedFilters.category;
+      filterStatus.value = appliedFilters.status;
       filterPopout.classList.remove("open");
     });
 
     applyFiltersBtn.addEventListener("click", () => {
       applyAdvancedFilters();
       filterPopout.classList.remove("open");
-    })
+    });
+
+    clearFiltersBtn.addEventListener("click", () => {
+      filterCategory.value = "";
+      filterStatus.value = "";
+      applyAdvancedFilters();
+      filterPopout.classList.remove("open");
+    });
 
     // Replace the external link with modal opener
     document.querySelector('.add-btn').addEventListener('click', (e) => {
@@ -112,25 +135,23 @@ document.addEventListener("DOMContentLoaded", () => {
       // Filter by EVENT
       if (currentEventId !== "all" && g.eventId !== currentEventId) return false;
   
-      // Filter by SEARCH
-      const name = (g.name || "").toLowerCase();
-      const contact = (g.contact || "").toLowerCase();
-  
-      if (currentSearch && !name.includes(currentSearch) && !contact.includes(currentSearch)) {
-        return false;
+      // Filter by SEARCH (name, contact or promoter; ignores case and accents)
+      if (currentSearch) {
+        const haystack = normalizeText([g.name, g.contact, g.promoter].join(" "));
+        if (!haystack.includes(currentSearch)) return false;
       }
   
       // Filter by CATEGORY
-      if (filterCategory.value && g.category !== filterCategory.value) {
+      if (appliedFilters.category && g.category !== appliedFilters.category) {
         return false;
       }
   
       // Filter by STATUS
-      if (filterStatus.value === "present" && !g.attended) {
+      if (appliedFilters.status === "present" && !g.attended) {
         return false;
       }
   
-      if (filterStatus.value === "absent" && g.attended) {
+      if (appliedFilters.status === "absent" && g.attended) {
         return false;
       }
   
@@ -139,7 +160,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyAdvancedFilters() {
-  resetAndRender();
+    appliedFilters = {
+      category: filterCategory.value,
+      status: filterStatus.value,
+    };
+
+    // Show how many filters are active on the button
+    const active = Object.values(appliedFilters).filter(Boolean).length;
+    filtersToggle.textContent = active ? `Filtros (${active})` : "Filtros";
+    filtersToggle.classList.toggle("active", active > 0);
+
+    resetAndRender();
+  }
+
+  // Lowercase, trim and remove accents: "João " -> "joao"
+  function normalizeText(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
   }
 
 

@@ -70,8 +70,8 @@
 
     <div class="card guests-card">
     <div class="search-card">
-      <input type="search" id="guest-search" placeholder="Digite quem está procurando" />
-      <button id="filters-toggle">Filtros</button>
+      <input type="search" id="guest-search" placeholder="Buscar por nome, contato ou promoter" aria-label="Buscar participante" />
+      <button id="filters-toggle" type="button">Filtros</button>
     </div>
       <table id="guests-table" class="guests-table">
         <thead>
@@ -101,7 +101,7 @@
 
       <div class="popout-content">
 
-        <label>Categoria</label>
+        <label for="filter-category">Categoria</label>
         <select id="filter-category">
           <option value="">Todas</option>
           <option value="VIP">VIP</option>
@@ -109,7 +109,7 @@
           <option value="Cortesia">Cortesia</option>
         </select>
 
-        <label>Status</label>
+        <label for="filter-status">Status</label>
         <select id="filter-status">
           <option value="">Todos</option>
           <option value="present">Confirmados</option>
@@ -117,7 +117,8 @@
         </select>
       </div>
 
-      <button id="apply-filters" class="apply-btn">Aplicar Filtros</button>
+      <button id="apply-filters" class="apply-btn" type="button">Aplicar Filtros</button>
+      <button id="clear-filters" class="clear-filters-btn" type="button">Limpar filtros</button>
     </div>
 
   <div class="footer-spacer"></div>
