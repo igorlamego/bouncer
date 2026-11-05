@@ -10,8 +10,8 @@
   --mint-hover: #2ab985;
   --light-text: #9aa0a8;
 
-  --titles: 'Montserrat';
-  --text: 'Inter';
+  --titles: 'Montserrat', sans-serif;
+  --text: 'Inter', sans-serif;
 }
 
 /* Reset leve */
@@ -165,3 +165,7 @@ footer { padding: 10% 0 0 1%; }
   .register__button { width: 70%; }
   .register__input { padding: 6px 10% 0 10%; }
 }
+
+body { font-family: var(--text); }
+
+button, input, select, textarea { font-family: inherit; }

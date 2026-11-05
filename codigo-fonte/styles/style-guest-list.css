@@ -12,8 +12,8 @@
   --red: #d33;
   --red-hover: rgb(223, 87, 87);
 
-  --titles: Montserrat;
-  --text: Inter;
+  --titles: 'Montserrat', sans-serif;
+  --text: 'Inter', sans-serif;
 
 }
 
@@ -685,3 +685,5 @@ footer {
   color: #9aa0a8;
   padding: 24px 0;
 }
+
+button, input, select, textarea { font-family: inherit; }

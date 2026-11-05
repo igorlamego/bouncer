@@ -9,8 +9,8 @@
     --branco: #ffffff;
     --mint-hover: #2ab985;
 
-    --titles: Montserrat;
-    --text: Inter;
+    --titles: 'Montserrat', sans-serif;
+    --text: 'Inter', sans-serif;
 
 }
 
@@ -163,3 +163,7 @@ footer {
     transition: background 1s;
     background-color: #ffbbbb;
 }
+
+body { font-family: var(--text); }
+
+button, input, select, textarea { font-family: inherit; }
