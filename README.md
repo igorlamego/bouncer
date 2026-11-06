@@ -39,10 +39,14 @@ O **Bouncer** é uma aplicação web que centraliza esse processo: o organizador
 
 - **Cadastro e login** de organizadores, com validação de e-mail e senha
 - **Painel** com total de eventos, eventos futuros, total de convidados e taxa média de comparecimento
-- **Eventos:** criação (data, horário, local, capacidade, descrição e flyer), listagem, detalhes e exclusão
+- **Eventos:** criação, edição e exclusão (data, horário, local, capacidade, descrição e flyer), além de página de detalhes com resumo da lista
 - **Lista de convidados** por evento, com contato, categoria (VIP, Lista, Cortesia), promoter e observações
+- **Edição e remoção** de participantes
+- **Prevenção de duplicidade:** o mesmo nome não entra duas vezes na lista de um evento
+- **Controle de capacidade:** aviso ao ultrapassar o limite de pessoas do evento
 - **Check-in** com um clique (Pendente ⇄ Confirmado) e contador de confirmados em tempo real
-- **Busca** por nome/contato e **filtros** por categoria e status
+- **Busca** por nome, contato ou promoter (ignora acentos) e **filtros** por categoria e status
+- Cada organizador vê **apenas os próprios eventos**
 - Layout **responsivo**, com menu hambúrguer no celular
 
 ## Tecnologias

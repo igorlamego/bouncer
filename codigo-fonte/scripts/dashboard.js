@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("total-events").textContent = totalEvents;
   document.getElementById("total-guests").textContent = totalGuests.toLocaleString("pt-BR");
   document.getElementById("upcoming-events").textContent = upcomingEvents;
-  document.getElementById("avg-attendance").textContent = `${Math.round(avgAttendance)}%`;
+  // "—" when there is no finished event with guests yet
+  document.getElementById("avg-attendance").textContent =
+    pastEvents.length > 0 ? `${Math.round(avgAttendance)}%` : "—";
 
   // ---- RECENT EVENTS ----
   const recentContainer = document.getElementById("recent-events");

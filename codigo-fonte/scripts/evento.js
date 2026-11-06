@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("event-guests-link").href =
         `guest-list.html?evento=${encodeURIComponent(evento.id)}`;
 
+    document.getElementById("event-edit-link").href =
+        `lista-eventos.html?editar=${encodeURIComponent(evento.id)}`;
+
     // Show flyer only when it is a stored image (older events saved just the file name)
     if (evento.flyer && evento.flyer.startsWith("data:image")) {
         document.getElementById("event-banner").src = evento.flyer;

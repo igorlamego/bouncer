@@ -504,3 +504,43 @@ a {text-decoration: none;}
 }
 
 button, input, select, textarea { font-family: inherit; }
+
+/* ======== AÇÕES DO CARD ======== */
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.card-actions .pill-btn {
+  padding: 10px 22px;
+}
+
+.card-actions .delete-btn { margin-top: 0; }
+
+.edit-btn {
+  background: transparent;
+  color: var(--indigo);
+  border: 1.5px solid var(--indigo);
+  padding: 9px 18px;
+  border-radius: 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.edit-btn:hover {
+  background: rgba(45, 42, 85, 0.06);
+  transform: translateY(-2px);
+}
+
+.field-hint {
+  display: block;
+  margin-top: 6px;
+  color: var(--light-text);
+  font-size: 0.85rem;
+}
+
+[hidden] { display: none !important; }

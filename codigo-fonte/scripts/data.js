@@ -231,3 +231,43 @@ document.addEventListener("DOMContentLoaded", () => {
   avatar.textContent = userData.nomeUser.charAt(0).toUpperCase();
   profileName.textContent = userData.nomeUser.trim().split(" ")[0];
 });
+
+
+// ------------ UI helpers shared by every page ------------
+
+// Small notification at the bottom of the screen (instead of alert)
+function showToast(message) {
+  let toast = document.getElementById("toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "toast";
+    toast.setAttribute("role", "status");
+    Object.assign(toast.style, {
+      position: "fixed", left: "50%", bottom: "24px", transform: "translateX(-50%)",
+      background: "#2d2a55", color: "#fff", padding: "12px 20px", borderRadius: "10px",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.2)", fontFamily: "'Inter', sans-serif",
+      fontSize: "15px", zIndex: "9999", opacity: "0", transition: "opacity 0.2s ease",
+      pointerEvents: "none", maxWidth: "90vw", textAlign: "center",
+    });
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.style.opacity = "1";
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => (toast.style.opacity = "0"), 2500);
+}
+window.showToast = showToast;
+
+// Modals close with Esc or by clicking outside the box (uses the modal's Cancel button)
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  const open = document.querySelector(".modal.show");
+  if (open) open.querySelector(".cancel-btn")?.click();
+  document.querySelector(".filter-popout.open .close-btn")?.click();
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList && e.target.classList.contains("modal") && e.target.classList.contains("show")) {
+    e.target.querySelector(".cancel-btn")?.click();
+  }
+});

@@ -709,3 +709,40 @@ button, input, select, textarea { font-family: inherit; }
 .clear-filters-btn:hover {
   background: rgba(108, 63, 164, 0.08);
 }
+
+/* "Evento" column only when "Todos os eventos" is selected */
+.guests-table .col-event { display: none; }
+.guests-table.show-event .col-event { display: table-cell; }
+
+.col-actions { white-space: nowrap; }
+
+.icon-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-right: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--indigo);
+}
+.icon-btn:hover { background: #f1eefb; }
+.delete-guest-btn { color: #c62828; border-color: #f0c4c4; }
+.delete-guest-btn:hover { background: #fdecec; }
+
+.empty-row a { color: var(--velvet); font-weight: 600; }
+
+@media (max-width: 600px) {
+  .guests-card thead { display: none; }
+  .guests-table.show-event .col-event { display: flex; }
+  .guests-card td.empty-row { display: block; text-align: center; }
+  .guests-card td.empty-row::before { content: none; }
+  .guests-card td.col-actions { justify-content: flex-end; gap: 6px; }
+  .guests-card td.col-actions::before { content: none; }
+}
+
+/* Search bar: input can shrink so the Filtros button always fits */
+.search-card input[type="search"] { min-width: 0; }
+.search-card button { flex-shrink: 0; }
+
+.col-nowrap { white-space: nowrap; }

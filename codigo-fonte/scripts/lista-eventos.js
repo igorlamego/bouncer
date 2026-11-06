@@ -1,3 +1,6 @@
+// Id of the event being edited (null when creating a new one)
+let editingEventId = null;
+
 document.addEventListener("DOMContentLoaded", () => {
   // Load events
   renderEvents();
@@ -5,8 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Modal event listeners
   document.querySelector(".create-btn").addEventListener("click", (e) => {
     e.preventDefault();
-    document.getElementById("add-event-modal").classList.add("show");
+    openEventModal();
   });
+
+  // Open the editor directly (lista-eventos.html?editar=ID, used by the event page)
+  const editId = new URLSearchParams(window.location.search).get("editar");
+  const toEdit = editId && getEvents().find((ev) => ev.id === editId);
+  if (toEdit) openEventModal(toEdit);
 
   document.getElementById("close-event-modal").addEventListener("click", closeAddEventModal);
   document.getElementById("cancel-add-event").addEventListener("click", closeAddEventModal);
@@ -36,14 +44,21 @@ function renderEvents() {
       <p><strong>Local:</strong> ${escapeHtml(evento.location)}</p>
       <p><strong>Descrição:</strong> ${escapeHtml(evento.description || "-")}</p>
 
-      <a class="pill-btn" href="evento.html?id=${encodeURIComponent(evento.id)}">Ver detalhes</a>
-
-      <button class="delete-btn" data-id="${escapeHtml(evento.id)}">
-          Excluir
-      </button>
+      <div class="card-actions">
+        <a class="pill-btn" href="evento.html?id=${encodeURIComponent(evento.id)}">Ver detalhes</a>
+        <button class="edit-btn" type="button" data-id="${escapeHtml(evento.id)}">Editar</button>
+        <button class="delete-btn" type="button" data-id="${escapeHtml(evento.id)}">Excluir</button>
+      </div>
     `;
 
     container.appendChild(card);
+  });
+
+  document.querySelectorAll(".edit-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const ev = getEvents().find((x) => x.id === e.currentTarget.getAttribute("data-id"));
+      if (ev) openEventModal(ev);
+    });
   });
 
   // Re-attach delete event listeners
@@ -58,9 +73,36 @@ function renderEvents() {
   });
 }
 
+function openEventModal(evento = null) {
+  editingEventId = evento ? evento.id : null;
+  document.getElementById("event-modal-title").textContent = evento ? "Editar Evento" : "Criar Novo Evento";
+  document.querySelector("#add-event-form .submit-btn").textContent = evento ? "Salvar Alterações" : "Salvar Evento";
+
+  document.getElementById("event-title").value = evento ? evento.title || "" : "";
+  document.getElementById("event-location").value = evento ? evento.location || "" : "";
+  document.getElementById("event-date").value = evento ? toInputDate(evento.date) : "";
+  document.getElementById("event-time").value = evento ? evento.horario || "" : "";
+  document.getElementById("event-capacity").value = evento ? evento.numero || "" : "";
+  document.getElementById("event-description").value = evento ? evento.description || "" : "";
+  document.getElementById("event-flyer").value = "";
+  document.getElementById("event-flyer-hint").hidden = !(evento && evento.flyer && evento.flyer.startsWith("data:image"));
+
+  document.getElementById("add-event-modal").classList.add("show");
+  document.getElementById("event-title").focus();
+}
+
+// Converts any stored date to the aaaa-mm-dd format used by <input type="date">
+function toInputDate(value) {
+  const d = parseEventDate(value);
+  if (!d) return "";
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
 function closeAddEventModal() {
   document.getElementById("add-event-modal").classList.remove("show");
   document.getElementById("add-event-form").reset();
+  editingEventId = null;
 }
 
 // Read the flyer image, shrink it and return it as a data URL,
@@ -110,8 +152,9 @@ async function handleAddEvent(e) {
     return;
   }
 
-  // Handle flyer file
-  let flyer = "";
+  // Handle flyer file (when editing, keeps the current flyer if no new file is chosen)
+  const current = editingEventId ? getEvents().find((ev) => ev.id === editingEventId) : null;
+  let flyer = current ? current.flyer || "" : "";
   if (flyerInput && flyerInput.files.length > 0) {
     try {
       flyer = await readFlyer(flyerInput.files[0]);
@@ -120,10 +163,10 @@ async function handleAddEvent(e) {
     }
   }
 
-  // Create new event
+  // Create new event (or keep id/owner when editing)
   const newEvent = {
-    id: makeId(),
-    userId: loggedIn.id,
+    id: editingEventId || makeId(),
+    userId: current ? current.userId : loggedIn.id,
     title,
     location,
     date,
@@ -134,13 +177,21 @@ async function handleAddEvent(e) {
   };
 
   // Save using existing data system
+  const persist = (ev) => {
+    if (!editingEventId) return saveEvent(ev);
+    const data = getData();
+    const idx = data.events.findIndex((x) => x.id === ev.id);
+    if (idx !== -1) data.events[idx] = ev;
+    saveData(data);
+  };
+
   try {
-    saveEvent(newEvent);
+    persist(newEvent);
   } catch {
     // localStorage is full (usually because of large images)
     newEvent.flyer = "";
     try {
-      saveEvent(newEvent);
+      persist(newEvent);
       alert("Sem espaço para salvar o flyer. O evento foi salvo sem imagem.");
     } catch {
       alert("Não foi possível salvar o evento: armazenamento do navegador cheio.");
@@ -149,10 +200,11 @@ async function handleAddEvent(e) {
   }
 
   // Close modal and refresh events list
+  const wasEditing = !!editingEventId;
   closeAddEventModal();
   renderEvents();
 
-  alert("Evento criado com sucesso!");
+  showToast(wasEditing ? "Evento atualizado!" : "Evento criado com sucesso!");
 }
 
 function deleteEvent(eventId) {
@@ -166,4 +218,5 @@ function deleteEvent(eventId) {
 
   saveData(data);
   renderEvents();
+  showToast("Evento excluído.");
 }

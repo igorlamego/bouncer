@@ -303,3 +303,16 @@ a {text-decoration: none;}
 }
 
 button, input, select, textarea { font-family: inherit; }
+
+.ticket-box .pill-btn.secondary {
+  background: transparent;
+  border: 1.5px solid var(--indigo);
+  box-shadow: none;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .event-info { align-items: stretch; }
+  .event-details { width: 100%; }
+  .ticket-box .pill-btn.secondary { margin-left: 0; }
+}

@@ -167,3 +167,16 @@ footer {
 body { font-family: var(--text); }
 
 button, input, select, textarea { font-family: inherit; }
+
+@media (max-width: 600px) {
+  .login__box {
+    width: calc(100% - 32px);
+    height: auto;
+    max-height: none;
+    padding: 32px 0;
+  }
+
+  .login__input { padding: 2% 8% 0 8%; }
+
+  .login__button { width: 70%; }
+}

@@ -77,11 +77,13 @@
         <thead>
           <tr>
             <th>Nome</th>
+            <th class="col-event">Evento</th>
             <th>Contato</th>
             <th>Categoria</th>
             <th>Status</th>
             <th>Promoter</th>
             <th>Observações</th>
+            <th class="col-actions">Ações</th>
           </tr>
         </thead>
         <tbody id="guests-tbody"></tbody>
@@ -144,11 +146,16 @@
 <div id="add-guest-modal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
-      <h2>Adicionar Participante</h2>
-      <button id="close-modal" class="close-btn">&times;</button>
+      <h2 id="guest-modal-title">Adicionar Participante</h2>
+      <button id="close-modal" class="close-btn" type="button" aria-label="Fechar">&times;</button>
     </div>
     
     <form id="add-guest-form">
+      <div class="form-group">
+        <label for="guest-event">Evento*</label>
+        <select id="guest-event" required></select>
+      </div>
+
       <div class="form-group">
         <label for="guest-name">Nome*</label>
         <input type="text" id="guest-name" placeholder="Digite o nome do participante" required>
